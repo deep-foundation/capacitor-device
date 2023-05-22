@@ -19,13 +19,13 @@ async function main() {
   }
   const latestVersion = execResult.stdoutOutput.toString().trim();
   const packageJsonVersion = packageJson.version;
+  const newVersion = options.version || 'patch';
   if (latestVersion > packageJsonVersion) {
     throw new Error(
       `Version ${packageJson.version} in ${packageJsonPath} is outdated. Latest version in npm is ${latestVersion}. Execute npm run npm-pull`
     );
   }
   if (latestVersion === packageJsonVersion) {
-    const newVersion = options.version || 'patch';
     const { execPromise } = exec(`npm version ${newVersion}`);
     const execResult = await execPromise;
     if (execResult.exitCode !== 0) {
