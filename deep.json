@@ -1,0 +1,227 @@
+{
+  "package": {
+    "name": "@deep-foundation/capacitor-device",
+    "version": "1.0.0"
+  },
+  "data": [
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "Value"
+      },
+      "id": 1
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "String"
+      },
+      "id": 2
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "Type"
+      },
+      "id": 3
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "HandleUpdate"
+      },
+      "id": 4
+    },
+    {
+      "package": {
+        "dependencyId": 1,
+        "containValue": "UpdateHandler"
+      },
+      "id": 5
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "Number"
+      },
+      "id": 6
+    },
+    {
+      "package": {
+        "dependencyId": 2,
+        "containValue": "Boolean"
+      },
+      "id": 7
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "Object"
+      },
+      "id": 8
+    },
+    {
+      "id": "TypeOfValueOfWebViewVersion",
+      "type": 1,
+      "from": "WebViewVersion",
+      "to": 2
+    },
+    {
+      "id": "TypeOfValueOfName",
+      "type": 1,
+      "from": "Name",
+      "to": 2
+    },
+    {
+      "id": "Name",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "HandleUpdate",
+      "type": 4,
+      "from": "Device",
+      "to": 5
+    },
+    {
+      "id": "OperatingSystem",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfOperatingSystem",
+      "type": 1,
+      "from": "OperatingSystem",
+      "to": 2
+    },
+    {
+      "id": "Device",
+      "type": 3
+    },
+    {
+      "id": "WebViewVersion",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "Manufacturer",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfManufacturer",
+      "type": 1,
+      "from": "Manufacturer",
+      "to": 2
+    },
+    {
+      "id": "LanguageCode",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfLanguageCode",
+      "type": 1,
+      "from": "LanguageCode",
+      "to": 2
+    },
+    {
+      "id": "BatteryLevel",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfBatteryLevel",
+      "type": 1,
+      "from": "BatteryLevel",
+      "to": 6
+    },
+    {
+      "id": "LanguageTag",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfLanguageTag",
+      "type": 1,
+      "from": "LanguageTag",
+      "to": 2
+    },
+    {
+      "id": "IsCharging",
+      "type": 3,
+      "from": "Device",
+      "to": 7
+    },
+    {
+      "id": "OsVersion",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfOsVersion",
+      "type": 1,
+      "from": "OsVersion",
+      "to": 2
+    },
+    {
+      "id": "IsVirtual",
+      "type": 3,
+      "from": "Device",
+      "to": 7
+    },
+    {
+      "id": "Platform",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfPlatform",
+      "type": 1,
+      "from": "Platform",
+      "to": 2
+    },
+    {
+      "id": "Model",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfModel",
+      "type": 1,
+      "from": "Model",
+      "to": 2
+    },
+    {
+      "id": "TypeOfValueOfDevice",
+      "type": 1,
+      "from": "Device",
+      "to": 8
+    }
+  ],
+  "errors": [],
+  "dependencies": [
+    {
+      "name": "@deep-foundation/core",
+      "version": "0.0.2"
+    },
+    {
+      "name": "@freephoenix888/object-to-links-async-converter",
+      "version": "0.0.10"
+    },
+    {
+      "name": "@freephoenix888/boolean",
+      "version": "0.0.1"
+    }
+  ]
+}
