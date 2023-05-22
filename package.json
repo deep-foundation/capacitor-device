@@ -5,7 +5,7 @@
   ],
   "version": "1.0.1",
   "scripts": {
-    "fetch": "npm install @deep-foundation/payments-tinkoff-c2b-test@latest --no-save && (if [ -f ./node_modules/@deep-foundation/payments-tinkoff-c2b-test/deep.json ]; then rm -f ./deep.json; fi;) && mv node_modules/@deep-foundation/payments-tinkoff-c2b-test/deep.json ./",
+    "fetch": "npm install @deep-foundation/capacitor-device@latest --no-save && (if [ -f ./node_modules/@deep-foundation/capacitor-device/deep.json ]; then rm -f ./deep.json; fi;) && mv node_modules/@deep-foundation/capacitor-device/deep.json ./",
     "build": "tsc"
   },
   "main": "dist/main.js",
