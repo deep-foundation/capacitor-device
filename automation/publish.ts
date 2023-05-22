@@ -4,7 +4,7 @@ import { program } from 'commander';
 import fs from 'fs';
 
 async function main() {
-  program.option('-v, --version <version>', 'New version to publish');
+  program.argument('<new_version>', 'New version to publish');
 
   program.parse(process.argv);
 
@@ -19,7 +19,6 @@ async function main() {
   }
   const latestVersion = execResult.stdoutOutput.toString().trim();
   const packageJsonVersion = packageJson.version;
-  console.log({ latestVersion, packageJsonVersion })
   if (latestVersion > packageJsonVersion) {
     throw new Error(
       `Version ${packageJson.version} in ${packageJsonPath} is outdated. Latest version in npm is ${latestVersion}. Execute npm run npm-pull`
@@ -33,18 +32,22 @@ async function main() {
       throw new Error(execResult.stderrOutput);
     }
     console.log(execResult.stdoutOutput);
+    await updateDeepJsonVersion({version: packageJsonVersion})
   }
   if (latestVersion < packageJsonVersion) {
-    const deepPackage = await import('../deep.json');
-    const packageJson = await import('../package.json');
-    deepPackage.package.version = packageJson.version;
+   await updateDeepJsonVersion({version: packageJsonVersion})
+  }
+}
+
+async function updateDeepJsonVersion({version}) {
+   const deepPackage = await import('../deep.json');
+    deepPackage.package.version = version;
 
     fs.writeFileSync(
       path.resolve('deep.json'),
       JSON.stringify(deepPackage, null, 2),
       'utf-8'
     );
-  }
 }
 
 main();
