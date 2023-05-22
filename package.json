@@ -4,6 +4,11 @@
     "deep-package"
   ],
   "version": "1.0.2",
+  "description": "A deep package that is based on @capacitor/device package",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deep-foundation/capacitor-device"
+  },
   "scripts": {
     "fetch": "npm install ${npm_package_name}@latest --no-save && (if [ -f ./node_modules/${npm_package_name}/deep.json ]; then rm -f ./deep.json; fi;) && mv node_modules/${npm_package_name}/deep.json ./",
     "build": "tsc"
@@ -14,6 +19,7 @@
     "/dist",
     "./deep.json"
   ],
+  "license": "Unlicense",
   "dependencies": {
     "@deep-foundation/core": "^0.0.2",
     "@freephoenix888/boolean": "^0.0.1",
