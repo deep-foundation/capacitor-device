@@ -32,10 +32,10 @@ async function main() {
       throw new Error(execResult.stderrOutput);
     }
     console.log(execResult.stdoutOutput);
-    await updateDeepJsonVersion({version: packageJsonVersion})
+    await updateDeepJsonVersion({version: newVersion})
   }
   if (latestVersion < packageJsonVersion) {
-   await updateDeepJsonVersion({version: packageJsonVersion})
+   await updateDeepJsonVersion({version: newVersion})
   }
 }
 
