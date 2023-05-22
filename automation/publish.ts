@@ -1,7 +1,6 @@
 import path from 'path';
 import exec from '@simplyhexagonal/exec';
 import { program } from 'commander';
-import inquirer from 'inquirer';
 import fs from 'fs';
 
 async function main() {
@@ -11,17 +10,19 @@ async function main() {
 
   const options = program.opts();
   console.log(options);
-  const packageJson = await import(path.resolve('package.json'));
+  const packageJsonPath = path.resolve('package.json');
+  const packageJson = await import(packageJsonPath);
   const { execPromise } = exec(`npm view ${packageJson.name} version`);
   const execResult = await execPromise;
   if (execResult.exitCode !== 0) {
     throw new Error(execResult.stderrOutput.trim());
   }
-  const latestVersion = parseInt(execResult.stdoutOutput.toString().trim());
-  const packageJsonVersion = parseInt(packageJson.version);
+  const latestVersion = execResult.stdoutOutput.toString().trim();
+  const packageJsonVersion = packageJson.version;
+  console.log({ latestVersion, packageJsonVersion })
   if (latestVersion > packageJsonVersion) {
     throw new Error(
-      `Version in package.json ${packageJson.version} is outdated. Latest version in npm is ${latestVersion}. Execute npm run npm-pull`
+      `Version ${packageJson.version} in ${packageJsonPath} is outdated. Latest version in npm is ${latestVersion}. Execute npm run npm-pull`
     );
   }
   if (latestVersion === packageJsonVersion) {
