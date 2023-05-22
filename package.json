@@ -3,7 +3,7 @@
   "keywords": [
     "deep-package"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "fetch": "npm install @deep-foundation/payments-tinkoff-c2b-test@latest --no-save && (if [ -f ./node_modules/@deep-foundation/payments-tinkoff-c2b-test/deep.json ]; then rm -f ./deep.json; fi;) && mv node_modules/@deep-foundation/payments-tinkoff-c2b-test/deep.json ./",
     "build": "tsc"
