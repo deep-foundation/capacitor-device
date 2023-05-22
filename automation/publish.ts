@@ -32,22 +32,28 @@ async function main() {
       throw new Error(execResult.stderrOutput);
     }
     console.log(execResult.stdoutOutput);
-    await updateDeepJsonVersion({version: newVersion})
+    await updateDeepJsonVersion({ version: newVersion });
   }
   if (latestVersion < packageJsonVersion) {
-   await updateDeepJsonVersion({version: newVersion})
+    const { execPromise } = exec(`npm version --allow-same-version ${packageJsonVersion}`);
+    const execResult = await execPromise;
+    if (execResult.exitCode !== 0) {
+      throw new Error(execResult.stderrOutput);
+    }
+    console.log(execResult.stdoutOutput);
+    await updateDeepJsonVersion({ version: newVersion });
   }
 }
 
-async function updateDeepJsonVersion({version}) {
-   const deepPackage = await import('../deep.json');
-    deepPackage.package.version = version;
+async function updateDeepJsonVersion({ version }) {
+  const deepPackage = await import('../deep.json');
+  deepPackage.package.version = version;
 
-    fs.writeFileSync(
-      path.resolve('deep.json'),
-      JSON.stringify(deepPackage, null, 2),
-      'utf-8'
-    );
+  fs.writeFileSync(
+    path.resolve('deep.json'),
+    JSON.stringify(deepPackage, null, 2),
+    'utf-8'
+  );
 }
 
 main();
