@@ -31,6 +31,7 @@ async function main() {
     if (execResult.exitCode !== 0) {
       throw new Error(execResult.stderrOutput);
     }
+    console.log(execResult.stdoutOutput);
   }
   if (latestVersion < packageJsonVersion) {
     const deepPackage = await import('../deep.json');
