@@ -26,21 +26,11 @@ async function main() {
     );
   }
   if (latestVersion === packageJsonVersion) {
-    const { execPromise } = exec(`npm version ${newVersion}`);
-    const execResult = await execPromise;
-    if (execResult.exitCode !== 0) {
-      throw new Error(execResult.stderrOutput);
-    }
-    console.log(execResult.stdoutOutput);
+    await execWrapped({command: `npm version --allow-same-version ${newVersion}`})
     await updateDeepJsonVersion({ version: newVersion });
   }
   if (latestVersion < packageJsonVersion) {
-    const { execPromise } = exec(`npm version --allow-same-version ${packageJsonVersion}`);
-    const execResult = await execPromise;
-    if (execResult.exitCode !== 0) {
-      throw new Error(execResult.stderrOutput);
-    }
-    console.log(execResult.stdoutOutput);
+    await execWrapped({command: `npm version ${packageJsonVersion}`})
     await updateDeepJsonVersion({ version: newVersion });
   }
 }
@@ -54,6 +44,15 @@ async function updateDeepJsonVersion({ version }) {
     JSON.stringify(deepPackage, null, 2),
     'utf-8'
   );
+}
+
+async function execWrapped({command}: {command: string}) {
+  const { execPromise } = exec(command);
+    const execResult = await execPromise;
+    if (execResult.exitCode !== 0) {
+      throw new Error(execResult.stderrOutput);
+    }
+    console.log(execResult.stdoutOutput);
 }
 
 main();
