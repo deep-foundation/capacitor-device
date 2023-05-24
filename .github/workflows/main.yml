@@ -19,7 +19,7 @@ jobs:
           node-version: ${{env.NODE_VERSION}}
       - run: npm i
       - run: npm run build
-      - run: npm test
+      - run: npm test --if-present
 
   publish-npm:
     needs: build-and-test
