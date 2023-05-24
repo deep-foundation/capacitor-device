@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
 
 env:
+# Peer-dependencies are not automatically installed on old npm versions
   NODE_VERSION: 18
 
 jobs:
