@@ -1,5 +1,6 @@
 {
   "name": "@deep-foundation/capacitor-device",
+  "type": "module",
   "keywords": [
     "deep-package"
   ],
