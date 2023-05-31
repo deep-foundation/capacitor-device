@@ -1,4 +1,4 @@
-export {DEVICE_PACKAGE_NAME} from './package-name'
+export {DEVICE_PACKAGE_NAME} from './package-name.ts'
 export {insertDevice} from './insert-device'
 export {saveDeviceInfo} from './save-device-info'
 export {getAllDeviceInfo} from './get-all-device-info'
