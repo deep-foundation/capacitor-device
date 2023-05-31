@@ -1,14 +1,14 @@
 import {
   DeepClient,
   SerialOperation,
-} from '@deep-foundation/deeplinks/imports/client';
-import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
-import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
+} from '@deep-foundation/deeplinks/imports/client.js';
+import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
+import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/index.js';
 import {
   MutationInputValue,
-} from '@deep-foundation/deeplinks/imports/client_types';
-import { DeviceInfo } from './device-info';
-import { getAllDeviceInfo } from './get-all-device-info';
+} from '@deep-foundation/deeplinks/imports/client_types.js';
+import { DeviceInfo } from './device-info.js';
+import { getAllDeviceInfo } from './get-all-device-info.js';
 
 export async function saveDeviceInfo(param: GetDeviceParam) {
   const { deep, info: data } = param;

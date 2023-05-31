@@ -1,5 +1,5 @@
 import { Card, CardHeader, Heading, CardBody, Stack, StackDivider, Box, Text, Image } from "@chakra-ui/react";
-import { AllDeviceInfo } from "../all-device-info";
+import { AllDeviceInfo } from "../all-device-info.js";
 
 export function Device({ device }: { device: AllDeviceInfo }) {
   return <Card >

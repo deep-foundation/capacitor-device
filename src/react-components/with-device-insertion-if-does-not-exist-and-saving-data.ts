@@ -1,6 +1,6 @@
-import { DeepClient } from '@deep-foundation/deeplinks/imports/client';
+import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
 import { useState, useEffect } from 'react';
-import { UseDeviceInsertionIfDoesNotExistAndSavingInfoParam, useDeviceInsertionIfDoesNotExistAndSavingData } from './use-device-insertion-if-does-not-exist-and-saving-data';
+import { UseDeviceInsertionIfDoesNotExistAndSavingInfoParam, useDeviceInsertionIfDoesNotExistAndSavingData } from './use-device-insertion-if-does-not-exist-and-saving-data.js';
 
 export function WithDeviceInsertionIfDoesNotExistAndSavingdata(
   props: WithDeviceInsertionIfDoesNotExistAndSavingdataParam

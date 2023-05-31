@@ -1,5 +1,5 @@
 import { Device } from "@capacitor/device";
-import { AllDeviceInfo } from "./all-device-info";
+import { AllDeviceInfo } from "./all-device-info.js";
 
 export async function getAllDeviceInfo(): Promise<AllDeviceInfo> {
    return {
