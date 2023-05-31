@@ -2,11 +2,9 @@
 
 # @deep-foundation/capacitor-device
 
-This documentation describes the `@deep-foundation/capacitor-device` package, currently at version `1.0.3`.
-
 ## Overview
 
-The `@deep-foundation/capacitor-device` package provides tools for working with device-related features from Capacitor.
+The `@deep-foundation/capacitor-device` package provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device).
 
 ## Device Information
 
@@ -29,6 +27,10 @@ The `Device` object in this package holds several properties which provide vario
 
 This package includes the `HandleUpdate` functionality (type: UpdateHandler) that is used to handle updates related to the `Device` object. `HandleUpdate` uses handler from `@freephoenix888/object-to-links-async-converter` to convert Device object value to links everytime when you update it
 
+## How to use?
+Insert `Device` link and update its value as object with properties described above. `HandleUpdate` will convert it to links and update them automatically.  
+This package also includes functions that will help you to use this package programatically by using JavaScript
+
 ## Contribution
 
-Contributions are welcomed. Please fork the repository and submit a pull request for any bugs, improvements, or features.
+Feel free to contribute. Please fork the repository and submit a pull request for any bugs, improvements, or features.
