@@ -21,6 +21,7 @@
     "./deep.json"
   ],
   "license": "Unlicense",
+  "type": "module",
   "dependencies": {
     "@deep-foundation/core": "^0.0.2",
     "@freephoenix888/boolean": "^0.0.1",
@@ -37,10 +38,6 @@
   "devDependencies": {
     "@deep-foundation/npm-release": "^0.0.16",
     "@types/fs-extra": "^11.0.1",
-    "fs-extra": "^11.1.1",
-    "glob": "^10.2.6",
-    "inquirer": "^9.2.6",
-    "ts-node": "^10.9.1",
-    "typescript-json-schema": "^0.56.0"
+    "fs-extra": "^11.1.1"
   }
 }
