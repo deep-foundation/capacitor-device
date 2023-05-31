@@ -1,7 +1,7 @@
 import { Device } from "@capacitor/device";
-import { DeepClient } from "@deep-foundation/deeplinks/imports/client";
-import { DEVICE_PACKAGE_NAME } from "./package-name";
-import { DeviceInfo } from "./device-info";
+import { DeepClient } from "@deep-foundation/deeplinks/imports/client.js";
+import { DEVICE_PACKAGE_NAME } from "./package-name.js";
+import { DeviceInfo } from "./device-info.js";
 
 export interface GetDeviceArg {
   deep: DeepClient, 
