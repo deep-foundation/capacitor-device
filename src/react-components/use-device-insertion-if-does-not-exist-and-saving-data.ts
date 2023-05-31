@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { DeepClient } from '@deep-foundation/deeplinks/imports/client';
-import { insertDevice } from '../insert-device';
-import { getAllDeviceInfo } from '../get-all-device-info';
+import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
+import { insertDevice } from '../insert-device.js';
+import { getAllDeviceInfo } from '../get-all-device-info.js';
 
 export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam) {
   const { deep, deviceLinkId, setDeviceLinkId, containerLinkId } = param;
