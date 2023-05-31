@@ -3,7 +3,7 @@ import {
   SerialOperation,
 } from '@deep-foundation/deeplinks/imports/client';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
-import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
+import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/index.js';
 import {
   MutationInputValue,
 } from '@deep-foundation/deeplinks/imports/client_types';
