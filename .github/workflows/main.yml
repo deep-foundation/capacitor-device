@@ -32,7 +32,7 @@ jobs:
           git commit -m "update package-lock.json" || echo "No changes to commit"
           git push origin main
       - run: npm run build
-      - run: npm test
+      - run: npm test --if-present
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
