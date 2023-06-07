@@ -39,4 +39,4 @@ jobs:
       - name: "npm version"
         run: npm version --allow-same-version $(node -p "require('./package.json').version")
       - name: "Push new version commit and tag"
-        run: git push && git push --tags
+        run: git push --tags && git push
