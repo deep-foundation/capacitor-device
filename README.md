@@ -1,9 +1,15 @@
 # @deep-foundation/capacitor-device
 [![npm](https://img.shields.io/npm/v/@deep-foundation/capacitor-device.svg)](https://www.npmjs.com/package/@deep-foundation/capacitor-device)
 
-## Goal
-
 Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device).
+
+## How to use?
+Insert `Device` link and update its value as object with properties described above. `HandleUpdate` will convert it to links and update them automatically.  
+This package also includes functions that will help you to use this package programatically by using JavaScript
+### Integrations
+```ts
+
+```
 
 ## Device Information
 
@@ -21,14 +27,11 @@ The `Device` link can have object value that can have following properties:
 - **isVirtual** (type: Boolean): Whether the device is virtual or not.
 - **platform** (type: String): The platform on which the device runs.
 - **model** (type: String): The model of the device.
+No one field is required. You can add any of these fields as you want
 
 ## Update Handling
 
 This package includes the `HandleUpdate` functionality (type: UpdateHandler) that is used to handle updates related to the `Device` object. `HandleUpdate` uses handler from `@freephoenix888/object-to-links-async-converter` to convert Device object value to links everytime when you update it
-
-## How to use?
-Insert `Device` link and update its value as object with properties described above. `HandleUpdate` will convert it to links and update them automatically.  
-This package also includes functions that will help you to use this package programatically by using JavaScript
 
 ## Contribution
 
