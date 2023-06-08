@@ -7,8 +7,27 @@ Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@cap
 Insert `Device` link and update its value as object with properties described above. `HandleUpdate` will convert it to links and update them automatically.  
 This package also includes functions that will help you to use this package programatically by using JavaScript
 ### Integrations
+#### Save all information
 ```ts
+import { saveDeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
+// Implicitly (if you do not pass info to saveDeviceInfo - it will save all information by default)
+await saveDeviceInfo({deep, deviceLinkId});
+// Explicitly
+const allDeviceInfo = await getAllDeviceInfo();
+await saveDeviceInfo({deep, deviceLinkId, info: allDeviceInfo});
+```
+#### Save specific information
+```ts
+import { saveDeviceInfo } from '@deep-foundation/capacitor-device';
 
+const deviceBatteryInfo = await Device.getBatteryInfo();
+await saveDeviceInfo({deep, deviceLinkId, info: deviceBatteryInfo});
+
+const {value: languageCode} = await Device.getLanguageCode();
+await saveDeviceInfo({deep, deviceLinkId, info: {languageCode}});
+
+const {value: languageTag} = await Device.getLanguageTag();
+await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});
 ```
 
 ## Device Information
