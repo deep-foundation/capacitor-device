@@ -41,7 +41,7 @@ jobs:
       - name: "Push new version commit and tag"
         run: (git push --tags && git push) || echo "Tag to the current version already exists"
       - name: Generate Documentation
-        run: npx typedoc src/index.ts
+        run: npx typedoc src/main.ts
       - name: Deploy Documentation to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
