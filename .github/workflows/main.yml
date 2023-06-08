@@ -37,6 +37,7 @@ jobs:
         id: publish
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          access: "public"
       - name: "npm version"
         if: ${{ steps.publish.outputs.type }}
         run: npm version --allow-same-version $(node -p "require('./package.json').version")
