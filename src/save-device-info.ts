@@ -10,7 +10,7 @@ import {
 import { DeviceInfo } from './device-info.js';
 import { getAllDeviceInfo } from './get-all-device-info.js';
 
-export async function saveDeviceInfo(param: GetDeviceParam) {
+export async function saveDeviceInfo(param: SaveDeviceInfoParam) {
   const { deep, info: data } = param;
 
   const deviceLink = await getDeviceLink();
@@ -128,7 +128,7 @@ export async function saveDeviceInfo(param: GetDeviceParam) {
   }
 }
 
-export type GetDeviceParam = { deep: DeepClient; info?: DeviceInfo } & (
+export type SaveDeviceInfoParam = { deep: DeepClient; info?: DeviceInfo } & (
   | { deviceLinkId: number }
   | { deviceLink: Link<number> }
 );
