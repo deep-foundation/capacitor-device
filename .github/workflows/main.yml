@@ -40,3 +40,7 @@ jobs:
         run: npm version --allow-same-version $(node -p "require('./package.json').version")
       - name: "Push new version commit and tag"
         run: (git push --tags && git push) || echo "Tag to the current version already exists"
+      - uses: TypeStrong/typedoc-action@v1
+        with:
+          args: --entrypoints src/main.ts
+          github-token: ${{ secrets.GITHUB_TOKEN }}
