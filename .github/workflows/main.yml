@@ -49,7 +49,6 @@ jobs:
         id: generate-docs
         run: npx typedoc src/main.ts
       - name: Deploy Documentation to Github Pages
-        needs: 
           - generate-docs
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
