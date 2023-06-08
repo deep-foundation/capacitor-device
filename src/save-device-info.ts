@@ -4,12 +4,45 @@ import {
 } from '@deep-foundation/deeplinks/imports/client.js';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
 import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/index.js';
-import {
-  MutationInputValue,
-} from '@deep-foundation/deeplinks/imports/client_types.js';
+import { MutationInputValue } from '@deep-foundation/deeplinks/imports/client_types.js';
 import { DeviceInfo } from './device-info.js';
 import { getAllDeviceInfo } from './get-all-device-info.js';
 
+/**
+ * Saves device information by modifying the value of the device link.
+ * Any fields not included in the `info` parameter will not be modified.
+ * If the {@link SaveDeviceInfoParam.info} parameter is undefined, the function will call {@link getAllDeviceInfo} to get the device information.
+ * 
+ * @example
+```ts
+// Save all device information
+
+import { saveDeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
+
+// Implicitly (if you do not pass info to saveDeviceInfo - it will save all information by default)
+await saveDeviceInfo({deep, deviceLinkId});
+
+// Explicitly
+const allDeviceInfo = await getAllDeviceInfo();
+await saveDeviceInfo({deep, deviceLinkId, info: allDeviceInfo});
+```
+ * 
+ * @example
+```ts
+// Save specific device information
+
+import { saveDeviceInfo } from '@deep-foundation/capacitor-device';
+
+const deviceBatteryInfo = await Device.getBatteryInfo();
+await saveDeviceInfo({deep, deviceLinkId, info: deviceBatteryInfo});
+
+const {value: languageCode} = await Device.getLanguageCode();
+await saveDeviceInfo({deep, deviceLinkId, info: {languageCode}});
+
+const {value: languageTag} = await Device.getLanguageTag();
+await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});
+```
+ */
 export async function saveDeviceInfo(param: SaveDeviceInfoParam) {
   const { deep, info: data } = param;
 
@@ -128,7 +161,13 @@ export async function saveDeviceInfo(param: SaveDeviceInfoParam) {
   }
 }
 
-export type SaveDeviceInfoParam = { deep: DeepClient; info?: DeviceInfo } & (
+/**
+ * This type is used for the parameter of the {@link saveDeviceInfo} function.
+ *
+ * The `SaveDeviceInfoParam` type is an object that must have a `deep` property of type {@link DeepClient} and an optional `info` property of type {@link DeviceInfo}. 
+ * In addition to these properties, the object must also have either a `deviceLinkId` property of type `number` or a `deviceLink` property of type {@link Link}.
+ */
+export type SaveDeviceInfoParam = { deep: DeepClient; info?: DeviceInfo | undefined } & (
   | { deviceLinkId: number }
   | { deviceLink: Link<number> }
 );

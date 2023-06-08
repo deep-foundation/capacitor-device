@@ -1,10 +1,18 @@
-import { Card, CardHeader, Heading, CardBody, Stack, StackDivider, Box, Text, Image } from "@chakra-ui/react";
+import { Card, CardHeader, Heading, CardBody, Text } from "@chakra-ui/react";
 import { AllDeviceInfo } from "../all-device-info.js";
 
-export function Device({ device }: { device: AllDeviceInfo }) {
-  return <Card >
+/**
+ * A React component that displays a device's information in a card format.
+ *
+ * @param param - An object of type `DeviceParam`
+ * 
+ * @returns A `Card` component containing device model as a `Heading` in the `CardHeader` and device name as a `Text` in the `CardBody`.
+ */
+export function Device(param: DeviceParam) {
+  const {device} = param;
+  return <Card>
     <CardHeader>
-      <Heading >
+      <Heading>
         {
           device.model
         }
@@ -19,3 +27,13 @@ export function Device({ device }: { device: AllDeviceInfo }) {
     </CardBody>
   </Card>
 }
+
+/**
+ * An interface defines the params that the `Device` component expects.
+ */
+export interface DeviceParam { 
+  /**
+   * All device information
+   */
+  device: AllDeviceInfo
+ }
