@@ -1,0 +1,10 @@
+name: Create Github Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  main:
+    uses: deep-foundation/workflows/.github/workflows/create-github-release.yml@main
