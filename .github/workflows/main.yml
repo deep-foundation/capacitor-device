@@ -20,8 +20,8 @@ jobs:
         with:
           node-version: ${{env.NODE_VERSION}}
           registry-url: https://registry.npmjs.org/
-      - name: Run npm install and push changes
-        run: npm clean-install
+      - run: npm i -g npm@latest
+      - run: npm clean-install
       - name: "Configure git"
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
