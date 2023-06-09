@@ -7,24 +7,28 @@ Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@cap
 
 ## How to use?
 ### Prerequisitions
-- Install this package in your deep by using npm-packager
+1. Install this package in your deep by using npm-packager
 
 ### By using DeepClient (DeepCase/programmatic)
-- Insert a link of type Device 
-- Change its object value to the object with propertied described in [Device Object Value](#device-object-value)
-- 
+1. Insert a link of type Device 
+2.  Change its object value to the object with propertied described in [Device Object Value](#md:device-object-value)  
+or  
+Insert a link of any type with a any name of the list described in [Device Object Value](#md:device-object-value) from Device link to the same Device link and set its value to the value of the corresponding property of the Device object value
+
+
 ### By using this library programatically
-#### Save all information
-```ts
+- [Save all device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information)
+
+<!-- ```ts
 import { saveDeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
 // Implicitly (if you do not pass info to saveDeviceInfo - it will save all information by default)
 await saveDeviceInfo({deep, deviceLinkId});
 // Explicitly
 const allDeviceInfo = await getAllDeviceInfo();
 await saveDeviceInfo({deep, deviceLinkId, info: allDeviceInfo});
-```
-#### Save specific information
-```ts
+``` -->
+- [Save specific device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information)
+<!-- ```ts
 import { saveDeviceInfo } from '@deep-foundation/capacitor-device';
 
 const deviceBatteryInfo = await Device.getBatteryInfo();
@@ -35,10 +39,10 @@ await saveDeviceInfo({deep, deviceLinkId, info: {languageCode}});
 
 const {value: languageTag} = await Device.getLanguageTag();
 await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});
-```
+``` -->
 
-#### Save information manually
-```ts
+- [Save information manually](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually)
+<!-- ```ts
 const myDeviceData = {
   "uuid": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
   "model": "X11",
@@ -55,7 +59,7 @@ const myDeviceData = {
 };
 
 await saveDeviceInfo({deep, deviceLinkId, info: myDeviceData});
-```
+``` -->
 
 ## Device Object Value
 
@@ -96,7 +100,7 @@ No one field is required. You can add any of these fields as you want
 
 ## Update Handling
 
-This package includes the `HandleUpdate` functionality (type: UpdateHandler) that is used to handle updates related to the `Device` object. `HandleUpdate` uses handler from `@freephoenix888/object-to-links-async-converter` to convert Device object value to links everytime when you update it
+This package includes the `HandleUpdate` functionality (type: UpdateHandler) that is used to handle updates related to the `Device` object. `HandleUpdate` uses handler from [`@freephoenix888/object-to-links-async-converter`](https://www.npmjs.com/package/@freephoenix888/object-to-links-async-converter) to convert Device object value to links everytime when you update it
 
 ## Contribution
 
