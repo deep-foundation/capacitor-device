@@ -8,5 +8,5 @@ on:
 jobs:
   main:
     uses: deep-foundation/workflows/.github/workflows/generate-documentation.yml@main
-    inputs:
-      entry-point: src/main.ts
+    with:
+      entry-point: "src/main.ts"
