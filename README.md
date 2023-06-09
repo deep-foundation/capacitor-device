@@ -3,10 +3,17 @@
 
 Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device).
 
+[Documentation](https://deep-foundation.github.io/capacitor-device/)
+
 ## How to use?
-Insert `Device` link and update its value as object with properties described above. `HandleUpdate` will convert it to links and update them automatically.  
-This package also includes functions that will help you to use this package programatically by using JavaScript
-### Integrations
+### Prerequisitions
+- Install this package in your deep by using npm-packager
+
+### By using DeepClient (DeepCase/programmatic)
+- Insert a link of type Device 
+- Change its object value to the object with propertied described in [Device Object Value](#device-object-value)
+- 
+### By using this library programatically
 #### Save all information
 ```ts
 import { saveDeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
@@ -30,7 +37,27 @@ const {value: languageTag} = await Device.getLanguageTag();
 await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});
 ```
 
-## Device Information
+#### Save information manually
+```ts
+const myDeviceData = {
+  "uuid": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
+  "model": "X11",
+  "platform": "web",
+  "isVirtual": false,
+  "osVersion": "x86.64",
+  "isCharging": true,
+  "languageTag": "en",
+  "batteryLevel": 1,
+  "languageCode": "en",
+  "manufacturer": "Google Inc.",
+  "webViewVersion": "113.0.0.0",
+  "operatingSystem": "unknown"
+};
+
+await saveDeviceInfo({deep, deviceLinkId, info: myDeviceData});
+```
+
+## Device Object Value
 
 The `Device` link can have object value that can have following properties:
 
@@ -45,8 +72,27 @@ The `Device` link can have object value that can have following properties:
 - **osVersion** (type: String): The version of the operating system on the device.
 - **isVirtual** (type: Boolean): Whether the device is virtual or not.
 - **platform** (type: String): The platform on which the device runs.
-- **model** (type: String): The model of the device.
+- **model** (type: String): The model of the device.  
+
 No one field is required. You can add any of these fields as you want
+
+### Fake Json
+```json
+{
+  "uuid": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
+  "model": "X11",
+  "platform": "web",
+  "isVirtual": false,
+  "osVersion": "x86.64",
+  "isCharging": true,
+  "languageTag": "en",
+  "batteryLevel": 1,
+  "languageCode": "en",
+  "manufacturer": "Google Inc.",
+  "webViewVersion": "113.0.0.0",
+  "operatingSystem": "unknown"
+}
+```
 
 ## Update Handling
 

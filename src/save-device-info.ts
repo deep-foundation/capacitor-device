@@ -42,6 +42,28 @@ await saveDeviceInfo({deep, deviceLinkId, info: {languageCode}});
 const {value: languageTag} = await Device.getLanguageTag();
 await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});
 ```
+ * 
+ * @example
+#### Save information manually
+```ts
+const myDeviceData = {
+  "uuid": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
+  "model": "X11",
+  "platform": "web",
+  "isVirtual": false,
+  "osVersion": "x86.64",
+  "isCharging": true,
+  "languageTag": "en",
+  "batteryLevel": 1,
+  "languageCode": "en",
+  "manufacturer": "Google Inc.",
+  "webViewVersion": "113.0.0.0",
+  "operatingSystem": "unknown"
+};
+
+await saveDeviceInfo({deep, deviceLinkId, info: myDeviceData});
+```
+ * 
  */
 export async function saveDeviceInfo(param: SaveDeviceInfoParam) {
   const { deep, info: data } = param;
