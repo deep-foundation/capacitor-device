@@ -14,8 +14,8 @@ import { getAllDeviceInfo } from './get-all-device-info.js';
  * If the {@link SaveDeviceInfoParam.info} parameter is undefined, the function will call {@link getAllDeviceInfo} to get the device information.
  * 
  * @example
+ * #### Save all device information
 ```ts
-// Save all device information
 
 import { saveDeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
 
@@ -26,11 +26,8 @@ await saveDeviceInfo({deep, deviceLinkId});
 const allDeviceInfo = await getAllDeviceInfo();
 await saveDeviceInfo({deep, deviceLinkId, info: allDeviceInfo});
 ```
- * 
- * @example
+ * #### Save specific device information
 ```ts
-// Save specific device information
-
 import { saveDeviceInfo } from '@deep-foundation/capacitor-device';
 
 const deviceBatteryInfo = await Device.getBatteryInfo();
@@ -42,8 +39,6 @@ await saveDeviceInfo({deep, deviceLinkId, info: {languageCode}});
 const {value: languageTag} = await Device.getLanguageTag();
 await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});
 ```
- * 
- * @example
 #### Save information manually
 ```ts
 const myDeviceData = {
