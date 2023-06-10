@@ -25,82 +25,27 @@
 <li>Change its object value to the object with propertied described in <a href="#md:device-object-value">Device Object Value</a><br>or<br>Insert a link of any type with a any name of the list described in <a href="#md:device-object-value">Device Object Value</a> from Device link to the same Device link and set its value to the value of the corresponding property of the Device object value</li>
 </ol>
 <a id="md:by-using-this-library-programatically" class="tsd-anchor"></a><h3><a href="#md:by-using-this-library-programatically">By using this library programatically</a></h3><ul>
-<li><a href="https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information">Save all device information</a></li>
+<li><a href="https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information">Save all device information</a>  </li>
+<li><a href="https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information">Save specific device information</a>  </li>
+<li><a href="https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually">Save information manually</a></li>
 </ul>
-<!-- ```ts
-import { saveDeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
-// Implicitly (if you do not pass info to saveDeviceInfo - it will save all information by default)
-await saveDeviceInfo({deep, deviceLinkId});
-// Explicitly
-const allDeviceInfo = await getAllDeviceInfo();
-await saveDeviceInfo({deep, deviceLinkId, info: allDeviceInfo});
-``` -->
+<a id="md:device-object-value" class="tsd-anchor"></a><h2><a href="#md:device-object-value">Device Object Value</a></h2><p>The <code>Device</code> link can have object value that can have following properties:</p>
 <ul>
-<li><a href="https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information">Save specific device information</a><!-- ```ts
-import { saveDeviceInfo } from '@deep-foundation/capacitor-device';</li>
+<li><strong>name</strong> (type: String): The name of the device.</li>
+<li><strong>operatingSystem</strong> (type: String): The operating system of the device.</li>
+<li><strong>webViewVersion</strong> (type: String): The version of the WebView on the device.</li>
+<li><strong>manufacturer</strong> (type: String): The manufacturer of the device.</li>
+<li><strong>languageCode</strong> (type: String): The language code set on the device.</li>
+<li><strong>batteryLevel</strong> (type: Number): The battery level of the device.</li>
+<li><strong>languageTag</strong> (type: String): The language tag set on the device.</li>
+<li><strong>isCharging</strong> (type: Boolean): Whether the device is charging or not.</li>
+<li><strong>osVersion</strong> (type: String): The version of the operating system on the device.</li>
+<li><strong>isVirtual</strong> (type: Boolean): Whether the device is virtual or not.</li>
+<li><strong>platform</strong> (type: String): The platform on which the device runs.</li>
+<li><strong>model</strong> (type: String): The model of the device.</li>
 </ul>
-<p>const deviceBatteryInfo = await Device.getBatteryInfo();
-await saveDeviceInfo({deep, deviceLinkId, info: deviceBatteryInfo});</p>
-<p>const {value: languageCode} = await Device.getLanguageCode();
-await saveDeviceInfo({deep, deviceLinkId, info: {languageCode}});</p>
-<p>const {value: languageTag} = await Device.getLanguageTag();
-await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});</p>
-<pre><code class="language---&gt;">
-- [Save information manually](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually)
-&lt;!-- ```ts
-const myDeviceData = {
-  &quot;uuid&quot;: &quot;d787dc6b-041f-4a61-8078-d5573c2e7a4e&quot;,
-  &quot;model&quot;: &quot;X11&quot;,
-  &quot;platform&quot;: &quot;web&quot;,
-  &quot;isVirtual&quot;: false,
-  &quot;osVersion&quot;: &quot;x86.64&quot;,
-  &quot;isCharging&quot;: true,
-  &quot;languageTag&quot;: &quot;en&quot;,
-  &quot;batteryLevel&quot;: 1,
-  &quot;languageCode&quot;: &quot;en&quot;,
-  &quot;manufacturer&quot;: &quot;Google Inc.&quot;,
-  &quot;webViewVersion&quot;: &quot;113.0.0.0&quot;,
-  &quot;operatingSystem&quot;: &quot;unknown&quot;
-};
-
-await saveDeviceInfo({deep, deviceLinkId, info: myDeviceData});
-``` --&gt;
-
-## Device Object Value
-
-The `Device` link can have object value that can have following properties:
-
-- **name** (type: String): The name of the device.
-- **operatingSystem** (type: String): The operating system of the device.
-- **webViewVersion** (type: String): The version of the WebView on the device.
-- **manufacturer** (type: String): The manufacturer of the device.
-- **languageCode** (type: String): The language code set on the device.
-- **batteryLevel** (type: Number): The battery level of the device.
-- **languageTag** (type: String): The language tag set on the device.
-- **isCharging** (type: Boolean): Whether the device is charging or not.
-- **osVersion** (type: String): The version of the operating system on the device.
-- **isVirtual** (type: Boolean): Whether the device is virtual or not.
-- **platform** (type: String): The platform on which the device runs.
-- **model** (type: String): The model of the device.  
-
-No one field is required. You can add any of these fields as you want
-
-### Fake Json
-```json
-{
-  &quot;uuid&quot;: &quot;d787dc6b-041f-4a61-8078-d5573c2e7a4e&quot;,
-  &quot;model&quot;: &quot;X11&quot;,
-  &quot;platform&quot;: &quot;web&quot;,
-  &quot;isVirtual&quot;: false,
-  &quot;osVersion&quot;: &quot;x86.64&quot;,
-  &quot;isCharging&quot;: true,
-  &quot;languageTag&quot;: &quot;en&quot;,
-  &quot;batteryLevel&quot;: 1,
-  &quot;languageCode&quot;: &quot;en&quot;,
-  &quot;manufacturer&quot;: &quot;Google Inc.&quot;,
-  &quot;webViewVersion&quot;: &quot;113.0.0.0&quot;,
-  &quot;operatingSystem&quot;: &quot;unknown&quot;
-}
+<p>No one field is required. You can add any of these fields as you want</p>
+<a id="md:fake-json" class="tsd-anchor"></a><h3><a href="#md:fake-json">Fake Json</a></h3><pre><code class="language-json"><span class="hl-0">{</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;uuid&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;d787dc6b-041f-4a61-8078-d5573c2e7a4e&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;model&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;X11&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;platform&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;web&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;isVirtual&quot;</span><span class="hl-0">: </span><span class="hl-3">false</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;osVersion&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;x86.64&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;isCharging&quot;</span><span class="hl-0">: </span><span class="hl-3">true</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;languageTag&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;en&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;batteryLevel&quot;</span><span class="hl-0">: </span><span class="hl-4">1</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;languageCode&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;en&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;manufacturer&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;Google Inc.&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;webViewVersion&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;113.0.0.0&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;operatingSystem&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;unknown&quot;</span><br/><span class="hl-0">}</span>
 </code><button>Copy</button></pre>
 <a id="md:update-handling" class="tsd-anchor"></a><h2><a href="#md:update-handling">Update Handling</a></h2><p>This package includes the <code>HandleUpdate</code> functionality (type: UpdateHandler) that is used to handle updates related to the <code>Device</code> object. <code>HandleUpdate</code> uses handler from <a href="https://www.npmjs.com/package/@freephoenix888/object-to-links-async-converter"><code>@freephoenix888/object-to-links-async-converter</code></a> to convert Device object value to links everytime when you update it</p>
 <a id="md:contribution" class="tsd-anchor"></a><h2><a href="#md:contribution">Contribution</a></h2><p>Feel free to contribute. Please fork the repository and submit a pull request for any bugs, improvements, or features.</p>
@@ -134,6 +79,10 @@ No one field is required. You can add any of these fields as you want
 <ul>
 <li><a href="#md:by-using-deepclient-deepcaseprogrammatic"><span>By using <wbr/>Deep<wbr/>Client (<wbr/>Deep<wbr/>Case/programmatic)</span></a></li>
 <li><a href="#md:by-using-this-library-programatically"><span>By using this library programatically</span></a></li></ul></li>
+<li><a href="#md:device-object-value"><span>Device <wbr/>Object <wbr/>Value</span></a></li>
+<li>
+<ul>
+<li><a href="#md:fake-json"><span>Fake <wbr/>Json</span></a></li></ul></li>
 <li><a href="#md:update-handling"><span>Update <wbr/>Handling</span></a></li>
 <li><a href="#md:contribution"><span>Contribution</span></a></li></ul></li></ul></li></ul></div></details></div>
 <div class="site-menu">
