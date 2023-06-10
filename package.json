@@ -30,13 +30,14 @@
     "lodash": "^4.17.21"
   },
   "peerDependencies": {
-    "@capacitor/device": "^4.1.0",
+    "@capacitor/device": "^5.0.4",
     "@chakra-ui/react": "^2.5.5",
     "@deep-foundation/deeplinks": "~0.0.181",
     "react": "^18.2.0"
   },
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.7",
+    "@capacitor/cli": "^5.0.0",
     "@deep-foundation/npm-automation": "^1.0.2",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.2.4",
