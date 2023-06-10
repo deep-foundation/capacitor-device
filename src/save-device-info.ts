@@ -42,7 +42,7 @@ await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});
 #### Save information manually
 ```ts
 const myDeviceData = {
-  "uuid": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
+  "identifier": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
   "model": "X11",
   "platform": "web",
   "isVirtual": false,
