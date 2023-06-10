@@ -44,7 +44,7 @@ No one field is required. You can add any of these fields as you want
 ### Fake Json
 ```json
 {
-  "uuid": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
+  "identifier": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
   "model": "X11",
   "platform": "web",
   "isVirtual": false,

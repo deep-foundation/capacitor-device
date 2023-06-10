@@ -1,7 +1,7 @@
 {
   "package": {
     "name": "@deep-foundation/capacitor-device",
-    "version": "3.0.2"
+    "version": "4.0.2"
   },
   "data": [
     {
@@ -14,7 +14,7 @@
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "String"
+        "containValue": "Number"
       },
       "id": 2
     },
@@ -28,28 +28,28 @@
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "HandleUpdate"
+        "containValue": "String"
       },
       "id": 4
     },
     {
       "package": {
         "dependencyId": 1,
-        "containValue": "UpdateHandler"
+        "containValue": "Boolean"
       },
       "id": 5
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Number"
+        "containValue": "HandleUpdate"
       },
       "id": 6
     },
     {
       "package": {
         "dependencyId": 2,
-        "containValue": "Boolean"
+        "containValue": "UpdateHandler"
       },
       "id": 7
     },
@@ -61,16 +61,86 @@
       "id": 8
     },
     {
-      "id": "TypeOfValueOfWebViewVersion",
+      "id": "TypeOfValueOfBatteryLevel",
       "type": 1,
-      "from": "WebViewVersion",
+      "from": "BatteryLevel",
       "to": 2
     },
     {
-      "id": "TypeOfValueOfName",
+      "id": "BatteryLevel",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfLanguageTag",
       "type": 1,
-      "from": "Name",
-      "to": 2
+      "from": "LanguageTag",
+      "to": 4
+    },
+    {
+      "id": "LanguageTag",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "IsCharging",
+      "type": 3,
+      "from": "Device",
+      "to": 5
+    },
+    {
+      "id": "TypeOfValueOfManufacturer",
+      "type": 1,
+      "from": "Manufacturer",
+      "to": 4
+    },
+    {
+      "id": "Manufacturer",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfLanguageCode",
+      "type": 1,
+      "from": "LanguageCode",
+      "to": 4
+    },
+    {
+      "id": "LanguageCode",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "Device",
+      "type": 3
+    },
+    {
+      "id": "HandleUpdate",
+      "type": 6,
+      "from": "Device",
+      "to": 7
+    },
+    {
+      "id": "Identifier",
+      "type": 3,
+      "from": "Device",
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfIdentifier",
+      "type": 1,
+      "from": "Identifier",
+      "to": 4
+    },
+    {
+      "id": "TypeOfValueOfDevice",
+      "type": 1,
+      "from": "Device",
+      "to": 8
     },
     {
       "id": "Name",
@@ -79,10 +149,10 @@
       "to": "Device"
     },
     {
-      "id": "HandleUpdate",
-      "type": 4,
-      "from": "Device",
-      "to": 5
+      "id": "TypeOfValueOfName",
+      "type": 1,
+      "from": "Name",
+      "to": 4
     },
     {
       "id": "OperatingSystem",
@@ -94,71 +164,7 @@
       "id": "TypeOfValueOfOperatingSystem",
       "type": 1,
       "from": "OperatingSystem",
-      "to": 2
-    },
-    {
-      "id": "Device",
-      "type": 3
-    },
-    {
-      "id": "WebViewVersion",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "Manufacturer",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "TypeOfValueOfManufacturer",
-      "type": 1,
-      "from": "Manufacturer",
-      "to": 2
-    },
-    {
-      "id": "LanguageCode",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "TypeOfValueOfLanguageCode",
-      "type": 1,
-      "from": "LanguageCode",
-      "to": 2
-    },
-    {
-      "id": "BatteryLevel",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "TypeOfValueOfBatteryLevel",
-      "type": 1,
-      "from": "BatteryLevel",
-      "to": 6
-    },
-    {
-      "id": "LanguageTag",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "TypeOfValueOfLanguageTag",
-      "type": 1,
-      "from": "LanguageTag",
-      "to": 2
-    },
-    {
-      "id": "IsCharging",
-      "type": 3,
-      "from": "Device",
-      "to": 7
+      "to": 4
     },
     {
       "id": "OsVersion",
@@ -170,13 +176,13 @@
       "id": "TypeOfValueOfOsVersion",
       "type": 1,
       "from": "OsVersion",
-      "to": 2
+      "to": 4
     },
     {
       "id": "IsVirtual",
       "type": 3,
       "from": "Device",
-      "to": 7
+      "to": 5
     },
     {
       "id": "Platform",
@@ -188,7 +194,7 @@
       "id": "TypeOfValueOfPlatform",
       "type": 1,
       "from": "Platform",
-      "to": 2
+      "to": 4
     },
     {
       "id": "Model",
@@ -200,13 +206,19 @@
       "id": "TypeOfValueOfModel",
       "type": 1,
       "from": "Model",
-      "to": 2
+      "to": 4
     },
     {
-      "id": "TypeOfValueOfDevice",
-      "type": 1,
+      "id": "WebViewVersion",
+      "type": 3,
       "from": "Device",
-      "to": 8
+      "to": "Device"
+    },
+    {
+      "id": "TypeOfValueOfWebViewVersion",
+      "type": 1,
+      "from": "WebViewVersion",
+      "to": 4
     }
   ],
   "errors": [],
@@ -216,920 +228,12 @@
       "version": "0.0.2"
     },
     {
-      "name": "@freephoenix888/object-to-links-async-converter",
-      "version": "0.0.10"
-    },
-    {
       "name": "@freephoenix888/boolean",
       "version": "0.0.1"
-    }
-  ],
-  "default": {
-    "package": {
-      "name": "@deep-foundation/capacitor-device",
-      "version": "v1.0.18"
     },
-    "data": [
-      {
-        "package": {
-          "dependencyId": 0,
-          "containValue": "Value"
-        },
-        "id": 1
-      },
-      {
-        "package": {
-          "dependencyId": 0,
-          "containValue": "String"
-        },
-        "id": 2
-      },
-      {
-        "package": {
-          "dependencyId": 0,
-          "containValue": "Type"
-        },
-        "id": 3
-      },
-      {
-        "package": {
-          "dependencyId": 0,
-          "containValue": "HandleUpdate"
-        },
-        "id": 4
-      },
-      {
-        "package": {
-          "dependencyId": 1,
-          "containValue": "UpdateHandler"
-        },
-        "id": 5
-      },
-      {
-        "package": {
-          "dependencyId": 0,
-          "containValue": "Number"
-        },
-        "id": 6
-      },
-      {
-        "package": {
-          "dependencyId": 2,
-          "containValue": "Boolean"
-        },
-        "id": 7
-      },
-      {
-        "package": {
-          "dependencyId": 0,
-          "containValue": "Object"
-        },
-        "id": 8
-      },
-      {
-        "id": "TypeOfValueOfWebViewVersion",
-        "type": 1,
-        "from": "WebViewVersion",
-        "to": 2
-      },
-      {
-        "id": "TypeOfValueOfName",
-        "type": 1,
-        "from": "Name",
-        "to": 2
-      },
-      {
-        "id": "Name",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "HandleUpdate",
-        "type": 4,
-        "from": "Device",
-        "to": 5
-      },
-      {
-        "id": "OperatingSystem",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "TypeOfValueOfOperatingSystem",
-        "type": 1,
-        "from": "OperatingSystem",
-        "to": 2
-      },
-      {
-        "id": "Device",
-        "type": 3
-      },
-      {
-        "id": "WebViewVersion",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "Manufacturer",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "TypeOfValueOfManufacturer",
-        "type": 1,
-        "from": "Manufacturer",
-        "to": 2
-      },
-      {
-        "id": "LanguageCode",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "TypeOfValueOfLanguageCode",
-        "type": 1,
-        "from": "LanguageCode",
-        "to": 2
-      },
-      {
-        "id": "BatteryLevel",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "TypeOfValueOfBatteryLevel",
-        "type": 1,
-        "from": "BatteryLevel",
-        "to": 6
-      },
-      {
-        "id": "LanguageTag",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "TypeOfValueOfLanguageTag",
-        "type": 1,
-        "from": "LanguageTag",
-        "to": 2
-      },
-      {
-        "id": "IsCharging",
-        "type": 3,
-        "from": "Device",
-        "to": 7
-      },
-      {
-        "id": "OsVersion",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "TypeOfValueOfOsVersion",
-        "type": 1,
-        "from": "OsVersion",
-        "to": 2
-      },
-      {
-        "id": "IsVirtual",
-        "type": 3,
-        "from": "Device",
-        "to": 7
-      },
-      {
-        "id": "Platform",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "TypeOfValueOfPlatform",
-        "type": 1,
-        "from": "Platform",
-        "to": 2
-      },
-      {
-        "id": "Model",
-        "type": 3,
-        "from": "Device",
-        "to": "Device"
-      },
-      {
-        "id": "TypeOfValueOfModel",
-        "type": 1,
-        "from": "Model",
-        "to": 2
-      },
-      {
-        "id": "TypeOfValueOfDevice",
-        "type": 1,
-        "from": "Device",
-        "to": 8
-      }
-    ],
-    "errors": [],
-    "dependencies": [
-      {
-        "name": "@deep-foundation/core",
-        "version": "0.0.2"
-      },
-      {
-        "name": "@freephoenix888/object-to-links-async-converter",
-        "version": "0.0.10"
-      },
-      {
-        "name": "@freephoenix888/boolean",
-        "version": "0.0.1"
-      }
-    ],
-    "default": {
-      "package": {
-        "name": "@deep-foundation/capacitor-device",
-        "version": "v1.0.17"
-      },
-      "data": [
-        {
-          "package": {
-            "dependencyId": 0,
-            "containValue": "Value"
-          },
-          "id": 1
-        },
-        {
-          "package": {
-            "dependencyId": 0,
-            "containValue": "String"
-          },
-          "id": 2
-        },
-        {
-          "package": {
-            "dependencyId": 0,
-            "containValue": "Type"
-          },
-          "id": 3
-        },
-        {
-          "package": {
-            "dependencyId": 0,
-            "containValue": "HandleUpdate"
-          },
-          "id": 4
-        },
-        {
-          "package": {
-            "dependencyId": 1,
-            "containValue": "UpdateHandler"
-          },
-          "id": 5
-        },
-        {
-          "package": {
-            "dependencyId": 0,
-            "containValue": "Number"
-          },
-          "id": 6
-        },
-        {
-          "package": {
-            "dependencyId": 2,
-            "containValue": "Boolean"
-          },
-          "id": 7
-        },
-        {
-          "package": {
-            "dependencyId": 0,
-            "containValue": "Object"
-          },
-          "id": 8
-        },
-        {
-          "id": "TypeOfValueOfWebViewVersion",
-          "type": 1,
-          "from": "WebViewVersion",
-          "to": 2
-        },
-        {
-          "id": "TypeOfValueOfName",
-          "type": 1,
-          "from": "Name",
-          "to": 2
-        },
-        {
-          "id": "Name",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "HandleUpdate",
-          "type": 4,
-          "from": "Device",
-          "to": 5
-        },
-        {
-          "id": "OperatingSystem",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "TypeOfValueOfOperatingSystem",
-          "type": 1,
-          "from": "OperatingSystem",
-          "to": 2
-        },
-        {
-          "id": "Device",
-          "type": 3
-        },
-        {
-          "id": "WebViewVersion",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "Manufacturer",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "TypeOfValueOfManufacturer",
-          "type": 1,
-          "from": "Manufacturer",
-          "to": 2
-        },
-        {
-          "id": "LanguageCode",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "TypeOfValueOfLanguageCode",
-          "type": 1,
-          "from": "LanguageCode",
-          "to": 2
-        },
-        {
-          "id": "BatteryLevel",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "TypeOfValueOfBatteryLevel",
-          "type": 1,
-          "from": "BatteryLevel",
-          "to": 6
-        },
-        {
-          "id": "LanguageTag",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "TypeOfValueOfLanguageTag",
-          "type": 1,
-          "from": "LanguageTag",
-          "to": 2
-        },
-        {
-          "id": "IsCharging",
-          "type": 3,
-          "from": "Device",
-          "to": 7
-        },
-        {
-          "id": "OsVersion",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "TypeOfValueOfOsVersion",
-          "type": 1,
-          "from": "OsVersion",
-          "to": 2
-        },
-        {
-          "id": "IsVirtual",
-          "type": 3,
-          "from": "Device",
-          "to": 7
-        },
-        {
-          "id": "Platform",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "TypeOfValueOfPlatform",
-          "type": 1,
-          "from": "Platform",
-          "to": 2
-        },
-        {
-          "id": "Model",
-          "type": 3,
-          "from": "Device",
-          "to": "Device"
-        },
-        {
-          "id": "TypeOfValueOfModel",
-          "type": 1,
-          "from": "Model",
-          "to": 2
-        },
-        {
-          "id": "TypeOfValueOfDevice",
-          "type": 1,
-          "from": "Device",
-          "to": 8
-        }
-      ],
-      "errors": [],
-      "dependencies": [
-        {
-          "name": "@deep-foundation/core",
-          "version": "0.0.2"
-        },
-        {
-          "name": "@freephoenix888/object-to-links-async-converter",
-          "version": "0.0.10"
-        },
-        {
-          "name": "@freephoenix888/boolean",
-          "version": "0.0.1"
-        }
-      ],
-      "default": {
-        "package": {
-          "name": "@deep-foundation/capacitor-device",
-          "version": "v1.0.16"
-        },
-        "data": [
-          {
-            "package": {
-              "dependencyId": 0,
-              "containValue": "Value"
-            },
-            "id": 1
-          },
-          {
-            "package": {
-              "dependencyId": 0,
-              "containValue": "String"
-            },
-            "id": 2
-          },
-          {
-            "package": {
-              "dependencyId": 0,
-              "containValue": "Type"
-            },
-            "id": 3
-          },
-          {
-            "package": {
-              "dependencyId": 0,
-              "containValue": "HandleUpdate"
-            },
-            "id": 4
-          },
-          {
-            "package": {
-              "dependencyId": 1,
-              "containValue": "UpdateHandler"
-            },
-            "id": 5
-          },
-          {
-            "package": {
-              "dependencyId": 0,
-              "containValue": "Number"
-            },
-            "id": 6
-          },
-          {
-            "package": {
-              "dependencyId": 2,
-              "containValue": "Boolean"
-            },
-            "id": 7
-          },
-          {
-            "package": {
-              "dependencyId": 0,
-              "containValue": "Object"
-            },
-            "id": 8
-          },
-          {
-            "id": "TypeOfValueOfWebViewVersion",
-            "type": 1,
-            "from": "WebViewVersion",
-            "to": 2
-          },
-          {
-            "id": "TypeOfValueOfName",
-            "type": 1,
-            "from": "Name",
-            "to": 2
-          },
-          {
-            "id": "Name",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "HandleUpdate",
-            "type": 4,
-            "from": "Device",
-            "to": 5
-          },
-          {
-            "id": "OperatingSystem",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "TypeOfValueOfOperatingSystem",
-            "type": 1,
-            "from": "OperatingSystem",
-            "to": 2
-          },
-          {
-            "id": "Device",
-            "type": 3
-          },
-          {
-            "id": "WebViewVersion",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "Manufacturer",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "TypeOfValueOfManufacturer",
-            "type": 1,
-            "from": "Manufacturer",
-            "to": 2
-          },
-          {
-            "id": "LanguageCode",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "TypeOfValueOfLanguageCode",
-            "type": 1,
-            "from": "LanguageCode",
-            "to": 2
-          },
-          {
-            "id": "BatteryLevel",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "TypeOfValueOfBatteryLevel",
-            "type": 1,
-            "from": "BatteryLevel",
-            "to": 6
-          },
-          {
-            "id": "LanguageTag",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "TypeOfValueOfLanguageTag",
-            "type": 1,
-            "from": "LanguageTag",
-            "to": 2
-          },
-          {
-            "id": "IsCharging",
-            "type": 3,
-            "from": "Device",
-            "to": 7
-          },
-          {
-            "id": "OsVersion",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "TypeOfValueOfOsVersion",
-            "type": 1,
-            "from": "OsVersion",
-            "to": 2
-          },
-          {
-            "id": "IsVirtual",
-            "type": 3,
-            "from": "Device",
-            "to": 7
-          },
-          {
-            "id": "Platform",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "TypeOfValueOfPlatform",
-            "type": 1,
-            "from": "Platform",
-            "to": 2
-          },
-          {
-            "id": "Model",
-            "type": 3,
-            "from": "Device",
-            "to": "Device"
-          },
-          {
-            "id": "TypeOfValueOfModel",
-            "type": 1,
-            "from": "Model",
-            "to": 2
-          },
-          {
-            "id": "TypeOfValueOfDevice",
-            "type": 1,
-            "from": "Device",
-            "to": 8
-          }
-        ],
-        "errors": [],
-        "dependencies": [
-          {
-            "name": "@deep-foundation/core",
-            "version": "0.0.2"
-          },
-          {
-            "name": "@freephoenix888/object-to-links-async-converter",
-            "version": "0.0.10"
-          },
-          {
-            "name": "@freephoenix888/boolean",
-            "version": "0.0.1"
-          }
-        ],
-        "default": {
-          "package": {
-            "name": "@deep-foundation/capacitor-device",
-            "version": "v1.0.10"
-          },
-          "data": [
-            {
-              "package": {
-                "dependencyId": 0,
-                "containValue": "Value"
-              },
-              "id": 1
-            },
-            {
-              "package": {
-                "dependencyId": 0,
-                "containValue": "String"
-              },
-              "id": 2
-            },
-            {
-              "package": {
-                "dependencyId": 0,
-                "containValue": "Type"
-              },
-              "id": 3
-            },
-            {
-              "package": {
-                "dependencyId": 0,
-                "containValue": "HandleUpdate"
-              },
-              "id": 4
-            },
-            {
-              "package": {
-                "dependencyId": 1,
-                "containValue": "UpdateHandler"
-              },
-              "id": 5
-            },
-            {
-              "package": {
-                "dependencyId": 0,
-                "containValue": "Number"
-              },
-              "id": 6
-            },
-            {
-              "package": {
-                "dependencyId": 2,
-                "containValue": "Boolean"
-              },
-              "id": 7
-            },
-            {
-              "package": {
-                "dependencyId": 0,
-                "containValue": "Object"
-              },
-              "id": 8
-            },
-            {
-              "id": "TypeOfValueOfWebViewVersion",
-              "type": 1,
-              "from": "WebViewVersion",
-              "to": 2
-            },
-            {
-              "id": "TypeOfValueOfName",
-              "type": 1,
-              "from": "Name",
-              "to": 2
-            },
-            {
-              "id": "Name",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "HandleUpdate",
-              "type": 4,
-              "from": "Device",
-              "to": 5
-            },
-            {
-              "id": "OperatingSystem",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "TypeOfValueOfOperatingSystem",
-              "type": 1,
-              "from": "OperatingSystem",
-              "to": 2
-            },
-            {
-              "id": "Device",
-              "type": 3
-            },
-            {
-              "id": "WebViewVersion",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "Manufacturer",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "TypeOfValueOfManufacturer",
-              "type": 1,
-              "from": "Manufacturer",
-              "to": 2
-            },
-            {
-              "id": "LanguageCode",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "TypeOfValueOfLanguageCode",
-              "type": 1,
-              "from": "LanguageCode",
-              "to": 2
-            },
-            {
-              "id": "BatteryLevel",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "TypeOfValueOfBatteryLevel",
-              "type": 1,
-              "from": "BatteryLevel",
-              "to": 6
-            },
-            {
-              "id": "LanguageTag",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "TypeOfValueOfLanguageTag",
-              "type": 1,
-              "from": "LanguageTag",
-              "to": 2
-            },
-            {
-              "id": "IsCharging",
-              "type": 3,
-              "from": "Device",
-              "to": 7
-            },
-            {
-              "id": "OsVersion",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "TypeOfValueOfOsVersion",
-              "type": 1,
-              "from": "OsVersion",
-              "to": 2
-            },
-            {
-              "id": "IsVirtual",
-              "type": 3,
-              "from": "Device",
-              "to": 7
-            },
-            {
-              "id": "Platform",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "TypeOfValueOfPlatform",
-              "type": 1,
-              "from": "Platform",
-              "to": 2
-            },
-            {
-              "id": "Model",
-              "type": 3,
-              "from": "Device",
-              "to": "Device"
-            },
-            {
-              "id": "TypeOfValueOfModel",
-              "type": 1,
-              "from": "Model",
-              "to": 2
-            },
-            {
-              "id": "TypeOfValueOfDevice",
-              "type": 1,
-              "from": "Device",
-              "to": 8
-            }
-          ],
-          "errors": [],
-          "dependencies": [
-            {
-              "name": "@deep-foundation/core",
-              "version": "0.0.2"
-            },
-            {
-              "name": "@freephoenix888/object-to-links-async-converter",
-              "version": "0.0.10"
-            },
-            {
-              "name": "@freephoenix888/boolean",
-              "version": "0.0.1"
-            }
-          ]
-        }
-      }
+    {
+      "name": "@freephoenix888/object-to-links-async-converter",
+      "version": "0.0.10"
     }
-  }
+  ]
 }
