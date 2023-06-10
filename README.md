@@ -1,6 +1,5 @@
-[![npm](https://img.shields.io/npm/v/@deep-foundation/capacitor-device.svg)](https://www.npmjs.com/package/@deep-foundation/capacitor-device) 
-[![Gitpod](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/deep-foundation/capacitor-device) 
-[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label&color=purple)](https://discord.gg/deep-foundation)
+# @deep-foundation/capacitor-device
+[![npm](https://img.shields.io/npm/v/@deep-foundation/capacitor-device.svg)](https://www.npmjs.com/package/@deep-foundation/capacitor-device)
 
 Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device).
 
@@ -18,9 +17,49 @@ Insert a link of any type with a any name of the list described in [Device Objec
 
 
 ### By using this library programatically
-- [Save all device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information)  
-- [Save specific device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information)  
-- [Save information manually](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually)  
+- [Save all device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information)
+
+<!-- ```ts
+import { saveDeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
+// Implicitly (if you do not pass info to saveDeviceInfo - it will save all information by default)
+await saveDeviceInfo({deep, deviceLinkId});
+// Explicitly
+const allDeviceInfo = await getAllDeviceInfo();
+await saveDeviceInfo({deep, deviceLinkId, info: allDeviceInfo});
+``` -->
+- [Save specific device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information)
+<!-- ```ts
+import { saveDeviceInfo } from '@deep-foundation/capacitor-device';
+
+const deviceBatteryInfo = await Device.getBatteryInfo();
+await saveDeviceInfo({deep, deviceLinkId, info: deviceBatteryInfo});
+
+const {value: languageCode} = await Device.getLanguageCode();
+await saveDeviceInfo({deep, deviceLinkId, info: {languageCode}});
+
+const {value: languageTag} = await Device.getLanguageTag();
+await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});
+``` -->
+
+- [Save information manually](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually)
+<!-- ```ts
+const myDeviceData = {
+  "uuid": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
+  "model": "X11",
+  "platform": "web",
+  "isVirtual": false,
+  "osVersion": "x86.64",
+  "isCharging": true,
+  "languageTag": "en",
+  "batteryLevel": 1,
+  "languageCode": "en",
+  "manufacturer": "Google Inc.",
+  "webViewVersion": "113.0.0.0",
+  "operatingSystem": "unknown"
+};
+
+await saveDeviceInfo({deep, deviceLinkId, info: myDeviceData});
+``` -->
 
 ## Device Object Value
 
