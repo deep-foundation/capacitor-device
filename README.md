@@ -17,49 +17,9 @@ Insert a link of any type with a any name of the list described in [Device Objec
 
 
 ### By using this library programatically
-- [Save all device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information)
-
-<!-- ```ts
-import { saveDeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
-// Implicitly (if you do not pass info to saveDeviceInfo - it will save all information by default)
-await saveDeviceInfo({deep, deviceLinkId});
-// Explicitly
-const allDeviceInfo = await getAllDeviceInfo();
-await saveDeviceInfo({deep, deviceLinkId, info: allDeviceInfo});
-``` -->
-- [Save specific device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information)
-<!-- ```ts
-import { saveDeviceInfo } from '@deep-foundation/capacitor-device';
-
-const deviceBatteryInfo = await Device.getBatteryInfo();
-await saveDeviceInfo({deep, deviceLinkId, info: deviceBatteryInfo});
-
-const {value: languageCode} = await Device.getLanguageCode();
-await saveDeviceInfo({deep, deviceLinkId, info: {languageCode}});
-
-const {value: languageTag} = await Device.getLanguageTag();
-await saveDeviceInfo({deep, deviceLinkId, info: {languageTag}});
-``` -->
-
-- [Save information manually](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually)
-<!-- ```ts
-const myDeviceData = {
-  "uuid": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
-  "model": "X11",
-  "platform": "web",
-  "isVirtual": false,
-  "osVersion": "x86.64",
-  "isCharging": true,
-  "languageTag": "en",
-  "batteryLevel": 1,
-  "languageCode": "en",
-  "manufacturer": "Google Inc.",
-  "webViewVersion": "113.0.0.0",
-  "operatingSystem": "unknown"
-};
-
-await saveDeviceInfo({deep, deviceLinkId, info: myDeviceData});
-``` -->
+- [Save all device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information)  
+- [Save specific device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information)  
+- [Save information manually](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually)  
 
 ## Device Object Value
 
