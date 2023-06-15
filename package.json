@@ -20,7 +20,7 @@
   "files": [
     "/dist", 
     "./deep.json" 
-  ],
+  ], 
   "license": "Unlicense",
   "dependencies": {
     "@deep-foundation/core": "^0.0.2",
