@@ -4,7 +4,7 @@
 
 Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device). 
 
-[Documentation](https://deep-foundation.github.io/capacitor-device/)
+[Documentation](https://deep-foundation.github.io/capacitor-device/) 
 
 ## How to use?
 ### Prerequisitions
