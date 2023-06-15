@@ -2,25 +2,25 @@
   "name": "@deep-foundation/capacitor-device",
   "type": "module",
   "keywords": [
-    "deep-package" 
+    "deep-package"
   ],
-  "version": "4.0.6",
-  "description": "A deep package that is based on @capacitor/device package", 
+  "version": "4.0.7",
+  "description": "A deep package that is based on @capacitor/device package",
   "repository": {
-    "type": "git", 
-    "url": "https://github.com/deep-foundation/capacitor-device" 
-  }, 
+    "type": "git",
+    "url": "https://github.com/deep-foundation/capacitor-device"
+  },
   "scripts": {
     "build": "fse remove dist && tsc",
     "npm-pull": "npm-pull",
-    "npm-release": "npm-release" 
+    "npm-release": "npm-release"
   },
-  "main": "dist/main.js", 
-  "types": "dist/main.d.ts", 
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "files": [
-    "/dist", 
-    "./deep.json" 
-  ], 
+    "/dist",
+    "./deep.json"
+  ],
   "license": "Unlicense",
   "dependencies": {
     "@deep-foundation/core": "^0.0.2",
