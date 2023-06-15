@@ -4,7 +4,7 @@
   "keywords": [
     "deep-package"
   ],
-  "version": "4.0.7",
+  "version": "4.0.8",
   "description": "A deep package that is based on @capacitor/device package",
   "repository": {
     "type": "git",
@@ -18,8 +18,8 @@
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "files": [
-    "/dist", 
-    "./deep.json" 
+    "/dist",
+    "./deep.json"
   ],
   "license": "Unlicense",
   "dependencies": {
