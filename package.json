@@ -15,7 +15,7 @@
     "npm-pull": "npm-pull",
     "npm-release": "npm-release"
   },
-  "main": "dist/main.js",
+  "main": "dist/main.js", 
   "types": "dist/main.d.ts",
   "files": [
     "/dist",
