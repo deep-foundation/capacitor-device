@@ -16,7 +16,7 @@
     "npm-release": "npm-release"
   },
   "main": "dist/main.js", 
-  "types": "dist/main.d.ts",
+  "types": "dist/main.d.ts", 
   "files": [
     "/dist", 
     "./deep.json" 
