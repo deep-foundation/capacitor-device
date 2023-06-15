@@ -8,7 +8,7 @@
   "description": "A deep package that is based on @capacitor/device package",
   "repository": {
     "type": "git",
-    "url": "https://github.com/deep-foundation/capacitor-device"
+    "url": "https://github.com/deep-foundation/capacitor-device" 
   },
   "scripts": {
     "build": "fse remove dist && tsc",
