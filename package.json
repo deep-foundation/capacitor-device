@@ -4,7 +4,7 @@
   "keywords": [
     "deep-package"
   ],
-  "version": "4.0.11",
+  "version": "4.0.12",
   "description": "A deep package that is based on @capacitor/device package",
   "repository": {
     "type": "git",
