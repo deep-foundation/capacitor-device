@@ -7,7 +7,7 @@ on:
 
 jobs:
   main:
-    uses: deep-foundation/workflows/.github/workflows/npm-publish.yml@main
+    uses: deep-foundation/workflows/.github/workflows/npm-test.yml@main
     secrets:
       npm-token: ${{ secrets.NPM_TOKEN }}
     with:
