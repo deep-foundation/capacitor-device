@@ -10,7 +10,7 @@ Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@cap
 ### Prerequisitions
 1. Install this package in your deep by using npm-packager
 
-### By using DeepClient (DeepCase/programmatic)
+### Manually
 1. Insert a link of type Device 
 2.  Change its object value to the object with propertied described in [Device Object Value](#md:device-object-value)  
 or  
