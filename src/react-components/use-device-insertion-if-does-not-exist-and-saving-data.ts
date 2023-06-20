@@ -16,7 +16,7 @@ import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-in
  * 
  * @returns An object of type {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoResult}
  */
-export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
+export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam, saveDeviceInfo: (deviceLink: any) => void): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
   const { deep, deviceLinkId, setDeviceLinkId, containerLinkId } = param;
   const [isLoading, setIsLoading] = useState(false);
 
@@ -26,6 +26,9 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceIn
       if (deviceLinkId) {
         const { data } = await deep.select(deviceLinkId);
         deviceLink = data[0];
+        if(deviceLink) {
+          saveDeviceInfo(deviceLink);
+        }
       }
 
       if (!deviceLinkId || !deviceLink) {
@@ -45,6 +48,7 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceIn
 
   return { isLoading };
 }
+
 
 /**
  * Describes the parameter object that should be passed to the {@link useDeviceInsertionIfDoesNotExistAndSavingData} hook.
