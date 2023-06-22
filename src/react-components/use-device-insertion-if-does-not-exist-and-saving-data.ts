@@ -16,8 +16,8 @@ import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-in
  * 
  * @returns An object of type {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoResult}
  */
-export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam, saveDeviceInfo: (deviceLink: any) => void): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
-  const { deep, deviceLinkId, setDeviceLinkId, containerLinkId } = param;
+export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
+  const { deep, deviceLinkId, containerLinkId } = param;
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -26,9 +26,6 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceIn
       if (deviceLinkId) {
         const { data } = await deep.select(deviceLinkId);
         deviceLink = data[0];
-        if(deviceLink) {
-          saveDeviceInfo(deviceLink);
-        }
       }
 
       if (!deviceLinkId || !deviceLink) {
@@ -38,7 +35,6 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceIn
           containerLinkId,
           info: await getAllDeviceInfo(),
         });
-        setDeviceLinkId(insertionResult.deviceLink.id);
         setIsLoading(false);
       }
     };
@@ -48,7 +44,6 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceIn
 
   return { isLoading };
 }
-
 
 /**
  * Describes the parameter object that should be passed to the {@link useDeviceInsertionIfDoesNotExistAndSavingData} hook.
@@ -64,7 +59,6 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoParam {
    * This field is not of type undefined because you should not call this component until you get the device link ID which is known. For these reasons there is {@link WithDeviceInsertionIfDoesNotExistAndSavingData}
    */
   deviceLinkId: number | null;
-  setDeviceLinkId: (id: number | null) => void;
   containerLinkId: number;
 }
 
