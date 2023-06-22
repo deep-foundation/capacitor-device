@@ -28,9 +28,11 @@ import { AllDeviceInfo } from "./all-device-info.js";
  * @function getAllDeviceInfo
  */
 export async function getAllDeviceInfo(): Promise<AllDeviceInfo> {
+  const deviceInfo = await Device.getInfo();
+  const batteryInfo = deviceInfo.operatingSystem !== 'ios' ? await Device.getBatteryInfo() : {};
    return {
-     ...(await Device.getInfo()),
-     ...(await Device.getBatteryInfo()),
+     ...deviceInfo,
+     ...batteryInfo,
      ...(await Device.getId()),
      ...{
        languageCode: (await Device.getLanguageCode()).value,
