@@ -4,6 +4,8 @@ import { insertDevice } from '../insert-device.js';
 import { getAllDeviceInfo } from '../get-all-device-info.js';
 import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-insertion-if-does-not-exist-and-saving-data.js';
 
+export type InsertDeviceCallback = () => Promise<void>;
+
 /**
  * A custom React Hook that checks if a device link exists in the Deep database, and if not, it inserts one. Also saves device information to deep on render.
  * 
@@ -16,8 +18,10 @@ import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-in
  * 
  * @returns An object of type {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoResult}
  */
-export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
-  const { deep, deviceLinkId, containerLinkId } = param;
+export function useDeviceInsertionIfDoesNotExistAndSavingData(
+  param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
+): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
+  const { deep, deviceLinkId, containerLinkId, insertDeviceCallback } = param;
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -30,17 +34,19 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceIn
 
       if (!deviceLinkId || !deviceLink) {
         setIsLoading(true);
-        const insertionResult = await insertDevice({
-          deep,
-          containerLinkId,
-          info: await getAllDeviceInfo(),
-        });
+        insertDeviceCallback
+          ? await insertDeviceCallback()
+          : await insertDevice({
+              deep,
+              containerLinkId,
+              info: await getAllDeviceInfo(),
+            });
         setIsLoading(false);
       }
     };
 
     fetchAndInsertDeviceLink();
-  }, [deviceLinkId]);
+  }, [deviceLinkId, insertDeviceCallback]);
 
   return { isLoading };
 }
@@ -59,7 +65,14 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoParam {
    * This field is not of type undefined because you should not call this component until you get the device link ID which is known. For these reasons there is {@link WithDeviceInsertionIfDoesNotExistAndSavingData}
    */
   deviceLinkId: number | null;
+  /**
+   * Id of a link where Device link will be contained if {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.insertDeviceCallback} is not provided
+   */
   containerLinkId: number;
+  /**
+   * Callback that will be called when {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.deviceLinkId} is not provided or does not exist in deep
+   */
+  insertDeviceCallback?: InsertDeviceCallback;
 }
 
 /**
