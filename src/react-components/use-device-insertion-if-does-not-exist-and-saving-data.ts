@@ -4,8 +4,6 @@ import { insertDevice } from '../insert-device.js';
 import { getAllDeviceInfo } from '../get-all-device-info.js';
 import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-insertion-if-does-not-exist-and-saving-data.js';
 
-export type InsertDeviceCallback = () => Promise<void>;
-
 /**
  * A custom React Hook that checks if a device link exists in the Deep database, and if not, it inserts one. Also saves device information to deep on render.
  * 
@@ -66,13 +64,13 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoParam {
    */
   deviceLinkId: number | null;
   /**
-   * Id of a link where Device link will be contained if {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.insertDeviceCallback} is not provided
+   * A container with ID of current space 
    */
   containerLinkId: number;
   /**
    * Callback that will be called when {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.deviceLinkId} is not provided or does not exist in deep
    */
-  insertDeviceCallback?: InsertDeviceCallback;
+  insertDeviceCallback?: () => Promise<void>;
 }
 
 /**
