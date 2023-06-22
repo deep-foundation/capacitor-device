@@ -1,7 +1,7 @@
 import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
 import { useState, useEffect } from 'react';
 import { UseDeviceInsertionIfDoesNotExistAndSavingInfoParam, useDeviceInsertionIfDoesNotExistAndSavingData } from './use-device-insertion-if-does-not-exist-and-saving-data.js';
-import { InsertDeviceCallback } from './use-device-insertion-if-does-not-exist-and-saving-data.js';
+
 /**
  * A higher-order component that handles the logic of inserting a device link into Deep if it does not exist and saving device information.
  *
@@ -75,8 +75,4 @@ export type WithDeviceInsertionIfDoesNotExistAndSavingDataParam =
      * A function that returns a JSX.Element to render when the device link ID doesn't exist.
      */
     renderIfNotInserted: () => JSX.Element;
-    /**
-    * Callback that will be called when {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.deviceLinkId} is not provided or does not exist in deep
-    */
-    insertDeviceCallback?: InsertDeviceCallback;
   };
