@@ -32,13 +32,7 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(
 
       if (!deviceLinkId || !deviceLink) {
         setIsLoading(true);
-        insertDeviceCallback
-          ? await insertDeviceCallback()
-          : await insertDevice({
-              deep,
-              containerLinkId,
-              info: await getAllDeviceInfo(),
-            });
+        await insertDeviceCallback();
         setIsLoading(false);
       }
     };
@@ -70,7 +64,7 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoParam {
   /**
    * Callback that will be called when {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.deviceLinkId} is not provided or does not exist in deep
    */
-  insertDeviceCallback?: () => Promise<void>;
+  insertDeviceCallback: () => Promise<void>;
 }
 
 /**
