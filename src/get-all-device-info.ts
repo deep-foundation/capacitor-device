@@ -30,7 +30,7 @@ import { AllDeviceInfo } from "./all-device-info.js";
 export async function getAllDeviceInfo(): Promise<AllDeviceInfo> {
   const deviceInfo = await Device.getInfo();
   let batteryInfo = {};
-  if (deviceInfo.platform !== 'ios' || !deviceInfo.model.includes('iPad')) {
+  if (!deviceInfo.model.includes('iPad') && !deviceInfo.model.includes('iPhone')) {
     batteryInfo = await Device.getBatteryInfo();
   }
    return {
