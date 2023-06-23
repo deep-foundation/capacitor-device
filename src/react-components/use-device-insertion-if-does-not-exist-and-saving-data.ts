@@ -32,13 +32,7 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(
 
       if (!deviceLinkId || !deviceLink) {
         setIsLoading(true);
-        insertDeviceCallback
-          ? await insertDeviceCallback()
-          : await insertDevice({
-              deep,
-              containerLinkId,
-              info: await getAllDeviceInfo(),
-            });
+        await insertDeviceCallback()
         setIsLoading(false);
       }
     };
