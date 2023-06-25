@@ -16,20 +16,22 @@
 <a href="https://gitpod.io/#https://github.com/deep-foundation/capacitor-device"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod" alt="Gitpod"></a> 
 <a href="https://discord.gg/deep-foundation"><img src="https://badgen.net/badge/icon/discord?icon=discord&label&color=purple" alt="Discord"></a></p>
 <p>Provides links based on <a href="https://www.npmjs.com/package/@capacitor/device"><code>@capacitor/device</code></a>. </p>
-<p><a href="https://deep-foundation.github.io/capacitor-device/">Documentation</a> </p>
-<a id="md:how-to-use" class="tsd-anchor"></a><h2><a href="#md:how-to-use">How to use?</a></h2><a id="md:prerequisitions" class="tsd-anchor"></a><h3><a href="#md:prerequisitions">Prerequisitions</a></h3><ol>
+<p><a href="https://deep-foundation.github.io/capacitor-device/"><strong>Documentation</strong></a> </p>
+<p><a href="https://deep-foundation.github.io/capacitor-device/enums/LinkName.html"><strong>List of links</strong></a></p>
+<a id="md:prerequisitions" class="tsd-anchor"></a><h2><a href="#md:prerequisitions">Prerequisitions</a></h2><ul>
 <li>Install this package in your deep by using npm-packager</li>
-</ol>
-<a id="md:manually" class="tsd-anchor"></a><h3><a href="#md:manually">Manually</a></h3><ol>
-<li>Insert a link of type Device </li>
-<li>Change its object value to the object with propertied described in <a href="#md:device-object-value">Device Object Value</a><br>or<br>Insert a link of any type with a any name of the list described in <a href="#md:device-object-value">Device Object Value</a> from Device link to the same Device link and set its value to the value of the corresponding property of the Device object value</li>
+<li>Provide permissions to this package</li>
+</ul>
+<a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><a id="md:manually" class="tsd-anchor"></a><h3><a href="#md:manually">Manually</a></h3><ol>
+<li>Insert a link of type <a href="https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html#Device"><code>Device</code></a> </li>
+<li>Change its object value to the object with propertied described in <a href="#md:device-object-value">Device Object Value</a><br>or<br>Insert a link of any type with a any name of the list described in <a href="#md:device-object-value">Device Object Value</a> from <a href="https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html#Device"><code>Device</code></a> link to the same <a href="https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html#Device"><code>Device</code></a> link and set its value to the value of the corresponding property of the <a href="https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html#Device"><code>Device</code></a> object value</li>
 </ol>
 <a id="md:by-using-this-library-programatically" class="tsd-anchor"></a><h3><a href="#md:by-using-this-library-programatically">By using this library programatically</a></h3><ul>
 <li><a href="https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information">Save all device information</a>  </li>
 <li><a href="https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information">Save specific device information</a>  </li>
 <li><a href="https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually">Save information manually</a></li>
 </ul>
-<a id="md:device-object-value" class="tsd-anchor"></a><h2><a href="#md:device-object-value">Device Object Value</a></h2><p>The <code>Device</code> link can have object value that can have following properties:</p>
+<a id="md:device-object-value" class="tsd-anchor"></a><h2><a href="#md:device-object-value">Device Object Value</a></h2><p>The <a href="https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html#Device"><code>Device</code></a> link can have object value that can have following properties:</p>
 <ul>
 <li><strong>name</strong> (type: String): The name of the device.</li>
 <li><strong>operatingSystem</strong> (type: String): The operating system of the device.</li>
@@ -44,10 +46,10 @@
 <li><strong>platform</strong> (type: String): The platform on which the device runs.</li>
 <li><strong>model</strong> (type: String): The model of the device.</li>
 </ul>
-<p>No one field is required. You can add any of these fields as you want</p>
-<a id="md:fake-json" class="tsd-anchor"></a><h3><a href="#md:fake-json">Fake Json</a></h3><pre><code class="language-json"><span class="hl-0">{</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;identifier&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;d787dc6b-041f-4a61-8078-d5573c2e7a4e&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;model&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;X11&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;platform&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;web&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;isVirtual&quot;</span><span class="hl-0">: </span><span class="hl-3">false</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;osVersion&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;x86.64&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;isCharging&quot;</span><span class="hl-0">: </span><span class="hl-3">true</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;languageTag&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;en&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;batteryLevel&quot;</span><span class="hl-0">: </span><span class="hl-4">1</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;languageCode&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;en&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;manufacturer&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;Google Inc.&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;webViewVersion&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;113.0.0.0&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;operatingSystem&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;unknown&quot;</span><br/><span class="hl-0">}</span>
-</code><button>Copy</button></pre>
-<a id="md:update-handling" class="tsd-anchor"></a><h2><a href="#md:update-handling">Update Handling</a></h2><p>This package includes the <code>HandleUpdate</code> functionality (type: UpdateHandler) that is used to handle updates related to the <code>Device</code> object. <code>HandleUpdate</code> uses handler from <a href="https://www.npmjs.com/package/@freephoenix888/object-to-links-async-converter"><code>@freephoenix888/object-to-links-async-converter</code></a> to convert Device object value to links everytime when you update it</p>
+<p>No one field is required. You can add any of these fields as you want  </p>
+<p>Information about possible fields can be found in the <a href="https://deep-foundation.github.io/capacitor-device/types/DeviceInfo.html"><code>DeviceInfo</code> interface</a>  </p>
+<p><a href="https://deep-foundation.github.io/capacitor-device/types/deviceInfo.html#md:device-info-example">Example of Device Object Value</a></p>
+<a id="md:update-handling" class="tsd-anchor"></a><h2><a href="#md:update-handling">Update Handling</a></h2><p><a href="https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html#Device"><code>Device</code></a> updates are handled by the <a href="https://freephoenix888.github.io/object-to-links-async-converter/enums/LinkName.html#UpdateHandler"><code>UpdateHandler</code></a> to represent <a href="https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html#Device"><code>Device</code></a> object value as links</p>
 <a id="md:contribution" class="tsd-anchor"></a><h2><a href="#md:contribution">Contribution</a></h2><p>Feel free to contribute. Please fork the repository and submit a pull request for any bugs, improvements, or features.</p>
 </div></div>
 <div class="col-sidebar">
@@ -71,18 +73,15 @@
 <ul>
 <li>
 <ul>
-<li><a href="#md:how-to-use"><span>How to use?</span></a></li>
+<li><a href="#md:prerequisitions"><span>Prerequisitions</span></a></li>
 <li>
 <ul>
-<li><a href="#md:prerequisitions"><span>Prerequisitions</span></a></li>
+<li><a href="#md:usage"><span>Usage</span></a></li>
 <li>
 <ul>
 <li><a href="#md:manually"><span>Manually</span></a></li>
 <li><a href="#md:by-using-this-library-programatically"><span>By using this library programatically</span></a></li></ul></li>
 <li><a href="#md:device-object-value"><span>Device <wbr/>Object <wbr/>Value</span></a></li>
-<li>
-<ul>
-<li><a href="#md:fake-json"><span>Fake <wbr/>Json</span></a></li></ul></li>
 <li><a href="#md:update-handling"><span>Update <wbr/>Handling</span></a></li>
 <li><a href="#md:contribution"><span>Contribution</span></a></li></ul></li></ul></li></ul></div></details></div>
 <div class="site-menu">
