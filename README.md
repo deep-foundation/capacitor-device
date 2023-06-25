@@ -4,17 +4,21 @@
 
 Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device). 
 
-[Documentation](https://deep-foundation.github.io/capacitor-device/) 
+[**Documentation**](https://deep-foundation.github.io/capacitor-device/) 
 
-## How to use?
-### Prerequisitions
-1. Install this package in your deep by using npm-packager
+[**List of links**](https://deep-foundation.github.io/capacitor-device/enums/LinkName.html)
+
+## Prerequisitions
+- Install this package in your deep by using npm-packager
+- Provide permissions to this package
+
+## Usage
 
 ### Manually
-1. Insert a link of type Device 
+1. Insert a link of type [`Device`] 
 2.  Change its object value to the object with propertied described in [Device Object Value](#md:device-object-value)  
 or  
-Insert a link of any type with a any name of the list described in [Device Object Value](#md:device-object-value) from Device link to the same Device link and set its value to the value of the corresponding property of the Device object value
+Insert a link of any type with a any name of the list described in [Device Object Value](#md:device-object-value) from [`Device`] link to the same [`Device`] link and set its value to the value of the corresponding property of the [`Device`] object value
 
 
 ### By using this library programatically
@@ -24,7 +28,7 @@ Insert a link of any type with a any name of the list described in [Device Objec
 
 ## Device Object Value
 
-The `Device` link can have object value that can have following properties:
+The [`Device`] link can have object value that can have following properties:
 
 - **name** (type: String): The name of the device.
 - **operatingSystem** (type: String): The operating system of the device.
@@ -39,30 +43,18 @@ The `Device` link can have object value that can have following properties:
 - **platform** (type: String): The platform on which the device runs.
 - **model** (type: String): The model of the device.  
 
-No one field is required. You can add any of these fields as you want
+No one field is required. You can add any of these fields as you want  
 
-### Fake Json
-```json
-{
-  "identifier": "d787dc6b-041f-4a61-8078-d5573c2e7a4e",
-  "model": "X11",
-  "platform": "web",
-  "isVirtual": false,
-  "osVersion": "x86.64",
-  "isCharging": true,
-  "languageTag": "en",
-  "batteryLevel": 1,
-  "languageCode": "en",
-  "manufacturer": "Google Inc.",
-  "webViewVersion": "113.0.0.0",
-  "operatingSystem": "unknown"
-}
-```
+Information about possible fields can be found in the [`DeviceInfo` interface](https://deep-foundation.github.io/capacitor-device/types/DeviceInfo.html)  
+
+[Example of Device Object Value](https://deep-foundation.github.io/capacitor-device/types/deviceInfo.html#md:device-info-example)
 
 ## Update Handling
 
-This package includes the `HandleUpdate` functionality (type: UpdateHandler) that is used to handle updates related to the `Device` object. `HandleUpdate` uses handler from [`@freephoenix888/object-to-links-async-converter`](https://www.npmjs.com/package/@freephoenix888/object-to-links-async-converter) to convert Device object value to links everytime when you update it
+[`Device`] updates are handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/enums/LinkName.html#UpdateHandler) to represent [`Device`] object value as links
 
 ## Contribution
 
 Feel free to contribute. Please fork the repository and submit a pull request for any bugs, improvements, or features.
+
+[`Device`]: https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html#Device
