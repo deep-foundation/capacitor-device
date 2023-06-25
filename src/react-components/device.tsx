@@ -3,8 +3,6 @@ import { AllDeviceInfo } from "../all-device-info.js";
 
 /**
  * A React component that displays a device's information in a card format.
- *
- * @param param - An object of type `DeviceParam`
  * 
  * @returns A `Card` component containing device model as a `Heading` in the `CardHeader` and device name as a `Text` in the `CardBody`.
  */

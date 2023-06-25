@@ -11,10 +11,6 @@ import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-in
  * If the passed {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.deviceLinkId} is not undefined, the hook verifies its existence in Deep. If it does not exist, a new device link is inserted.
  * 
  * It is recommended to use {@link WithDeviceInsertionIfDoesNotExistAndSavingData} instead of using this hook directly
- * 
- * @param param An object of type {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam}.
- * 
- * @returns An object of type {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoResult}
  */
 export function useDeviceInsertionIfDoesNotExistAndSavingData(
   param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,

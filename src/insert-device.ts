@@ -6,9 +6,6 @@ import { getAllDeviceInfo } from './get-all-device-info.js';
 
 /**
  * Inserts a device into the Deep
- *
- * @param param The parameters required for the device insertion.
- * @returns A promise that resolves with the result of the device insertion.
  * 
  * @remarks
  * If the {@link InsertDeviceParam.info} parameter is undefined, the function will call {@link getAllDeviceInfo} to get the device information.
