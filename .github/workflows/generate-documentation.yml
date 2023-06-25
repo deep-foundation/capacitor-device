@@ -1,9 +1,6 @@
 name: Generate Documentation
 
 on:
-  push:
-    tags:
-      - 'v*' 
   workflow_dispatch:
 
 jobs:

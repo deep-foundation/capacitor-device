@@ -19,17 +19,17 @@ export function WithDeviceInsertionIfDoesNotExistAndSavingData(
     containerLinkId,
     deep,
     deviceLinkId,
-    setDeviceLinkId,
     children,
     renderIfLoading,
     renderIfNotInserted,
+    insertDeviceCallback,
   } = props;
 
   const { isLoading } = useDeviceInsertionIfDoesNotExistAndSavingData({
     deep,
     containerLinkId,
     deviceLinkId,
-    setDeviceLinkId,
+    insertDeviceCallback,
   });
 
   if (isLoading) {
@@ -63,10 +63,6 @@ export type WithDeviceInsertionIfDoesNotExistAndSavingDataParam =
      * The ID of the device link in the Deep database.
      */
     deviceLinkId: number | undefined | null;
-    /**
-     * A function that updates the `deviceLinkId`.
-     */
-    setDeviceLinkId: (deviceLinkId: number) => void;
     /**
      * The child elements to render when the device link ID exists and the loading is finished.
      */

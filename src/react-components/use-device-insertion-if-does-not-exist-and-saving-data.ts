@@ -16,8 +16,10 @@ import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-in
  * 
  * @returns An object of type {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoResult}
  */
-export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
-  const { deep, deviceLinkId, setDeviceLinkId, containerLinkId } = param;
+export function useDeviceInsertionIfDoesNotExistAndSavingData(
+  param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
+): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
+  const { deep, deviceLinkId, containerLinkId, insertDeviceCallback } = param;
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -30,12 +32,7 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(param: UseDeviceIn
 
       if (!deviceLinkId || !deviceLink) {
         setIsLoading(true);
-        const insertionResult = await insertDevice({
-          deep,
-          containerLinkId,
-          info: await getAllDeviceInfo(),
-        });
-        setDeviceLinkId(insertionResult.deviceLink.id);
+        await insertDeviceCallback()
         setIsLoading(false);
       }
     };
@@ -60,8 +57,14 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoParam {
    * This field is not of type undefined because you should not call this component until you get the device link ID which is known. For these reasons there is {@link WithDeviceInsertionIfDoesNotExistAndSavingData}
    */
   deviceLinkId: number | null;
-  setDeviceLinkId: (id: number | null) => void;
+  /**
+   * A container with ID of current space 
+   */
   containerLinkId: number;
+  /**
+   * Callback that will be called when {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.deviceLinkId} is not provided or does not exist in deep
+   */
+  insertDeviceCallback: () => Promise<void>;
 }
 
 /**
