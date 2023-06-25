@@ -1,5 +1,5 @@
 import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
-import { DEVICE_PACKAGE_NAME } from './package-name.js';
+import { PACKAGE_NAME } from './package-name.js';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
 import { DeviceInfo } from './device-info.js';
 import { getAllDeviceInfo } from './get-all-device-info.js';
@@ -30,7 +30,7 @@ export async function insertDevice(
     info = await getAllDeviceInfo(),
     containerLinkId = deep.linkId,
   } = param;
-  const deviceTypeLinkId = await deep.id(DEVICE_PACKAGE_NAME, 'Device');
+  const deviceTypeLinkId = await deep.id(PACKAGE_NAME, 'Device');
   const containTypeLinkId = await deep.id('@deep-foundation/core', 'Contain');
   let {
     data: [deviceLink],

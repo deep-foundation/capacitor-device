@@ -1,4 +1,4 @@
-export {DEVICE_PACKAGE_NAME} from './package-name.js'
+export {PACKAGE_NAME} from './package-name.js'
 export {insertDevice,InsertDeviceParam,InsertDeviceResult} from './insert-device.js'
 export {saveDeviceInfo,SaveDeviceInfoParam} from './save-device-info.js'
 export {getAllDeviceInfo} from './get-all-device-info.js'

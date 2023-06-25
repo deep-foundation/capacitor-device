@@ -1,6 +1,6 @@
 import { Device } from "@capacitor/device";
 import { DeepClient } from "@deep-foundation/deeplinks/imports/client.js";
-import { DEVICE_PACKAGE_NAME } from "./package-name.js";
+import { PACKAGE_NAME } from "./package-name.js";
 import { DeviceInfo } from "./device-info.js";
 
 export interface GetDeviceArg {
