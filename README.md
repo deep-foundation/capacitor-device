@@ -8,6 +8,13 @@ Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@cap
 
 [**List of links**](https://deep-foundation.github.io/capacitor-device/enums/LinkName.html)
 
+## Device Object Value
+
+The [`Device`] link can have object value.  
+No one field is required. You can add any fields as you want.  Only the fields that are supported by this package will be represented as links   
+[Supported fields can be found in the `DeviceInfo` interface](https://deep-foundation.github.io/capacitor-device/types/DeviceInfo.html)  
+[Example of Device Object Value](https://deep-foundation.github.io/capacitor-device/types/deviceInfo.html#md:device-info-example)
+
 ## Prerequisitions
 - Install this package in your deep by using npm-packager
 - Provide permissions to this package
@@ -20,34 +27,10 @@ Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@cap
 or  
 Insert a link of any type with a any name of the list described in [Device Object Value](#md:device-object-value) from [`Device`] link to the same [`Device`] link and set its value to the value of the corresponding property of the [`Device`] object value
 
-
 ### By using this library programatically
 - [Save all device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information)  
 - [Save specific device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information)  
 - [Save information manually](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually)  
-
-## Device Object Value
-
-The [`Device`] link can have object value that can have following properties:
-
-- **name** (type: String): The name of the device.
-- **operatingSystem** (type: String): The operating system of the device.
-- **webViewVersion** (type: String): The version of the WebView on the device.
-- **manufacturer** (type: String): The manufacturer of the device.
-- **languageCode** (type: String): The language code set on the device.
-- **batteryLevel** (type: Number): The battery level of the device.
-- **languageTag** (type: String): The language tag set on the device.
-- **isCharging** (type: Boolean): Whether the device is charging or not.
-- **osVersion** (type: String): The version of the operating system on the device.
-- **isVirtual** (type: Boolean): Whether the device is virtual or not.
-- **platform** (type: String): The platform on which the device runs.
-- **model** (type: String): The model of the device.  
-
-No one field is required. You can add any of these fields as you want  
-
-Information about possible fields can be found in the [`DeviceInfo` interface](https://deep-foundation.github.io/capacitor-device/types/DeviceInfo.html)  
-
-[Example of Device Object Value](https://deep-foundation.github.io/capacitor-device/types/deviceInfo.html#md:device-info-example)
 
 ## Update Handling
 
