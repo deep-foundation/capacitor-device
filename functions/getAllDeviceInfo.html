@@ -17,33 +17,17 @@
 <h1>Function getAllDeviceInfo</h1></div>
 <section class="tsd-panel">
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="getAllDeviceInfo"><span class="tsd-kind-call-signature">get<wbr/>All<wbr/>Device<wbr/>Info</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/AllDeviceInfo.html" class="tsd-signature-type tsd-kind-type-alias">AllDeviceInfo</a><span class="tsd-signature-symbol">&gt;</span><a href="#getAllDeviceInfo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" id="icon-anchor"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></g></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="getAllDeviceInfo"><span class="tsd-kind-call-signature">get<wbr/>All<wbr/>Device<wbr/>Info</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/DeviceInfo.html" class="tsd-signature-type tsd-kind-type-alias">DeviceInfo</a><span class="tsd-signature-symbol">&gt;</span><a href="#getAllDeviceInfo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" id="icon-anchor"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></g></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Asynchronously retrieves comprehensive information about the device. </p>
-<p>This function aggregates data from various sources, specifically using several methods from the <code>Device</code> class 
-provided by the &quot;@capacitor/device&quot; module. The methods used include:</p>
-<ul>
-<li>Device.getInfo()</li>
-<li>Device.getBatteryInfo()</li>
-<li>Device.getId()</li>
-<li>Device.getLanguageCode()</li>
-</ul>
-<p>The return object includes data from all of these sources.</p>
+<div class="tsd-comment tsd-typography"><p>Gets all information about the device.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/AllDeviceInfo.html" class="tsd-signature-type tsd-kind-type-alias">AllDeviceInfo</a><span class="tsd-signature-symbol">&gt;</span></h4><p>A Promise that resolves with an <code>AllDeviceInfo</code> object that includes all device information.</p>
-
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/DeviceInfo.html" class="tsd-signature-type tsd-kind-type-alias">DeviceInfo</a><span class="tsd-signature-symbol">&gt;</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Example</h4><pre><code><span class="hl-7">getAllDeviceInfo</span><span class="hl-1">().</span><span class="hl-7">then</span><span class="hl-1">(</span><span class="hl-5">info</span><span class="hl-1"> </span><span class="hl-0">=&gt;</span><span class="hl-1"> </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-7">log</span><span class="hl-1">(</span><span class="hl-5">info</span><span class="hl-1">));</span>
+<h4>Example</h4><pre><code><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">deviceInfo</span><span class="hl-1"> = </span><span class="hl-7">await</span><span class="hl-1"> </span><span class="hl-8">getAllDeviceInfo</span><span class="hl-1">();</span>
 </code><button>Copy</button></pre>
-<p>Note: To get detailed documentation about the methods used from the <code>Device</code> class, refer to the official 
-documentation for &quot;@capacitor/device&quot;.</p>
-
-<h4>Export</h4>
-<h4>Async</h4>
-<h4>Function</h4><p>getAllDeviceInfo</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/deep-foundation/capacitor-device/blob/ea8e89c/src/get-all-device-info.ts#L30">get-all-device-info.ts:30</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/deep-foundation/capacitor-device/blob/5574256/src/get-all-device-info.ts#L12">get-all-device-info.ts:12</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -68,8 +52,7 @@ documentation for &quot;@capacitor/device&quot;.</p>
 <li><a href="../interfaces/InsertDeviceResult.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Insert<wbr/>Device<wbr/>Result</span></a></li>
 <li><a href="../interfaces/UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Use<wbr/>Device<wbr/>Insertion<wbr/>If<wbr/>Does<wbr/>Not<wbr/>Exist<wbr/>And<wbr/>Saving<wbr/>Info<wbr/>Param</span></a></li>
 <li><a href="../interfaces/UseDeviceInsertionIfDoesNotExistAndSavingInfoResult.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Use<wbr/>Device<wbr/>Insertion<wbr/>If<wbr/>Does<wbr/>Not<wbr/>Exist<wbr/>And<wbr/>Saving<wbr/>Info<wbr/>Result</span></a></li>
-<li><a href="../types/AllDeviceInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4194304"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-type-alias)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)"></path></g></svg><span>All<wbr/>Device<wbr/>Info</span></a></li>
-<li><a href="../types/DeviceInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Device<wbr/>Info</span></a></li>
+<li><a href="../types/DeviceInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4194304"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-type-alias)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)"></path></g></svg><span>Device<wbr/>Info</span></a></li>
 <li><a href="../types/SaveDeviceInfoParam.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Save<wbr/>Device<wbr/>Info<wbr/>Param</span></a></li>
 <li><a href="../types/WithDeviceInsertionIfDoesNotExistAndSavingDataParam.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>With<wbr/>Device<wbr/>Insertion<wbr/>If<wbr/>Does<wbr/>Not<wbr/>Exist<wbr/>And<wbr/>Saving<wbr/>Data<wbr/>Param</span></a></li>
 <li><a href="../variables/PACKAGE_NAME.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-32"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-variable)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.106 16L8.85 7.24H9.966L11.454 13.192C11.558 13.608 11.646 13.996 11.718 14.356C11.79 14.708 11.842 14.976 11.874 15.16C11.906 14.976 11.954 14.708 12.018 14.356C12.09 13.996 12.178 13.608 12.282 13.192L13.758 7.24H14.85L12.582 16H11.106Z" fill="var(--color-text)"></path></g></svg><span>PACKAGE_<wbr/>NAME</span></a></li>
