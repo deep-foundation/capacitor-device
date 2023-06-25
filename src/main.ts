@@ -3,7 +3,7 @@ export {insertDevice,type InsertDeviceParam,type InsertDeviceResult} from './ins
 export {saveDeviceInfo, type SaveDeviceInfoParam} from './save-device-info.js'
 export {getAllDeviceInfo} from './get-all-device-info.js'
 export {type DeviceInfo} from './device-info.js'
-export {type AllDeviceInfo} from './all-device-info.js'
+export {type AllDeviceInfo} from './device-info.js'
 export {Device, type DeviceParam} from './react-components/device.js'
 export {useDeviceInsertionIfDoesNotExistAndSavingData, type UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,UseDeviceInsertionIfDoesNotExistAndSavingInfoResult} from './react-components/use-device-insertion-if-does-not-exist-and-saving-data.js'
 export {WithDeviceInsertionIfDoesNotExistAndSavingData, type WithDeviceInsertionIfDoesNotExistAndSavingDataParam} from './react-components/with-device-insertion-if-does-not-exist-and-saving-data.js'

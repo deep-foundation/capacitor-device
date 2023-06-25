@@ -1,5 +1,5 @@
 import { Device } from "@capacitor/device";
-import { AllDeviceInfo } from "./all-device-info.js";
+import { DeviceInfo } from "./device-info.js";
 
 /**
  * Asynchronously retrieves comprehensive information about the device. 
@@ -13,7 +13,7 @@ import { AllDeviceInfo } from "./all-device-info.js";
  * 
  * The return object includes data from all of these sources.
  *
- * @returns {Promise<AllDeviceInfo>} A Promise that resolves with an `AllDeviceInfo` object that includes all device information.
+ * @returns {Promise<DeviceInfo>} A Promise that resolves with an `AllDeviceInfo` object that includes all device information.
  * 
  * @example
  * ```
@@ -27,7 +27,7 @@ import { AllDeviceInfo } from "./all-device-info.js";
  * @async
  * @function getAllDeviceInfo
  */
-export async function getAllDeviceInfo(): Promise<AllDeviceInfo> {
+export async function getAllDeviceInfo(): Promise<DeviceInfo> {
   const deviceInfo = await Device.getInfo();
   let batteryInfo = {};
   if (!['ios', 'mac'].includes(deviceInfo.operatingSystem)) {

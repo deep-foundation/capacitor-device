@@ -1,5 +1,5 @@
 import { Card, CardHeader, Heading, CardBody, Text } from "@chakra-ui/react";
-import { AllDeviceInfo } from "../all-device-info.js";
+import { DeviceInfo } from "../device-info.js";
 
 /**
  * A React component that displays a device's information in a card format.
@@ -33,5 +33,5 @@ export interface DeviceParam {
   /**
    * All device information
    */
-  device: AllDeviceInfo
+  device: DeviceInfo
  }
