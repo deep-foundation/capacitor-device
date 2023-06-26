@@ -8,7 +8,7 @@ export interface GetDeviceArg {
   deviceLinkId: number
 }
 
-export async function getDevice(arg: GetDeviceArg): Promise<DeviceInfo|undefined> {
+export async function getDevice(arg: GetDeviceArg): Promise<GetDevicecResult> {
   const {deep, deviceLinkId} = arg;
 //   const nameTypeLinkId = await deep.id(DEVICE_PACKAGE_NAME, "Name");
 //   const modelTypeLinkId = await deep.id(DEVICE_PACKAGE_NAME, "Model");
@@ -52,3 +52,5 @@ export async function getDevice(arg: GetDeviceArg): Promise<DeviceInfo|undefined
    
    return deviceLink.value.value;
 }
+
+export type GetDevicecResult = Partial<DeviceInfo>;
