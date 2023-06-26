@@ -40,4 +40,4 @@ Insert a link of any type with a any name of the list described in [Device Objec
 
 Feel free to contribute. Please fork the repository and submit a pull request for any bugs, improvements, or features.
 
-[`Device`]: https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html#Device
+[`Device`]: https://deep-foundation.github.io/capacitor-device/enums/LinkName.html#Device
