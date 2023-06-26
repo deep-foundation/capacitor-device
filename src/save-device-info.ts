@@ -143,7 +143,7 @@ export async function saveDeviceInfo(param: SaveDeviceInfoParam) {
     data,
   }: {
     deviceLink: Link<number>;
-    data: DeviceInfo | undefined;
+    data: Partial<DeviceInfo> | undefined;
   }) {
     return {
       ...(deviceLink.value?.value ?? {}),
