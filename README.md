@@ -13,7 +13,7 @@ Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@cap
 The [`Device`] link can have object value.  
 No one field is required. You can add any fields as you want.  Only the fields that are supported by this package will be represented as links   
 [Supported fields can be found in the `DeviceInfo` interface](https://deep-foundation.github.io/capacitor-device/types/DeviceInfo.html)  
-[Example of Device Object Value](https://deep-foundation.github.io/capacitor-device/types/deviceInfo.html#md:device-info-example)
+[Example of Device Object Value](https://deep-foundation.github.io/capacitor-device/types/DeviceInfo.html#md:device-info-example)
 
 ## Prerequisitions
 - Install this package in your deep by using npm-packager
