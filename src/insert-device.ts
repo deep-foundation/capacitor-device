@@ -65,7 +65,7 @@ export interface InsertDeviceParam {
   /**
    * A DeviceInfo instance or undefined.
    */
-  info?: DeviceInfo | undefined;
+  info?: Partial<DeviceInfo> | undefined;
 
   /**
    * A link where a device link will be contained in.
