@@ -184,7 +184,7 @@ export async function saveDeviceInfo(param: SaveDeviceInfoParam) {
  * The `SaveDeviceInfoParam` type is an object that must have a `deep` property of type {@link DeepClient} and an optional `info` property of type {@link DeviceInfo}. 
  * In addition to these properties, the object must also have either a `deviceLinkId` property of type `number` or a `deviceLink` property of type {@link Link}.
  */
-export type SaveDeviceInfoParam = { deep: DeepClient; info?: DeviceInfo | undefined } & (
+export type SaveDeviceInfoParam = { deep: DeepClient; info?: Partial<DeviceInfo> | undefined } & (
   | { deviceLinkId: number }
   | { deviceLink: Link<number> }
 );
