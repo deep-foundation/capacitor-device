@@ -33,5 +33,5 @@ export interface DeviceParam {
   /**
    * All device information
    */
-  device: DeviceInfo
+  device: Pick<DeviceInfo, 'model'|'name'>
  }
