@@ -8,6 +8,9 @@ import { DeviceInfo } from "./device-info.js";
  * ```
  * const deviceInfo = await getAllDeviceInfo();
  * ```
+ * 
+ * @remarks
+ * Battery information is not available on iOS or macOS
  */
 export async function getAllDeviceInfo(): Promise<DeviceInfo> {
   const deviceInfo = await Device.getInfo();
