@@ -148,6 +148,9 @@ import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
    deep: DeepClient;
    /**
     * Device Info
+    * 
+    * @remarks
+    * If not passed then {@link getAllDeviceInfo} is used to get the device info
     */
    info?: DeviceInfo;
  } & (

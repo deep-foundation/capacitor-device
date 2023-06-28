@@ -143,6 +143,9 @@ export interface GetDeviceInsertSerialOperationsParam {
   deep: DeepClient;
   /**
    * Device Info
+   * 
+   * @remarks
+   * If not passed then {@link getAllDeviceInfo} is used to get the device info
    */
   info?: DeviceInfo;
   /**
