@@ -142,10 +142,26 @@ import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
  }
  
  export type GetDeviceValueUpdateSerialOperationsParam = {
+   /**
+    * DeepClient
+    */
    deep: DeepClient;
+   /**
+    * Device Info
+    */
    info?: DeviceInfo;
  } & (
-   | { deviceLinkId: number }
-   | { deviceLink: Link<number> }
+   | { 
+      /**
+       * Device Link Id
+       */
+      deviceLinkId: number 
+   }
+   | { 
+      /**
+       * Device Link
+       */
+      deviceLink: Link<number> 
+   }
  )
  
