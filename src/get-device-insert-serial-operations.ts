@@ -22,7 +22,7 @@ import { getAllDeviceInfo } from './get-all-device-info';
  ```
   */
 export async function getDeviceInsertSerialOperations(
-  param: InsertDeviceParam
+  param: GetDeviceInsertSerialOperationsParam
 ): Promise<Array<SerialOperation>> {
   const {
     deep,
@@ -76,7 +76,7 @@ export async function getDeviceInsertSerialOperations(
   return serialOperations;
 
   async function getReservedLinkIds(): Promise<
-    Exclude<InsertDeviceParam['reservedLinkIds'], undefined>
+    Exclude<GetDeviceInsertSerialOperationsParam['reservedLinkIds'], undefined>
   > {
     let result = {
       containLinkId: 0,
@@ -97,7 +97,7 @@ export async function getDeviceInsertSerialOperations(
   }
 
   async function getTypeLinkIds(): Promise<
-    Required<Exclude<InsertDeviceParam['typeLinkIds'], undefined>>
+    Required<Exclude<GetDeviceInsertSerialOperationsParam['typeLinkIds'], undefined>>
   > {
     return {
       containTypeLinkId:
@@ -110,7 +110,7 @@ export async function getDeviceInsertSerialOperations(
   }
 }
 
-export interface InsertDeviceParam {
+export interface GetDeviceInsertSerialOperationsParam {
   reservedLinkIds?: {
     deviceLinkId: number;
     containLinkId: number;
