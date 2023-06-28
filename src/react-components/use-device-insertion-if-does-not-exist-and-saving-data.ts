@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
-import { insertDevice } from '../insert-device.js';
-import { getAllDeviceInfo } from '../get-all-device-info.js';
 import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-insertion-if-does-not-exist-and-saving-data.js';
 
 /**
