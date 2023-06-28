@@ -111,16 +111,53 @@ export async function getDeviceInsertSerialOperations(
 }
 
 export interface GetDeviceInsertSerialOperationsParam {
+   /**
+    * Reserved link ids that will be used in the serial operations
+    */
   reservedLinkIds?: {
+   /**
+    * Reserved link id for the device
+    */
     deviceLinkId: number;
+    /**
+     * Reserved link id for the contain
+     */
     containLinkId: number;
   };
+  /**
+   * Link ids of types that will be used in the serial operations
+   */
   typeLinkIds?: {
+   /**
+    * Link id of the contain type
+    */
     containTypeLinkId?: number;
+    /**
+     * Link id of the device type
+     */
     deviceTypeLinkId?: number;
   };
+  /**
+   * Deep Client
+   */
   deep: DeepClient;
+  /**
+   * Device Info
+   */
   info?: DeviceInfo;
+  /**
+   * Link id of the container
+   * 
+   * @remarks
+   * If it is null, contain link will not be created
+   * If it is undefined or not provided, it will be the {@link GetDeviceInsertSerialOperationsParam.deep.linkId}
+   */
   containerLinkId?: number | undefined | null;
+  /**
+   * Value of the contain link
+   * 
+   * @remarks
+   * If {@link GetDeviceInsertSerialOperationsParam.containerLinkId} is null, this will be ignored
+   */
   containValue?: string | undefined;
 }
