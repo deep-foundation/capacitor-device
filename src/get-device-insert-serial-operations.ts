@@ -75,11 +75,12 @@ export async function getDeviceInsertSerialOperations(
 
   return serialOperations;
 
-  type GetReservedLinkIdsResult = Exclude<GetDeviceInsertSerialOperationsParam['reservedLinkIds'], undefined>
+  type GetReservedLinkIdsResult = Exclude<
+    GetDeviceInsertSerialOperationsParam['reservedLinkIds'],
+    undefined
+  >;
 
-  async function getReservedLinkIds(): Promise<
-  GetReservedLinkIdsResult
-  > {
+  async function getReservedLinkIds(): Promise<GetReservedLinkIdsResult> {
     let result: GetReservedLinkIdsResult = {
       containLinkId: 0,
       deviceLinkId: 0,
@@ -98,11 +99,11 @@ export async function getDeviceInsertSerialOperations(
     return result;
   }
 
-  type GetTypeLinkIdsResult = Required<Exclude<GetDeviceInsertSerialOperationsParam['typeLinkIds'], undefined>>;
+  type GetTypeLinkIdsResult = Required<
+    Exclude<GetDeviceInsertSerialOperationsParam['typeLinkIds'], undefined>
+  >;
 
-  async function getTypeLinkIds(): Promise<
-  GetTypeLinkIdsResult
-  > {
+  async function getTypeLinkIds(): Promise<GetTypeLinkIdsResult> {
     const result: GetTypeLinkIdsResult = {
       containTypeLinkId:
         param.typeLinkIds?.containTypeLinkId ||
@@ -116,13 +117,13 @@ export async function getDeviceInsertSerialOperations(
 }
 
 export interface GetDeviceInsertSerialOperationsParam {
-   /**
-    * Reserved link ids that will be used in the serial operations
-    */
+  /**
+   * Reserved link ids that will be used in the serial operations
+   */
   reservedLinkIds?: {
-   /**
-    * Reserved link id for the device
-    */
+    /**
+     * Reserved link id for the device
+     */
     deviceLinkId: number;
     /**
      * Reserved link id for the contain
@@ -133,9 +134,9 @@ export interface GetDeviceInsertSerialOperationsParam {
    * Link ids of types that will be used in the serial operations
    */
   typeLinkIds?: {
-   /**
-    * Link id of the contain type
-    */
+    /**
+     * Link id of the contain type
+     */
     containTypeLinkId?: number;
     /**
      * Link id of the device type
@@ -148,14 +149,14 @@ export interface GetDeviceInsertSerialOperationsParam {
   deep: DeepClient;
   /**
    * Device Info
-   * 
+   *
    * @remarks
    * If not passed then {@link getAllDeviceInfo} is used to get the device info
    */
   info?: DeviceInfo;
   /**
    * Link id of the container
-   * 
+   *
    * @remarks
    * If it is null, contain link will not be created
    * If it is undefined or not provided, it will be the {@link GetDeviceInsertSerialOperationsParam.deep.linkId}
@@ -163,7 +164,7 @@ export interface GetDeviceInsertSerialOperationsParam {
   containerLinkId?: number | undefined | null;
   /**
    * Value of the contain link
-   * 
+   *
    * @remarks
    * If {@link GetDeviceInsertSerialOperationsParam.containerLinkId} is null, this will be ignored
    */
