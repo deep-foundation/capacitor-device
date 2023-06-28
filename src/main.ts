@@ -7,4 +7,4 @@ export {WithDeviceInsertionIfDoesNotExistAndSavingData, type WithDeviceInsertion
 export {LinkName} from './link-name'
 export {getDevice,type GetDeviceArg,type GetDevicecResult} from './get-device'
 export {getDeviceInsertSerialOperations, type GetDeviceInsertSerialOperationsParam} from './get-device-insert-serial-operations'
-export {getDeviceValueInsertSerialOperations, type GetDeviceValueUpdateSerialOperationsParam} from './get-device-value-insert-serial-operations'
+export {getDeviceValueInsertSerialOperations, type GetDeviceValueUpdateSerialOperationsParam} from './get-device-value-update-serial-operations'
