@@ -75,10 +75,12 @@ export async function getDeviceInsertSerialOperations(
 
   return serialOperations;
 
+  type GetReservedLinkIdsResult = Exclude<GetDeviceInsertSerialOperationsParam['reservedLinkIds'], undefined>
+
   async function getReservedLinkIds(): Promise<
-    Exclude<GetDeviceInsertSerialOperationsParam['reservedLinkIds'], undefined>
+  GetReservedLinkIdsResult
   > {
-    let result = {
+    let result: GetReservedLinkIdsResult = {
       containLinkId: 0,
       deviceLinkId: 0,
     };
@@ -96,10 +98,12 @@ export async function getDeviceInsertSerialOperations(
     return result;
   }
 
+  type GetTypeLinkIdsResult = Required<Exclude<GetDeviceInsertSerialOperationsParam['typeLinkIds'], undefined>>;
+
   async function getTypeLinkIds(): Promise<
-    Required<Exclude<GetDeviceInsertSerialOperationsParam['typeLinkIds'], undefined>>
+  GetTypeLinkIdsResult
   > {
-    return {
+    const result: GetTypeLinkIdsResult = {
       containTypeLinkId:
         param.typeLinkIds?.containTypeLinkId ||
         (await deep.id('@deep-foundation/core', 'Contain')),
@@ -107,6 +111,7 @@ export async function getDeviceInsertSerialOperations(
         param.typeLinkIds?.deviceTypeLinkId ||
         (await deep.id(PACKAGE_NAME, LinkName[LinkName.Device])),
     };
+    return result;
   }
 }
 
