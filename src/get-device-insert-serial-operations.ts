@@ -150,8 +150,7 @@ export interface GetDeviceInsertSerialOperationsParam {
   /**
    * Device Info
    *
-   * @remarks
-   * If not passed then {@link getAllDeviceInfo} is used to get the device info
+   * @defaultValue result of {@link getAllDeviceInfo} if not provided or undefined
    */
   info?: DeviceInfo;
   /**
@@ -159,7 +158,7 @@ export interface GetDeviceInsertSerialOperationsParam {
    *
    * @remarks
    * If it is null, contain link will not be created
-   * If it is undefined or not provided, it will be the {@link GetDeviceInsertSerialOperationsParam.deep.linkId}
+   * @defaultValue {@link GetDeviceInsertSerialOperationsParam.deep.linkId} if not provided or undefined
    */
   containerLinkId?: number | undefined | null;
   /**
