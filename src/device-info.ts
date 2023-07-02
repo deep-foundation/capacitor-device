@@ -1,4 +1,9 @@
-import { BatteryInfo, GetLanguageCodeResult, LanguageTag , DeviceInfo as DeviceGeneralInfo} from "@capacitor/device";
+import {
+  BatteryInfo,
+  GetLanguageCodeResult,
+  LanguageTag,
+  DeviceInfo as DeviceGeneralInfo,
+} from '@capacitor/device';
 
 /**
  * Includes all the device information fields provided by the `@capacitor/device` package.
@@ -26,8 +31,8 @@ const deviceInfo: DeviceInfo = {
 ```
  */
 export type DeviceInfo = Partial<
-DeviceGeneralInfo &
-BatteryInfo & { languageCode: GetLanguageCodeResult['value'] } & {
-  languageTag: LanguageTag['value'];
-}
+  DeviceGeneralInfo &
+    BatteryInfo & { languageCode: GetLanguageCodeResult['value'] } & {
+      languageTag: LanguageTag['value'];
+    }
 >;
