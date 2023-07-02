@@ -25,7 +25,9 @@ const deviceInfo: DeviceInfo = {
 }
 ```
  */
-export type DeviceInfo = DeviceGeneralInfo &
+export type DeviceInfo = Partial<
+DeviceGeneralInfo &
 BatteryInfo & { languageCode: GetLanguageCodeResult['value'] } & {
   languageTag: LanguageTag['value'];
-};
+}
+>;
