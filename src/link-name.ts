@@ -5,7 +5,7 @@
 ```ts
 const notifyTypeLinkId = await deep.id(
    PACKAGE_NAME,
-   LinkName[LinkName.Notify]
+   LinkName[LinkName.Device]
 )
 ```
  */
