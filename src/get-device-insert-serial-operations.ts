@@ -75,9 +75,11 @@ export async function getDeviceInsertSerialOperations(
 
   return serialOperations;
 
-  type GetReservedLinkIdsResult = Exclude<
-    GetDeviceInsertSerialOperationsParam['reservedLinkIds'],
-    undefined
+  type GetReservedLinkIdsResult = Required<
+    Exclude<
+      GetDeviceInsertSerialOperationsParam['reservedLinkIds'],
+      undefined
+    >
   >;
 
   async function getReservedLinkIds(): Promise<GetReservedLinkIdsResult> {
