@@ -21,16 +21,12 @@ No one field is required. You can add any fields as you want.  Only the fields t
 
 ## Usage
 
-### Manually
 1. Insert a link of type [`Device`] 
 2.  Change its object value to the object with properties described in [Device Object Value](#md:device-object-value) and this update will be handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/enums/LinkName.html#UpdateHandler) to represent [`Device`] object value as links
 or  
 Insert a link of any type with a any name of the list described in [Device Object Value](#md:device-object-value) from [`Device`] link to the same [`Device`] link and set its value to the value of the corresponding property of the [`Device`] object value
 
-### By using this library programatically
-- [Save all device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-all-device-information)  
-- [Save specific device information](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-specific-device-information)  
-- [Save information manually](https://deep-foundation.github.io/capacitor-device/functions/saveDeviceInfo.html#md:save-information-manually)  
+Note: You can use library of this package to do operations described above 
 
 ## Update Handling
 
