@@ -1,5 +1,4 @@
 export { Package , PackageConstructorParam} from './package'
-export {PACKAGE_NAME} from './package-name'
 export {getAllDeviceInfo} from './get-all-device-info'
 export {type DeviceInfo} from './device-info'
 export {Device, type DeviceParam} from './react-components/device'
