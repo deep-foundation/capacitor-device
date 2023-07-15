@@ -119,7 +119,7 @@
       "type": 3
     },
     {
-      "id": "HandleUpdate",
+      "id": "handleUpdate",
       "type": 6,
       "from": "Device",
       "to": 7
