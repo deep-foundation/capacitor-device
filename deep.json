@@ -61,7 +61,7 @@
       "id": 8
     },
     {
-      "id": "TypeOfValueOfBatteryLevel",
+      "id": "batteryLevelValue",
       "type": 1,
       "from": "BatteryLevel",
       "to": 2
@@ -73,7 +73,7 @@
       "to": "Device"
     },
     {
-      "id": "TypeOfValueOfLanguageTag",
+      "id": "languageTagValue",
       "type": 1,
       "from": "LanguageTag",
       "to": 4
@@ -91,7 +91,7 @@
       "to": 5
     },
     {
-      "id": "TypeOfValueOfManufacturer",
+      "id": "manufacturerValue",
       "type": 1,
       "from": "Manufacturer",
       "to": 4
@@ -103,7 +103,7 @@
       "to": "Device"
     },
     {
-      "id": "TypeOfValueOfLanguageCode",
+      "id": "languageCodeValue",
       "type": 1,
       "from": "LanguageCode",
       "to": 4
@@ -131,13 +131,13 @@
       "to": "Device"
     },
     {
-      "id": "TypeOfValueOfIdentifier",
+      "id": "identifierValue",
       "type": 1,
       "from": "Identifier",
       "to": 4
     },
     {
-      "id": "TypeOfValueOfDevice",
+      "id": "deviceValue",
       "type": 1,
       "from": "Device",
       "to": 8
@@ -149,7 +149,7 @@
       "to": "Device"
     },
     {
-      "id": "TypeOfValueOfName",
+      "id": "nameValue",
       "type": 1,
       "from": "Name",
       "to": 4
@@ -161,7 +161,7 @@
       "to": "Device"
     },
     {
-      "id": "TypeOfValueOfOperatingSystem",
+      "id": "operatingSystemValue",
       "type": 1,
       "from": "OperatingSystem",
       "to": 4
@@ -173,7 +173,7 @@
       "to": "Device"
     },
     {
-      "id": "TypeOfValueOfOsVersion",
+      "id": "osVersionValue",
       "type": 1,
       "from": "OsVersion",
       "to": 4
@@ -191,7 +191,7 @@
       "to": "Device"
     },
     {
-      "id": "TypeOfValueOfPlatform",
+      "id": "platformValue",
       "type": 1,
       "from": "Platform",
       "to": 4
@@ -203,7 +203,7 @@
       "to": "Device"
     },
     {
-      "id": "TypeOfValueOfModel",
+      "id": "modelValue",
       "type": 1,
       "from": "Model",
       "to": 4
@@ -215,7 +215,7 @@
       "to": "Device"
     },
     {
-      "id": "TypeOfValueOfWebViewVersion",
+      "id": "webViewVersionValue",
       "type": 1,
       "from": "WebViewVersion",
       "to": 4
