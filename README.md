@@ -6,8 +6,6 @@ Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@cap
 
 [**Documentation**](https://deep-foundation.github.io/capacitor-device/) 
 
-[**List of links**](https://deep-foundation.github.io/capacitor-device/enums/LinkName.html)
-
 ## Device Object Value
 
 The [`Device`] link can have object value.  
@@ -22,7 +20,7 @@ No one field is required. You can add any fields as you want.  Only the fields t
 ## Usage
 
 1. Insert a link of type [`Device`] 
-2.  Change its object value to the object with properties described in [Device Object Value](#md:device-object-value) and this update will be handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/enums/LinkName.html#UpdateHandler) to represent [`Device`] object value as links
+2.  Change its object value to the object with properties described in [Device Object Value](#md:device-object-value) and this update will be handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/classes/Package.html#UpdateHandler) to represent [`Device`] object value as links
 or  
 Insert a link of any type with a any name of the list described in [Device Object Value](#md:device-object-value) from [`Device`] link to the same [`Device`] link and set its value to the value of the corresponding property of the [`Device`] object value
 
@@ -30,10 +28,10 @@ Note: You can use library of this package to do operations described above
 
 ## Update Handling
 
-[`Device`] updates are handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/enums/LinkName.html#UpdateHandler) to represent [`Device`] object value as links
+[`Device`] updates are handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/classes/Package.html#UpdateHandler) to represent [`Device`] object value as links
 
 ## Contribution
 
 Feel free to contribute. Please fork the repository and submit a pull request for any bugs, improvements, or features.
 
-[`Device`]: https://deep-foundation.github.io/capacitor-device/enums/LinkName.html#Device
+[`Device`]: https://deep-foundation.github.io/capacitor-device/classes/Package.html#Device
