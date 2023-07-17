@@ -2,11 +2,10 @@ import {
   DeepClient,
   SerialOperation,
 } from '@deep-foundation/deeplinks/imports/client';
-import { LinkName } from './link-name';
-import { PACKAGE_NAME } from './package-name';
 import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
 import { DeviceInfo } from './device-info';
 import { getAllDeviceInfo } from './get-all-device-info';
+import { Package } from './package';
 
 /**
   * Gets serial operations to insert Device
@@ -30,6 +29,7 @@ export async function getDeviceInsertSerialOperations(
     containValue,
     containerLinkId,
   } = param;
+  const $package = new Package({deep})
   const { containLinkId, deviceLinkId } = await getReservedLinkIds();
   const { containTypeLinkId, deviceTypeLinkId } = await getTypeLinkIds();
   const serialOperations = [];
@@ -112,7 +112,7 @@ export async function getDeviceInsertSerialOperations(
         (await deep.id('@deep-foundation/core', 'Contain')),
       deviceTypeLinkId:
         param.typeLinkIds?.deviceTypeLinkId ||
-        (await deep.id(PACKAGE_NAME, LinkName[LinkName.Device])),
+        (await $package.Device.id()),
     };
     return result;
   }
