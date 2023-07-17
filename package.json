@@ -11,7 +11,7 @@
     "url": "https://github.com/deep-foundation/capacitor-device"
   },
   "scripts": {
-    "package:build": "fse remove dist && tsc",
+    "package:build": "fse remove dist && npm run generate-package-class && tsc",
     "npm-pull": "npm-pull",
     "npm-release": "npm-release",
     "generate-package-class": "generate-package-class"
