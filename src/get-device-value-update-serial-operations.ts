@@ -2,8 +2,6 @@ import {
    DeepClient,
    SerialOperation,
  } from '@deep-foundation/deeplinks/imports/client';
- import { LinkName } from './link-name';
- import { PACKAGE_NAME } from './package-name';
  import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
  import { DeviceInfo } from './device-info';
  import { getAllDeviceInfo } from './get-all-device-info';
