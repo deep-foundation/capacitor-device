@@ -54,59 +54,32 @@ const webViewVersionValueLinkId = await package.webViewVersionValue.id();
 const package = new Package({deep});
 
 const batteryLevelValueLinkId = package.batteryLevelValue.idLocal();
-
 const BatteryLevelLinkId = package.BatteryLevel.idLocal();
-
 const languageTagValueLinkId = package.languageTagValue.idLocal();
-
 const LanguageTagLinkId = package.LanguageTag.idLocal();
-
 const IsChargingLinkId = package.IsCharging.idLocal();
-
 const manufacturerValueLinkId = package.manufacturerValue.idLocal();
-
 const ManufacturerLinkId = package.Manufacturer.idLocal();
-
 const languageCodeValueLinkId = package.languageCodeValue.idLocal();
-
 const LanguageCodeLinkId = package.LanguageCode.idLocal();
-
 const DeviceLinkId = package.Device.idLocal();
-
 const handleUpdateLinkId = package.handleUpdate.idLocal();
-
 const IdentifierLinkId = package.Identifier.idLocal();
-
 const identifierValueLinkId = package.identifierValue.idLocal();
-
 const deviceValueLinkId = package.deviceValue.idLocal();
-
 const NameLinkId = package.Name.idLocal();
-
 const nameValueLinkId = package.nameValue.idLocal();
-
 const OperatingSystemLinkId = package.OperatingSystem.idLocal();
-
 const operatingSystemValueLinkId = package.operatingSystemValue.idLocal();
-
 const OsVersionLinkId = package.OsVersion.idLocal();
-
 const osVersionValueLinkId = package.osVersionValue.idLocal();
-
 const IsVirtualLinkId = package.IsVirtual.idLocal();
-
 const PlatformLinkId = package.Platform.idLocal();
-
 const platformValueLinkId = package.platformValue.idLocal();
-
 const ModelLinkId = package.Model.idLocal();
-
 const modelValueLinkId = package.modelValue.idLocal();
-
 const WebViewVersionLinkId = package.WebViewVersion.idLocal();
-
 const webViewVersionValueLinkId = package.webViewVersionValue.idLocal();
-
 ```
   */
 
