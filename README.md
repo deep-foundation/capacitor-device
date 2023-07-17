@@ -20,7 +20,7 @@ No one field is required. You can add any fields as you want.  Only the fields t
 ## Usage
 
 1. Insert a link of type [`Device`] 
-2.  Change its object value to the object with properties described in [Device Object Value](#md:device-object-value) and this update will be handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/classes/Package.html#UpdateHandler) to represent [`Device`] object value as links
+2. Change its object value to the object with properties described in [Device Object Value](#md:device-object-value) and this update will be handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/classes/Package.html#UpdateHandler) to represent [`Device`] object value as links
 or  
 Insert a link of any type with a any name of the list described in [Device Object Value](#md:device-object-value) from [`Device`] link to the same [`Device`] link and set its value to the value of the corresponding property of the [`Device`] object value
 
