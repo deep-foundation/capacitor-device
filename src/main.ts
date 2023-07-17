@@ -1,8 +1,8 @@
 export {
   Package,
   Package as CapacitorDevicePackage,
-  type PackageConstructorParam,
-  type PackageConstructorParam as CapacitorDevicePackageConstructorParam,
+  type PackageOptions,
+  type PackageOptions as CapacitorDevicePackageConstructorParam,
 } from './package';
 export { getAllDeviceInfo } from './get-all-device-info';
 export { type DeviceInfo } from './device-info';
