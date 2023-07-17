@@ -1,5 +1,8 @@
 
-import {Package as BasePackage} from '@deep-foundation/deeplinks/imports/package';
+import {
+  Package as BasePackage,
+  PackageConstructorParam as BasePackageConstructorParam,
+} from '@deep-foundation/deeplinks/imports/package';
 
 /**
  * Represents a deep package
@@ -134,6 +137,13 @@ const webViewVersionValueLinkId = package.webViewVersionValue.idLocal();
   */
 
 export class Package extends BasePackage {
+
+  constructor(param: PackageConstructorParam) {
+    super({
+      ...param,
+      name: 'Device',
+    });
+  }
 
 
   /**
@@ -516,3 +526,5 @@ const webViewVersionValueLinkId = await package.webViewVersionValue.localId();
   public webViewVersionValue = this.createEntity("webViewVersionValue");
 
 }
+
+export type PackageConstructorParam = Omit<BasePackageConstructorParam, 'name'>;
