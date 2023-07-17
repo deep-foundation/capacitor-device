@@ -1,7 +1,7 @@
 
 import {
   Package as BasePackage,
-  PackageConstructorParam as BasePackageConstructorParam,
+  PackageOptions as BasePackageOptions,
 } from '@deep-foundation/deeplinks/imports/package';
 
 /**
@@ -21,57 +21,31 @@ const {name: packageName} = package;
 const package = new Package({deep});
 
 const batteryLevelValueLinkId = await package.batteryLevelValue.id();
-
 const BatteryLevelLinkId = await package.BatteryLevel.id();
-
 const languageTagValueLinkId = await package.languageTagValue.id();
-
 const LanguageTagLinkId = await package.LanguageTag.id();
-
 const IsChargingLinkId = await package.IsCharging.id();
-
 const manufacturerValueLinkId = await package.manufacturerValue.id();
-
 const ManufacturerLinkId = await package.Manufacturer.id();
-
 const languageCodeValueLinkId = await package.languageCodeValue.id();
-
 const LanguageCodeLinkId = await package.LanguageCode.id();
-
 const DeviceLinkId = await package.Device.id();
-
 const handleUpdateLinkId = await package.handleUpdate.id();
-
 const IdentifierLinkId = await package.Identifier.id();
-
 const identifierValueLinkId = await package.identifierValue.id();
-
 const deviceValueLinkId = await package.deviceValue.id();
-
 const NameLinkId = await package.Name.id();
-
 const nameValueLinkId = await package.nameValue.id();
-
 const OperatingSystemLinkId = await package.OperatingSystem.id();
-
 const operatingSystemValueLinkId = await package.operatingSystemValue.id();
-
 const OsVersionLinkId = await package.OsVersion.id();
-
 const osVersionValueLinkId = await package.osVersionValue.id();
-
 const IsVirtualLinkId = await package.IsVirtual.id();
-
 const PlatformLinkId = await package.Platform.id();
-
 const platformValueLinkId = await package.platformValue.id();
-
 const ModelLinkId = await package.Model.id();
-
 const modelValueLinkId = await package.modelValue.id();
-
 const WebViewVersionLinkId = await package.WebViewVersion.id();
-
 const webViewVersionValueLinkId = await package.webViewVersionValue.id();
 ```
   *
@@ -138,7 +112,7 @@ const webViewVersionValueLinkId = package.webViewVersionValue.idLocal();
 
 export class Package extends BasePackage {
 
-  constructor(param: PackageConstructorParam) {
+  constructor(param: PackageOptions) {
     super({
       ...param,
       name: 'Device',
@@ -527,4 +501,4 @@ const webViewVersionValueLinkId = await package.webViewVersionValue.localId();
 
 }
 
-export type PackageConstructorParam = Omit<BasePackageConstructorParam, 'name'>;
+export type PackageOptions = Omit<BasePackageOptions, 'name'>;
