@@ -4,7 +4,20 @@
 
 Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device). 
 
-[**Documentation**](https://deep-foundation.github.io/capacitor-device/) 
+**[Documentation]**
+
+## Prerequisitions
+- Install this package in your deep by using npm-packager
+- Provide permissions to this package
+
+## Quick Start
+
+1. Insert a link of type [`Device`] 
+2. Change its object value to the object with properties described in [Device Object Value](#md:device-object-value) and this update will be handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/classes/Package.html#UpdateHandler) to represent [`Device`] object value as links
+or  
+Insert a link of any type with a any name of the list described in [Device Object Value](#md:device-object-value) from [`Device`] link to the same [`Device`] link and set its value to the value of the corresponding property of the [`Device`] object value
+
+Note: You can use library of this package to do operations described above. Read about it in [Documentation]
 
 ## Device Object Value
 
@@ -12,19 +25,6 @@ The [`Device`] link can have object value.
 No one field is required. You can add any fields as you want.  Only the fields that are supported by this package will be represented as links   
 [Supported fields can be found in the `DeviceInfo` interface](https://deep-foundation.github.io/capacitor-device/types/DeviceInfo.html)  
 [Example of Device Object Value](https://deep-foundation.github.io/capacitor-device/types/DeviceInfo.html#md:device-info-example)
-
-## Prerequisitions
-- Install this package in your deep by using npm-packager
-- Provide permissions to this package
-
-## Usage
-
-1. Insert a link of type [`Device`] 
-2. Change its object value to the object with properties described in [Device Object Value](#md:device-object-value) and this update will be handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/classes/Package.html#UpdateHandler) to represent [`Device`] object value as links
-or  
-Insert a link of any type with a any name of the list described in [Device Object Value](#md:device-object-value) from [`Device`] link to the same [`Device`] link and set its value to the value of the corresponding property of the [`Device`] object value
-
-Note: You can use library of this package to do operations described above 
 
 ## Update Handling
 
@@ -35,3 +35,4 @@ Note: You can use library of this package to do operations described above
 Feel free to contribute. Please fork the repository and submit a pull request for any bugs, improvements, or features.
 
 [`Device`]: https://deep-foundation.github.io/capacitor-device/classes/Package.html#Device
+[Documentation]: https://deep-foundation.github.io/capacitor-device/
