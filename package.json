@@ -11,8 +11,8 @@
     "url": "https://github.com/deep-foundation/capacitor-device"
   },
   "scripts": {
-    "package:clean-build": "fse remove dist && npm run build",
-    "package:build": "npm run generate-package-class && tsc",
+    "clean-build": "fse remove dist && npm run build",
+    "build": "npm run generate-package-class && tsc",
     "npm-pull": "npm-pull",
     "npm-release": "npm-release",
     "generate-package-class": "generate-package-class"
@@ -40,7 +40,7 @@
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.7",
     "@capacitor/cli": "^5.0.0",
-    "@deep-foundation/npm-automation": "~10.0.11",
+    "@deep-foundation/npm-automation": "~10.0.12",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.2.4",
     "fs-extra": "^11.1.1",
