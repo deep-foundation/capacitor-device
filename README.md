@@ -4,8 +4,6 @@
 
 A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device) 
 
-**[Documentation]**
-
 ## Prerequisitions
 - Install this package in your deep by using npm-packager
 - Provide permissions to this package
