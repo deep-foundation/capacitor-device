@@ -30,7 +30,6 @@ jobs:
         fi
 
         npm run build
-        
       test-command: "echo 'Tests are temporarily disabled'"
       should-generate-documentation: true
       generate-documentation-command: |
