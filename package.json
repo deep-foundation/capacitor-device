@@ -5,7 +5,7 @@
     "deep-package"
   ],
   "version": "14.0.3",
-  "description": "A deep package that is based on @capacitor/device package",
+  "description": "A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device)",
   "repository": {
     "type": "git",
     "url": "https://github.com/deep-foundation/capacitor-device"

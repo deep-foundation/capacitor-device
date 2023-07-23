@@ -2,7 +2,7 @@
 [![Gitpod](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/deep-foundation/capacitor-device) 
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label&color=purple)](https://discord.gg/deep-foundation)
 
-Provides links based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device). 
+A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device) 
 
 **[Documentation]**
 
