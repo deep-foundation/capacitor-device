@@ -2,7 +2,12 @@
   "name": "@deep-foundation/capacitor-device",
   "type": "module",
   "keywords": [
-    "deep-package"
+    "deep-package",
+    "capacitor",
+    "device",
+    "capacitor-device",
+    "deep",
+    "deep-foundation"
   ],
   "version": "14.0.4",
   "description": "A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device)",
