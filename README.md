@@ -4,6 +4,10 @@
 
 A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device) 
 
+# Table Of Contents
+<!-- TABLE_OF_CONTENTS_START -->
+<!-- TABLE_OF_CONTENTS_END -->
+
 ## Prerequisitions
 - Install this package in your deep by using npm-packager
 - Provide permissions to this package
