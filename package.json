@@ -4,7 +4,7 @@
   "keywords": [
     "deep-package"
   ],
-  "version": "14.0.3",
+  "version": "14.0.4",
   "description": "A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device)",
   "repository": {
     "type": "git",
