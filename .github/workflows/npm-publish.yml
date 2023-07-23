@@ -18,5 +18,19 @@ jobs:
       build-command: "npm run build"
       test-command: "echo 'Tests are temporarily disabled'"
       should-generate-documentation: true
-      generate-documentation-command: npx --yes typedoc ./src/main.ts 
+      generate-documentation-command: |
+        git config --global user.name 'FreePhoenix888'
+        git config --global user.email 'freephoenix888@gmail.com'
+        
+        npx --yes --package @deep-foundation/npm-automation generate-package-class
+        git add ./src/package.ts
+        if git diff --staged --quiet
+        then
+          echo "No changes to commit"
+        else
+          git commit -m 'docs: update ./src/package.ts'
+          git push origin main
+        fi
+
+        npx --yes typedoc ./src/main.ts 
         
