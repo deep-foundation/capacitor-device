@@ -19,65 +19,66 @@ const {name: packageName} = package;
 #### Use id method to get the id of the link
 ```ts
 const package = new Package({deep});
-const batteryLevelValueLinkId = await package.batteryLevelValue.id();
-const batteryLevelTypeLinkId = await package.BatteryLevel.id();
-const languageTagValueLinkId = await package.languageTagValue.id();
-const languageTagTypeLinkId = await package.LanguageTag.id();
-const isChargingTypeLinkId = await package.IsCharging.id();
-const manufacturerValueLinkId = await package.manufacturerValue.id();
-const manufacturerTypeLinkId = await package.Manufacturer.id();
-const languageCodeValueLinkId = await package.languageCodeValue.id();
-const languageCodeTypeLinkId = await package.LanguageCode.id();
-const deviceTypeLinkId = await package.Device.id();
-const handleUpdateLinkId = await package.handleUpdate.id();
-const identifierTypeLinkId = await package.Identifier.id();
-const identifierValueLinkId = await package.identifierValue.id();
-const deviceValueLinkId = await package.deviceValue.id();
-const nameTypeLinkId = await package.Name.id();
-const nameValueLinkId = await package.nameValue.id();
-const operatingSystemTypeLinkId = await package.OperatingSystem.id();
-const operatingSystemValueLinkId = await package.operatingSystemValue.id();
-const osVersionTypeLinkId = await package.OsVersion.id();
-const osVersionValueLinkId = await package.osVersionValue.id();
-const isVirtualTypeLinkId = await package.IsVirtual.id();
-const platformTypeLinkId = await package.Platform.id();
-const platformValueLinkId = await package.platformValue.id();
-const modelTypeLinkId = await package.Model.id();
-const modelValueLinkId = await package.modelValue.id();
-const webViewVersionTypeLinkId = await package.WebViewVersion.id();
-const webViewVersionValueLinkId = await package.webViewVersionValue.id();
+const batteryLevelValueLinkId = await package["batteryLevelValue"].id();
+const batteryLevelTypeLinkId = await package["BatteryLevel"].id();
+const languageTagValueLinkId = await package["languageTagValue"].id();
+const languageTagTypeLinkId = await package["LanguageTag"].id();
+const isChargingTypeLinkId = await package["IsCharging"].id();
+const manufacturerValueLinkId = await package["manufacturerValue"].id();
+const manufacturerTypeLinkId = await package["Manufacturer"].id();
+const languageCodeValueLinkId = await package["languageCodeValue"].id();
+const languageCodeTypeLinkId = await package["LanguageCode"].id();
+const deviceTypeLinkId = await package["Device"].id();
+const handleUpdateLinkId = await package["handleUpdate"].id();
+const identifierTypeLinkId = await package["Identifier"].id();
+const identifierValueLinkId = await package["identifierValue"].id();
+const deviceValueLinkId = await package["deviceValue"].id();
+const nameTypeLinkId = await package["Name"].id();
+const nameValueLinkId = await package["nameValue"].id();
+const operatingSystemTypeLinkId = await package["OperatingSystem"].id();
+const operatingSystemValueLinkId = await package["operatingSystemValue"].id();
+const osVersionTypeLinkId = await package["OsVersion"].id();
+const osVersionValueLinkId = await package["osVersionValue"].id();
+const isVirtualTypeLinkId = await package["IsVirtual"].id();
+const platformTypeLinkId = await package["Platform"].id();
+const platformValueLinkId = await package["platformValue"].id();
+const modelTypeLinkId = await package["Model"].id();
+const modelValueLinkId = await package["modelValue"].id();
+const webViewVersionTypeLinkId = await package["WebViewVersion"].id();
+const webViewVersionValueLinkId = await package["webViewVersionValue"].id();
 ```
 
 #### Use idLocal method to get the local id of the link
 ```ts
 const package = new Package({deep});
-const batteryLevelValueLinkId = package.batteryLevelValue.idLocal();
-const batteryLevelTypeLinkId = package.BatteryLevel.idLocal();
-const languageTagValueLinkId = package.languageTagValue.idLocal();
-const languageTagTypeLinkId = package.LanguageTag.idLocal();
-const isChargingTypeLinkId = package.IsCharging.idLocal();
-const manufacturerValueLinkId = package.manufacturerValue.idLocal();
-const manufacturerTypeLinkId = package.Manufacturer.idLocal();
-const languageCodeValueLinkId = package.languageCodeValue.idLocal();
-const languageCodeTypeLinkId = package.LanguageCode.idLocal();
-const deviceTypeLinkId = package.Device.idLocal();
-const handleUpdateLinkId = package.handleUpdate.idLocal();
-const identifierTypeLinkId = package.Identifier.idLocal();
-const identifierValueLinkId = package.identifierValue.idLocal();
-const deviceValueLinkId = package.deviceValue.idLocal();
-const nameTypeLinkId = package.Name.idLocal();
-const nameValueLinkId = package.nameValue.idLocal();
-const operatingSystemTypeLinkId = package.OperatingSystem.idLocal();
-const operatingSystemValueLinkId = package.operatingSystemValue.idLocal();
-const osVersionTypeLinkId = package.OsVersion.idLocal();
-const osVersionValueLinkId = package.osVersionValue.idLocal();
-const isVirtualTypeLinkId = package.IsVirtual.idLocal();
-const platformTypeLinkId = package.Platform.idLocal();
-const platformValueLinkId = package.platformValue.idLocal();
-const modelTypeLinkId = package.Model.idLocal();
-const modelValueLinkId = package.modelValue.idLocal();
-const webViewVersionTypeLinkId = package.WebViewVersion.idLocal();
-const webViewVersionValueLinkId = package.webViewVersionValue.idLocal();
+await package.applyMinilinks();
+const batteryLevelValueLinkId = package["batteryLevelValue"].idLocal();
+const batteryLevelTypeLinkId = package["BatteryLevel"].idLocal();
+const languageTagValueLinkId = package["languageTagValue"].idLocal();
+const languageTagTypeLinkId = package["LanguageTag"].idLocal();
+const isChargingTypeLinkId = package["IsCharging"].idLocal();
+const manufacturerValueLinkId = package["manufacturerValue"].idLocal();
+const manufacturerTypeLinkId = package["Manufacturer"].idLocal();
+const languageCodeValueLinkId = package["languageCodeValue"].idLocal();
+const languageCodeTypeLinkId = package["LanguageCode"].idLocal();
+const deviceTypeLinkId = package["Device"].idLocal();
+const handleUpdateLinkId = package["handleUpdate"].idLocal();
+const identifierTypeLinkId = package["Identifier"].idLocal();
+const identifierValueLinkId = package["identifierValue"].idLocal();
+const deviceValueLinkId = package["deviceValue"].idLocal();
+const nameTypeLinkId = package["Name"].idLocal();
+const nameValueLinkId = package["nameValue"].idLocal();
+const operatingSystemTypeLinkId = package["OperatingSystem"].idLocal();
+const operatingSystemValueLinkId = package["operatingSystemValue"].idLocal();
+const osVersionTypeLinkId = package["OsVersion"].idLocal();
+const osVersionValueLinkId = package["osVersionValue"].idLocal();
+const isVirtualTypeLinkId = package["IsVirtual"].idLocal();
+const platformTypeLinkId = package["Platform"].idLocal();
+const platformValueLinkId = package["platformValue"].idLocal();
+const modelTypeLinkId = package["Model"].idLocal();
+const modelValueLinkId = package["modelValue"].idLocal();
+const webViewVersionTypeLinkId = package["WebViewVersion"].idLocal();
+const webViewVersionValueLinkId = package["webViewVersionValue"].idLocal();
 ```
 */
 export class Package extends BasePackage {
@@ -95,379 +96,379 @@ export class Package extends BasePackage {
       #### Use id method to get the id of the batteryLevelValue link
       ```ts
       const package = new Package({deep});
-      const batteryLevelValueLinkId = await package.batteryLevelValue.id();
+      const batteryLevelValueLinkId = await package["batteryLevelValue"].id();
       ```
       #### Use localId method to get the local id of the batteryLevelValue link
       ```ts
       const package = new Package({deep});
-      const batteryLevelValueLinkId = await package.batteryLevelValue.localId();
+      const batteryLevelValueLinkId = await package["batteryLevelValue"].localId();
       ```
       */
-      public batteryLevelValue = this.createEntity("batteryLevelValue");
+      public "batteryLevelValue" = this.createEntity("batteryLevelValue");
       /**
       @example
       #### Use id method to get the id of the BatteryLevel link
       ```ts
       const package = new Package({deep});
-      const batteryLevelTypeLinkId = await package.BatteryLevel.id();
+      const batteryLevelTypeLinkId = await package["BatteryLevel"].id();
       ```
       #### Use localId method to get the local id of the BatteryLevel link
       ```ts
       const package = new Package({deep});
-      const batteryLevelTypeLinkId = await package.BatteryLevel.localId();
+      const batteryLevelTypeLinkId = await package["BatteryLevel"].localId();
       ```
       */
-      public BatteryLevel = this.createEntity("BatteryLevel");
+      public "BatteryLevel" = this.createEntity("BatteryLevel");
       /**
       @example
       #### Use id method to get the id of the languageTagValue link
       ```ts
       const package = new Package({deep});
-      const languageTagValueLinkId = await package.languageTagValue.id();
+      const languageTagValueLinkId = await package["languageTagValue"].id();
       ```
       #### Use localId method to get the local id of the languageTagValue link
       ```ts
       const package = new Package({deep});
-      const languageTagValueLinkId = await package.languageTagValue.localId();
+      const languageTagValueLinkId = await package["languageTagValue"].localId();
       ```
       */
-      public languageTagValue = this.createEntity("languageTagValue");
+      public "languageTagValue" = this.createEntity("languageTagValue");
       /**
       @example
       #### Use id method to get the id of the LanguageTag link
       ```ts
       const package = new Package({deep});
-      const languageTagTypeLinkId = await package.LanguageTag.id();
+      const languageTagTypeLinkId = await package["LanguageTag"].id();
       ```
       #### Use localId method to get the local id of the LanguageTag link
       ```ts
       const package = new Package({deep});
-      const languageTagTypeLinkId = await package.LanguageTag.localId();
+      const languageTagTypeLinkId = await package["LanguageTag"].localId();
       ```
       */
-      public LanguageTag = this.createEntity("LanguageTag");
+      public "LanguageTag" = this.createEntity("LanguageTag");
       /**
       @example
       #### Use id method to get the id of the IsCharging link
       ```ts
       const package = new Package({deep});
-      const isChargingTypeLinkId = await package.IsCharging.id();
+      const isChargingTypeLinkId = await package["IsCharging"].id();
       ```
       #### Use localId method to get the local id of the IsCharging link
       ```ts
       const package = new Package({deep});
-      const isChargingTypeLinkId = await package.IsCharging.localId();
+      const isChargingTypeLinkId = await package["IsCharging"].localId();
       ```
       */
-      public IsCharging = this.createEntity("IsCharging");
+      public "IsCharging" = this.createEntity("IsCharging");
       /**
       @example
       #### Use id method to get the id of the manufacturerValue link
       ```ts
       const package = new Package({deep});
-      const manufacturerValueLinkId = await package.manufacturerValue.id();
+      const manufacturerValueLinkId = await package["manufacturerValue"].id();
       ```
       #### Use localId method to get the local id of the manufacturerValue link
       ```ts
       const package = new Package({deep});
-      const manufacturerValueLinkId = await package.manufacturerValue.localId();
+      const manufacturerValueLinkId = await package["manufacturerValue"].localId();
       ```
       */
-      public manufacturerValue = this.createEntity("manufacturerValue");
+      public "manufacturerValue" = this.createEntity("manufacturerValue");
       /**
       @example
       #### Use id method to get the id of the Manufacturer link
       ```ts
       const package = new Package({deep});
-      const manufacturerTypeLinkId = await package.Manufacturer.id();
+      const manufacturerTypeLinkId = await package["Manufacturer"].id();
       ```
       #### Use localId method to get the local id of the Manufacturer link
       ```ts
       const package = new Package({deep});
-      const manufacturerTypeLinkId = await package.Manufacturer.localId();
+      const manufacturerTypeLinkId = await package["Manufacturer"].localId();
       ```
       */
-      public Manufacturer = this.createEntity("Manufacturer");
+      public "Manufacturer" = this.createEntity("Manufacturer");
       /**
       @example
       #### Use id method to get the id of the languageCodeValue link
       ```ts
       const package = new Package({deep});
-      const languageCodeValueLinkId = await package.languageCodeValue.id();
+      const languageCodeValueLinkId = await package["languageCodeValue"].id();
       ```
       #### Use localId method to get the local id of the languageCodeValue link
       ```ts
       const package = new Package({deep});
-      const languageCodeValueLinkId = await package.languageCodeValue.localId();
+      const languageCodeValueLinkId = await package["languageCodeValue"].localId();
       ```
       */
-      public languageCodeValue = this.createEntity("languageCodeValue");
+      public "languageCodeValue" = this.createEntity("languageCodeValue");
       /**
       @example
       #### Use id method to get the id of the LanguageCode link
       ```ts
       const package = new Package({deep});
-      const languageCodeTypeLinkId = await package.LanguageCode.id();
+      const languageCodeTypeLinkId = await package["LanguageCode"].id();
       ```
       #### Use localId method to get the local id of the LanguageCode link
       ```ts
       const package = new Package({deep});
-      const languageCodeTypeLinkId = await package.LanguageCode.localId();
+      const languageCodeTypeLinkId = await package["LanguageCode"].localId();
       ```
       */
-      public LanguageCode = this.createEntity("LanguageCode");
+      public "LanguageCode" = this.createEntity("LanguageCode");
       /**
       @example
       #### Use id method to get the id of the Device link
       ```ts
       const package = new Package({deep});
-      const deviceTypeLinkId = await package.Device.id();
+      const deviceTypeLinkId = await package["Device"].id();
       ```
       #### Use localId method to get the local id of the Device link
       ```ts
       const package = new Package({deep});
-      const deviceTypeLinkId = await package.Device.localId();
+      const deviceTypeLinkId = await package["Device"].localId();
       ```
       */
-      public Device = this.createEntity("Device");
+      public "Device" = this.createEntity("Device");
       /**
       @example
       #### Use id method to get the id of the handleUpdate link
       ```ts
       const package = new Package({deep});
-      const handleUpdateLinkId = await package.handleUpdate.id();
+      const handleUpdateLinkId = await package["handleUpdate"].id();
       ```
       #### Use localId method to get the local id of the handleUpdate link
       ```ts
       const package = new Package({deep});
-      const handleUpdateLinkId = await package.handleUpdate.localId();
+      const handleUpdateLinkId = await package["handleUpdate"].localId();
       ```
       */
-      public handleUpdate = this.createEntity("handleUpdate");
+      public "handleUpdate" = this.createEntity("handleUpdate");
       /**
       @example
       #### Use id method to get the id of the Identifier link
       ```ts
       const package = new Package({deep});
-      const identifierTypeLinkId = await package.Identifier.id();
+      const identifierTypeLinkId = await package["Identifier"].id();
       ```
       #### Use localId method to get the local id of the Identifier link
       ```ts
       const package = new Package({deep});
-      const identifierTypeLinkId = await package.Identifier.localId();
+      const identifierTypeLinkId = await package["Identifier"].localId();
       ```
       */
-      public Identifier = this.createEntity("Identifier");
+      public "Identifier" = this.createEntity("Identifier");
       /**
       @example
       #### Use id method to get the id of the identifierValue link
       ```ts
       const package = new Package({deep});
-      const identifierValueLinkId = await package.identifierValue.id();
+      const identifierValueLinkId = await package["identifierValue"].id();
       ```
       #### Use localId method to get the local id of the identifierValue link
       ```ts
       const package = new Package({deep});
-      const identifierValueLinkId = await package.identifierValue.localId();
+      const identifierValueLinkId = await package["identifierValue"].localId();
       ```
       */
-      public identifierValue = this.createEntity("identifierValue");
+      public "identifierValue" = this.createEntity("identifierValue");
       /**
       @example
       #### Use id method to get the id of the deviceValue link
       ```ts
       const package = new Package({deep});
-      const deviceValueLinkId = await package.deviceValue.id();
+      const deviceValueLinkId = await package["deviceValue"].id();
       ```
       #### Use localId method to get the local id of the deviceValue link
       ```ts
       const package = new Package({deep});
-      const deviceValueLinkId = await package.deviceValue.localId();
+      const deviceValueLinkId = await package["deviceValue"].localId();
       ```
       */
-      public deviceValue = this.createEntity("deviceValue");
+      public "deviceValue" = this.createEntity("deviceValue");
       /**
       @example
       #### Use id method to get the id of the Name link
       ```ts
       const package = new Package({deep});
-      const nameTypeLinkId = await package.Name.id();
+      const nameTypeLinkId = await package["Name"].id();
       ```
       #### Use localId method to get the local id of the Name link
       ```ts
       const package = new Package({deep});
-      const nameTypeLinkId = await package.Name.localId();
+      const nameTypeLinkId = await package["Name"].localId();
       ```
       */
-      public Name = this.createEntity("Name");
+      public "Name" = this.createEntity("Name");
       /**
       @example
       #### Use id method to get the id of the nameValue link
       ```ts
       const package = new Package({deep});
-      const nameValueLinkId = await package.nameValue.id();
+      const nameValueLinkId = await package["nameValue"].id();
       ```
       #### Use localId method to get the local id of the nameValue link
       ```ts
       const package = new Package({deep});
-      const nameValueLinkId = await package.nameValue.localId();
+      const nameValueLinkId = await package["nameValue"].localId();
       ```
       */
-      public nameValue = this.createEntity("nameValue");
+      public "nameValue" = this.createEntity("nameValue");
       /**
       @example
       #### Use id method to get the id of the OperatingSystem link
       ```ts
       const package = new Package({deep});
-      const operatingSystemTypeLinkId = await package.OperatingSystem.id();
+      const operatingSystemTypeLinkId = await package["OperatingSystem"].id();
       ```
       #### Use localId method to get the local id of the OperatingSystem link
       ```ts
       const package = new Package({deep});
-      const operatingSystemTypeLinkId = await package.OperatingSystem.localId();
+      const operatingSystemTypeLinkId = await package["OperatingSystem"].localId();
       ```
       */
-      public OperatingSystem = this.createEntity("OperatingSystem");
+      public "OperatingSystem" = this.createEntity("OperatingSystem");
       /**
       @example
       #### Use id method to get the id of the operatingSystemValue link
       ```ts
       const package = new Package({deep});
-      const operatingSystemValueLinkId = await package.operatingSystemValue.id();
+      const operatingSystemValueLinkId = await package["operatingSystemValue"].id();
       ```
       #### Use localId method to get the local id of the operatingSystemValue link
       ```ts
       const package = new Package({deep});
-      const operatingSystemValueLinkId = await package.operatingSystemValue.localId();
+      const operatingSystemValueLinkId = await package["operatingSystemValue"].localId();
       ```
       */
-      public operatingSystemValue = this.createEntity("operatingSystemValue");
+      public "operatingSystemValue" = this.createEntity("operatingSystemValue");
       /**
       @example
       #### Use id method to get the id of the OsVersion link
       ```ts
       const package = new Package({deep});
-      const osVersionTypeLinkId = await package.OsVersion.id();
+      const osVersionTypeLinkId = await package["OsVersion"].id();
       ```
       #### Use localId method to get the local id of the OsVersion link
       ```ts
       const package = new Package({deep});
-      const osVersionTypeLinkId = await package.OsVersion.localId();
+      const osVersionTypeLinkId = await package["OsVersion"].localId();
       ```
       */
-      public OsVersion = this.createEntity("OsVersion");
+      public "OsVersion" = this.createEntity("OsVersion");
       /**
       @example
       #### Use id method to get the id of the osVersionValue link
       ```ts
       const package = new Package({deep});
-      const osVersionValueLinkId = await package.osVersionValue.id();
+      const osVersionValueLinkId = await package["osVersionValue"].id();
       ```
       #### Use localId method to get the local id of the osVersionValue link
       ```ts
       const package = new Package({deep});
-      const osVersionValueLinkId = await package.osVersionValue.localId();
+      const osVersionValueLinkId = await package["osVersionValue"].localId();
       ```
       */
-      public osVersionValue = this.createEntity("osVersionValue");
+      public "osVersionValue" = this.createEntity("osVersionValue");
       /**
       @example
       #### Use id method to get the id of the IsVirtual link
       ```ts
       const package = new Package({deep});
-      const isVirtualTypeLinkId = await package.IsVirtual.id();
+      const isVirtualTypeLinkId = await package["IsVirtual"].id();
       ```
       #### Use localId method to get the local id of the IsVirtual link
       ```ts
       const package = new Package({deep});
-      const isVirtualTypeLinkId = await package.IsVirtual.localId();
+      const isVirtualTypeLinkId = await package["IsVirtual"].localId();
       ```
       */
-      public IsVirtual = this.createEntity("IsVirtual");
+      public "IsVirtual" = this.createEntity("IsVirtual");
       /**
       @example
       #### Use id method to get the id of the Platform link
       ```ts
       const package = new Package({deep});
-      const platformTypeLinkId = await package.Platform.id();
+      const platformTypeLinkId = await package["Platform"].id();
       ```
       #### Use localId method to get the local id of the Platform link
       ```ts
       const package = new Package({deep});
-      const platformTypeLinkId = await package.Platform.localId();
+      const platformTypeLinkId = await package["Platform"].localId();
       ```
       */
-      public Platform = this.createEntity("Platform");
+      public "Platform" = this.createEntity("Platform");
       /**
       @example
       #### Use id method to get the id of the platformValue link
       ```ts
       const package = new Package({deep});
-      const platformValueLinkId = await package.platformValue.id();
+      const platformValueLinkId = await package["platformValue"].id();
       ```
       #### Use localId method to get the local id of the platformValue link
       ```ts
       const package = new Package({deep});
-      const platformValueLinkId = await package.platformValue.localId();
+      const platformValueLinkId = await package["platformValue"].localId();
       ```
       */
-      public platformValue = this.createEntity("platformValue");
+      public "platformValue" = this.createEntity("platformValue");
       /**
       @example
       #### Use id method to get the id of the Model link
       ```ts
       const package = new Package({deep});
-      const modelTypeLinkId = await package.Model.id();
+      const modelTypeLinkId = await package["Model"].id();
       ```
       #### Use localId method to get the local id of the Model link
       ```ts
       const package = new Package({deep});
-      const modelTypeLinkId = await package.Model.localId();
+      const modelTypeLinkId = await package["Model"].localId();
       ```
       */
-      public Model = this.createEntity("Model");
+      public "Model" = this.createEntity("Model");
       /**
       @example
       #### Use id method to get the id of the modelValue link
       ```ts
       const package = new Package({deep});
-      const modelValueLinkId = await package.modelValue.id();
+      const modelValueLinkId = await package["modelValue"].id();
       ```
       #### Use localId method to get the local id of the modelValue link
       ```ts
       const package = new Package({deep});
-      const modelValueLinkId = await package.modelValue.localId();
+      const modelValueLinkId = await package["modelValue"].localId();
       ```
       */
-      public modelValue = this.createEntity("modelValue");
+      public "modelValue" = this.createEntity("modelValue");
       /**
       @example
       #### Use id method to get the id of the WebViewVersion link
       ```ts
       const package = new Package({deep});
-      const webViewVersionTypeLinkId = await package.WebViewVersion.id();
+      const webViewVersionTypeLinkId = await package["WebViewVersion"].id();
       ```
       #### Use localId method to get the local id of the WebViewVersion link
       ```ts
       const package = new Package({deep});
-      const webViewVersionTypeLinkId = await package.WebViewVersion.localId();
+      const webViewVersionTypeLinkId = await package["WebViewVersion"].localId();
       ```
       */
-      public WebViewVersion = this.createEntity("WebViewVersion");
+      public "WebViewVersion" = this.createEntity("WebViewVersion");
       /**
       @example
       #### Use id method to get the id of the webViewVersionValue link
       ```ts
       const package = new Package({deep});
-      const webViewVersionValueLinkId = await package.webViewVersionValue.id();
+      const webViewVersionValueLinkId = await package["webViewVersionValue"].id();
       ```
       #### Use localId method to get the local id of the webViewVersionValue link
       ```ts
       const package = new Package({deep});
-      const webViewVersionValueLinkId = await package.webViewVersionValue.localId();
+      const webViewVersionValueLinkId = await package["webViewVersionValue"].localId();
       ```
       */
-      public webViewVersionValue = this.createEntity("webViewVersionValue");
+      public "webViewVersionValue" = this.createEntity("webViewVersionValue");
 
 }
 
