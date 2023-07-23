@@ -19,7 +19,7 @@ jobs:
         git config --global user.name 'FreePhoenix888'
         git config --global user.email 'freephoenix888@gmail.com'
 
-        npx --yes --package @deep-foundation/npm-automation generate-package-class
+        npx --yes --package @deep-foundation/npm-automation@10.0.18 generate-package-class
         git add ./src/package.ts
         if git diff --staged --quiet
         then
@@ -37,7 +37,7 @@ jobs:
         git config --global user.name 'FreePhoenix888'
         git config --global user.email 'freephoenix888@gmail.com'
 
-        table_of_contents=$(npx markdown-toc README.md)
+        table_of_contents=$(npx markdown-toc@1.2.0 README.md)
         pattern="(<!-- TABLE_OF_CONTENTS_START -->)[\\S\\s]*(<!-- TABLE_OF_CONTENTS_END -->)"
         replacement=$'$1\n'"${table_of_contents}"$'\n$2'
         npx replace "$pattern" "$replacement" README.md
@@ -51,5 +51,5 @@ jobs:
           git push origin main
         fi
 
-        npx --yes typedoc ./src/main.ts 
+        npx --yes typedoc@0.24.8 ./src/main.ts 
         
