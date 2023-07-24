@@ -16,10 +16,11 @@ jobs:
       npm-token: ${{ secrets.NPM_TOKEN }}
     with:
       build-command: |
+        npm run build
+
         git config --global user.name 'FreePhoenix888'
         git config --global user.email 'freephoenix888@gmail.com'
 
-        npm run generate-package-class
         git add ./src/package.ts
         if git diff --staged --quiet
         then
@@ -28,8 +29,6 @@ jobs:
           git commit -m 'Generate new package class'
           git push origin main
         fi
-
-        npm run build
       test-command: "echo 'Tests are temporarily disabled'"
       should-generate-documentation: true
       generate-documentation-command: |
