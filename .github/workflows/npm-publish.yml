@@ -19,7 +19,7 @@ jobs:
         git config --global user.name 'FreePhoenix888'
         git config --global user.email 'freephoenix888@gmail.com'
 
-        npx --yes --package @deep-foundation/npm-automation@10.0.18 generate-package-class
+        npm run generate-package-class
         git add ./src/package.ts
         if git diff --staged --quiet
         then
