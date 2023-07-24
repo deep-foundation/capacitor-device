@@ -21,7 +21,7 @@
     "npm-pull": "npm-pull",
     "npm-release": "npm-release",
     "generate-package-class": "generate-package-class",
-    "generate-table-of-contents-in-readme": "markdown-toc README.md",
+    "documentation:generate-table-of-contents-in-readme": "markdown-toc README.md",
     "library:generate-documentation": "typedoc ./src/main.ts"
   },
   "main": "dist/main.js",
