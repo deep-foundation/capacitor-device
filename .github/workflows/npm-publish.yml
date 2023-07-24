@@ -49,5 +49,5 @@ jobs:
           git push origin main
         fi
 
-        npx --yes typedoc@0.24.8 ./src/main.ts 
+        npm run library:generate-documentation 
         
