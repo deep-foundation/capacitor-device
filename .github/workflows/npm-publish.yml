@@ -36,7 +36,7 @@ jobs:
         git config --global user.name 'FreePhoenix888'
         git config --global user.email 'freephoenix888@gmail.com'
 
-        table_of_contents=$(npx markdown-toc@1.2.0 README.md)
+        table_of_contents=$(npm run generate-table-of-contents-in-readme)
         pattern="(<!-- TABLE_OF_CONTENTS_START -->)[\\S\\s]*(<!-- TABLE_OF_CONTENTS_END -->)"
         replacement=$'$1\n'"${table_of_contents}"$'\n$2'
         npx replace "$pattern" "$replacement" README.md
