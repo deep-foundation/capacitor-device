@@ -20,7 +20,8 @@
     "build": "npm run generate-package-class && tsc",
     "npm-pull": "npm-pull",
     "npm-release": "npm-release",
-    "generate-package-class": "generate-package-class"
+    "generate-package-class": "generate-package-class",
+    "generate-table-of-contents-in-readme": "markdown-toc README.md"
   },
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
