@@ -1,5 +1,4 @@
 import {execa} from 'execa';
-import fs from 'fs-extra';
 import replaceInFile from 'replace-in-file';
 
 const generateDocumentation = async () => {
