@@ -9,7 +9,7 @@
     "deep",
     "deep-foundation"
   ],
-  "version": "14.0.8",
+  "version": "14.0.9",
   "description": "A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device)",
   "repository": {
     "type": "git",
