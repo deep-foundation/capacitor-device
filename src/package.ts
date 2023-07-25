@@ -80,6 +80,37 @@ const modelValueLinkId = package["modelValue"].idLocal();
 const webViewVersionTypeLinkId = package["WebViewVersion"].idLocal();
 const webViewVersionValueLinkId = package["webViewVersionValue"].idLocal();
 ```
+#### Use name field to get the name of the link
+```ts
+const package = new Package({deep});
+const batteryLevelValue = package["batteryLevelValue"].name;
+const batteryLevel = package["BatteryLevel"].name;
+const languageTagValue = package["languageTagValue"].name;
+const languageTag = package["LanguageTag"].name;
+const isCharging = package["IsCharging"].name;
+const manufacturerValue = package["manufacturerValue"].name;
+const manufacturer = package["Manufacturer"].name;
+const languageCodeValue = package["languageCodeValue"].name;
+const languageCode = package["LanguageCode"].name;
+const device = package["Device"].name;
+const handleUpdate = package["handleUpdate"].name;
+const identifier = package["Identifier"].name;
+const identifierValue = package["identifierValue"].name;
+const deviceValue = package["deviceValue"].name;
+const name = package["Name"].name;
+const nameValue = package["nameValue"].name;
+const operatingSystem = package["OperatingSystem"].name;
+const operatingSystemValue = package["operatingSystemValue"].name;
+const osVersion = package["OsVersion"].name;
+const osVersionValue = package["osVersionValue"].name;
+const isVirtual = package["IsVirtual"].name;
+const platform = package["Platform"].name;
+const platformValue = package["platformValue"].name;
+const model = package["Model"].name;
+const modelValue = package["modelValue"].name;
+const webViewVersion = package["WebViewVersion"].name;
+const webViewVersionValue = package["webViewVersionValue"].name;
+```
 */
 export class Package extends BasePackage {
 
@@ -103,6 +134,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const batteryLevelValueLinkId = await package["batteryLevelValue"].localId();
       ```
+      #### Use name field to get the name of the batteryLevelValue link
+      ```ts
+      const package = new Package({deep});
+      const batteryLevelValue = await package["batteryLevelValue"].name;
+      ```
       */
       public "batteryLevelValue" = this.createEntity("batteryLevelValue");
       /**
@@ -116,6 +152,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const batteryLevelTypeLinkId = await package["BatteryLevel"].localId();
+      ```
+      #### Use name field to get the name of the BatteryLevel link
+      ```ts
+      const package = new Package({deep});
+      const batteryLevel = await package["BatteryLevel"].name;
       ```
       */
       public "BatteryLevel" = this.createEntity("BatteryLevel");
@@ -131,6 +172,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const languageTagValueLinkId = await package["languageTagValue"].localId();
       ```
+      #### Use name field to get the name of the languageTagValue link
+      ```ts
+      const package = new Package({deep});
+      const languageTagValue = await package["languageTagValue"].name;
+      ```
       */
       public "languageTagValue" = this.createEntity("languageTagValue");
       /**
@@ -144,6 +190,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const languageTagTypeLinkId = await package["LanguageTag"].localId();
+      ```
+      #### Use name field to get the name of the LanguageTag link
+      ```ts
+      const package = new Package({deep});
+      const languageTag = await package["LanguageTag"].name;
       ```
       */
       public "LanguageTag" = this.createEntity("LanguageTag");
@@ -159,6 +210,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const isChargingTypeLinkId = await package["IsCharging"].localId();
       ```
+      #### Use name field to get the name of the IsCharging link
+      ```ts
+      const package = new Package({deep});
+      const isCharging = await package["IsCharging"].name;
+      ```
       */
       public "IsCharging" = this.createEntity("IsCharging");
       /**
@@ -172,6 +228,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const manufacturerValueLinkId = await package["manufacturerValue"].localId();
+      ```
+      #### Use name field to get the name of the manufacturerValue link
+      ```ts
+      const package = new Package({deep});
+      const manufacturerValue = await package["manufacturerValue"].name;
       ```
       */
       public "manufacturerValue" = this.createEntity("manufacturerValue");
@@ -187,6 +248,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const manufacturerTypeLinkId = await package["Manufacturer"].localId();
       ```
+      #### Use name field to get the name of the Manufacturer link
+      ```ts
+      const package = new Package({deep});
+      const manufacturer = await package["Manufacturer"].name;
+      ```
       */
       public "Manufacturer" = this.createEntity("Manufacturer");
       /**
@@ -200,6 +266,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const languageCodeValueLinkId = await package["languageCodeValue"].localId();
+      ```
+      #### Use name field to get the name of the languageCodeValue link
+      ```ts
+      const package = new Package({deep});
+      const languageCodeValue = await package["languageCodeValue"].name;
       ```
       */
       public "languageCodeValue" = this.createEntity("languageCodeValue");
@@ -215,6 +286,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const languageCodeTypeLinkId = await package["LanguageCode"].localId();
       ```
+      #### Use name field to get the name of the LanguageCode link
+      ```ts
+      const package = new Package({deep});
+      const languageCode = await package["LanguageCode"].name;
+      ```
       */
       public "LanguageCode" = this.createEntity("LanguageCode");
       /**
@@ -228,6 +304,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const deviceTypeLinkId = await package["Device"].localId();
+      ```
+      #### Use name field to get the name of the Device link
+      ```ts
+      const package = new Package({deep});
+      const device = await package["Device"].name;
       ```
       */
       public "Device" = this.createEntity("Device");
@@ -243,6 +324,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const handleUpdateLinkId = await package["handleUpdate"].localId();
       ```
+      #### Use name field to get the name of the handleUpdate link
+      ```ts
+      const package = new Package({deep});
+      const handleUpdate = await package["handleUpdate"].name;
+      ```
       */
       public "handleUpdate" = this.createEntity("handleUpdate");
       /**
@@ -256,6 +342,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const identifierTypeLinkId = await package["Identifier"].localId();
+      ```
+      #### Use name field to get the name of the Identifier link
+      ```ts
+      const package = new Package({deep});
+      const identifier = await package["Identifier"].name;
       ```
       */
       public "Identifier" = this.createEntity("Identifier");
@@ -271,6 +362,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const identifierValueLinkId = await package["identifierValue"].localId();
       ```
+      #### Use name field to get the name of the identifierValue link
+      ```ts
+      const package = new Package({deep});
+      const identifierValue = await package["identifierValue"].name;
+      ```
       */
       public "identifierValue" = this.createEntity("identifierValue");
       /**
@@ -284,6 +380,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const deviceValueLinkId = await package["deviceValue"].localId();
+      ```
+      #### Use name field to get the name of the deviceValue link
+      ```ts
+      const package = new Package({deep});
+      const deviceValue = await package["deviceValue"].name;
       ```
       */
       public "deviceValue" = this.createEntity("deviceValue");
@@ -299,6 +400,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const nameTypeLinkId = await package["Name"].localId();
       ```
+      #### Use name field to get the name of the Name link
+      ```ts
+      const package = new Package({deep});
+      const name = await package["Name"].name;
+      ```
       */
       public "Name" = this.createEntity("Name");
       /**
@@ -312,6 +418,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const nameValueLinkId = await package["nameValue"].localId();
+      ```
+      #### Use name field to get the name of the nameValue link
+      ```ts
+      const package = new Package({deep});
+      const nameValue = await package["nameValue"].name;
       ```
       */
       public "nameValue" = this.createEntity("nameValue");
@@ -327,6 +438,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const operatingSystemTypeLinkId = await package["OperatingSystem"].localId();
       ```
+      #### Use name field to get the name of the OperatingSystem link
+      ```ts
+      const package = new Package({deep});
+      const operatingSystem = await package["OperatingSystem"].name;
+      ```
       */
       public "OperatingSystem" = this.createEntity("OperatingSystem");
       /**
@@ -340,6 +456,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const operatingSystemValueLinkId = await package["operatingSystemValue"].localId();
+      ```
+      #### Use name field to get the name of the operatingSystemValue link
+      ```ts
+      const package = new Package({deep});
+      const operatingSystemValue = await package["operatingSystemValue"].name;
       ```
       */
       public "operatingSystemValue" = this.createEntity("operatingSystemValue");
@@ -355,6 +476,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const osVersionTypeLinkId = await package["OsVersion"].localId();
       ```
+      #### Use name field to get the name of the OsVersion link
+      ```ts
+      const package = new Package({deep});
+      const osVersion = await package["OsVersion"].name;
+      ```
       */
       public "OsVersion" = this.createEntity("OsVersion");
       /**
@@ -368,6 +494,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const osVersionValueLinkId = await package["osVersionValue"].localId();
+      ```
+      #### Use name field to get the name of the osVersionValue link
+      ```ts
+      const package = new Package({deep});
+      const osVersionValue = await package["osVersionValue"].name;
       ```
       */
       public "osVersionValue" = this.createEntity("osVersionValue");
@@ -383,6 +514,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const isVirtualTypeLinkId = await package["IsVirtual"].localId();
       ```
+      #### Use name field to get the name of the IsVirtual link
+      ```ts
+      const package = new Package({deep});
+      const isVirtual = await package["IsVirtual"].name;
+      ```
       */
       public "IsVirtual" = this.createEntity("IsVirtual");
       /**
@@ -396,6 +532,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const platformTypeLinkId = await package["Platform"].localId();
+      ```
+      #### Use name field to get the name of the Platform link
+      ```ts
+      const package = new Package({deep});
+      const platform = await package["Platform"].name;
       ```
       */
       public "Platform" = this.createEntity("Platform");
@@ -411,6 +552,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const platformValueLinkId = await package["platformValue"].localId();
       ```
+      #### Use name field to get the name of the platformValue link
+      ```ts
+      const package = new Package({deep});
+      const platformValue = await package["platformValue"].name;
+      ```
       */
       public "platformValue" = this.createEntity("platformValue");
       /**
@@ -424,6 +570,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const modelTypeLinkId = await package["Model"].localId();
+      ```
+      #### Use name field to get the name of the Model link
+      ```ts
+      const package = new Package({deep});
+      const model = await package["Model"].name;
       ```
       */
       public "Model" = this.createEntity("Model");
@@ -439,6 +590,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const modelValueLinkId = await package["modelValue"].localId();
       ```
+      #### Use name field to get the name of the modelValue link
+      ```ts
+      const package = new Package({deep});
+      const modelValue = await package["modelValue"].name;
+      ```
       */
       public "modelValue" = this.createEntity("modelValue");
       /**
@@ -453,6 +609,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const webViewVersionTypeLinkId = await package["WebViewVersion"].localId();
       ```
+      #### Use name field to get the name of the WebViewVersion link
+      ```ts
+      const package = new Package({deep});
+      const webViewVersion = await package["WebViewVersion"].name;
+      ```
       */
       public "WebViewVersion" = this.createEntity("WebViewVersion");
       /**
@@ -466,6 +627,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const webViewVersionValueLinkId = await package["webViewVersionValue"].localId();
+      ```
+      #### Use name field to get the name of the webViewVersionValue link
+      ```ts
+      const package = new Package({deep});
+      const webViewVersionValue = await package["webViewVersionValue"].name;
       ```
       */
       public "webViewVersionValue" = this.createEntity("webViewVersionValue");
