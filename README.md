@@ -6,12 +6,7 @@ A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@cap
 
 # Table Of Contents
 <!-- TABLE_OF_CONTENTS_START -->
-- [Table Of Contents](#table-of-contents)
-- [Prerequisitions](#prerequisitions)
-- [Quick Start](#quick-start)
-- [Device Object Value](#device-object-value)
-- [Update Handling](#update-handling)
-- [Contribution](#contribution)
+undefined
 <!-- TABLE_OF_CONTENTS_END -->
 
 # Prerequisitions
