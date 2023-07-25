@@ -31,23 +31,5 @@ jobs:
         fi
       test-command: "echo 'Tests are temporarily disabled'"
       should-generate-documentation: true
-      generate-documentation-command: |
-        git config --global user.name 'FreePhoenix888'
-        git config --global user.email 'freephoenix888@gmail.com'
-
-        table_of_contents=$(npm run generate-table-of-contents-in-readme)
-        pattern="(<!-- TABLE_OF_CONTENTS_START -->)[\\S\\s]*(<!-- TABLE_OF_CONTENTS_END -->)"
-        replacement=$'$1\n'"${table_of_contents}"$'\n$2'
-        npx replace "$pattern" "$replacement" README.md
-
-        git add README.md
-        if git diff --staged --quiet
-        then
-          echo "No changes to commit"
-        else
-          git commit -m 'docs: update README.md'
-          git push origin main
-        fi
-
-        npm run library:generate-documentation 
+      generate-documentation-command: "npm run documentation:generate"
         

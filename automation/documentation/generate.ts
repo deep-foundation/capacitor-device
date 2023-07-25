@@ -1,7 +1,7 @@
 import {execa} from 'execa';
 import replaceInFile from 'replace-in-file';
 
-const generateDocumentation = async () => {
+const generate = async () => {
   await execa('git', ['config', '--global', 'user.name', 'FreePhoenix888']);
   await execa('git', ['config', '--global', 'user.email', 'freephoenix888@gmail.com']);
 
@@ -32,7 +32,7 @@ const generateDocumentation = async () => {
     await execa('git', ['push', 'origin', 'main']);
   }
 
-  await execa('npm', ['run', 'library:generate-documentation']);
+  await execa('npm', ['run', 'library:documentation:generate']);
 };
 
-generateDocumentation();
+generate();
