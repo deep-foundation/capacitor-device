@@ -21,7 +21,7 @@
     "npm-pull": "npm-pull",
     "npm-release": "npm-release",
     "build:generate-package-class": "generate-package-class",
-    "documentation:generate": "ts-node ./automation/documentation/generate.ts",
+    "documentation:generate": "ts-node --esm ./automation/documentation/generate.ts",
     "documentation:generate-table-of-contents-in-readme": "markdown-toc README.md",
     "library:documentation:generate": "typedoc ./src/main.ts"
   },
