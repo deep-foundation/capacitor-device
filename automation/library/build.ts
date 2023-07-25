@@ -1,8 +1,6 @@
 import { execa } from 'execa';
 
 const generate = async () => {
-  await execa('tsc', {stdio: 'inherit'});
-
   await execa('git', ['config', '--global', 'user.name', 'FreePhoenix888'], {stdio: 'inherit'});
   await execa('git', ['config', '--global', 'user.email', 'freephoenix888@gmail.com'], {stdio: 'inherit'});
 
@@ -18,6 +16,8 @@ const generate = async () => {
     await execa('git', ['commit', '-m', 'Generate new package class'], {stdio: 'inherit'});
     await execa('git', ['push', 'origin', 'main'], {stdio: 'inherit'});
   }
+  
+  await execa('tsc', {stdio: 'inherit'});
 };
 
 generate();
