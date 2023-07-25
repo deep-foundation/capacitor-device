@@ -20,4 +20,4 @@ const generate = async () => {
   }
 };
 
-generate().catch(error => console.error('Error occurred:', error));
+generate();
