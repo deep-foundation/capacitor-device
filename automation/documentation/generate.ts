@@ -5,7 +5,7 @@ const generate = async () => {
   await execa('git', ['config', '--global', 'user.name', 'FreePhoenix888'], {stdio: 'inherit'});
   await execa('git', ['config', '--global', 'user.email', 'freephoenix888@gmail.com'], {stdio: 'inherit'});
 
-  const { stdout: tableOfContents } = await execa('npm', ['run', '--silent','documentation:generate-table-of-contents-in-readme'], {stdio: 'inherit'});
+  const { stdout: tableOfContents } = await execa('markdown-toc', ['README.md'], {stdio: 'inherit'});
 
   const options = {
     files: 'README.md',

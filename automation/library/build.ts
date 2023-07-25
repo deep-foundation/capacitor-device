@@ -6,7 +6,7 @@ const generate = async () => {
   await execa('git', ['config', '--global', 'user.name', 'FreePhoenix888'], {stdio: 'inherit'});
   await execa('git', ['config', '--global', 'user.email', 'freephoenix888@gmail.com'], {stdio: 'inherit'});
 
-  await execa('npm', ['run', '--silent','library:build:generate-package-class'], {stdio: 'inherit'});
+  await execa('npm', ['run', 'library:build:generate-package-class'], {stdio: 'inherit'});
 
   await execa('git', ['add', './src/package.ts'], {stdio: 'inherit'});
 
