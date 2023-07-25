@@ -1,5 +1,4 @@
 import { execa } from 'execa';
-import replaceInFile from 'replace-in-file';
 
 const generate = async () => {
   await execa('tsc');
