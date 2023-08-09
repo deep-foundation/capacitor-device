@@ -6,7 +6,7 @@ import { DeviceInfo } from "../device-info.js";
  * 
  * @returns A `Card` component containing device model as a `Heading` in the `CardHeader` and device name as a `Text` in the `CardBody`.
  */
-export function Device(param: DeviceParam) {
+export function Device(param: DeviceOptions) {
   const {device} = param;
   return <Card {...param.cardProps}>
     <CardHeader>
@@ -29,7 +29,7 @@ export function Device(param: DeviceParam) {
 /**
  * An interface defines the params that the `Device` component expects.
  */
-export interface DeviceParam { 
+export interface DeviceOptions { 
   /**
    * All device information
    */
