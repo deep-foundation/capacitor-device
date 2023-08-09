@@ -3,8 +3,8 @@ import {
    SerialOperation,
  } from '@deep-foundation/deeplinks/imports/client.js';
  import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/index.js';
- import { DeviceInfo } from './device-info';
- import { getAllDeviceInfo } from './get-all-device-info';
+ import { DeviceInfo } from './device-info.js';
+ import { getAllDeviceInfo } from './get-all-device-info.js';
 import { MutationInputValue } from '@deep-foundation/deeplinks/imports/client_types';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
  

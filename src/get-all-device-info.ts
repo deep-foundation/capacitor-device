@@ -1,5 +1,5 @@
 import { Device } from "@capacitor/device";
-import { DeviceInfo } from "./device-info.js";
+import { DeviceInfo } from './device-info.js.js';
 
 /**
  * Gets all information about the device. 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
-import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-insertion-if-does-not-exist-and-saving-data.js';
+import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-insertion-if-does-not-exist-and-saving-data.js.js';
 
 /**
  * A custom React Hook that checks if a device link exists in the Deep database, and if not, it inserts one. Also saves device information to deep on render.
