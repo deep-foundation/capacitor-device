@@ -1,4 +1,4 @@
-import { Card, CardHeader, Heading, CardBody, Text } from "@chakra-ui/react";
+import { Card, CardHeader, Heading, CardBody, Text, CardProps} from "@chakra-ui/react";
 import { DeviceInfo } from "../device-info.js";
 
 /**
@@ -34,4 +34,8 @@ export interface DeviceParam {
    * All device information
    */
   device: Pick<DeviceInfo, 'model'|'name'>
+  /**
+   * Props for the `Card` component
+   */
+  cardProps: CardProps
  }
