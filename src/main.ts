@@ -26,6 +26,6 @@ export {
   type GetDeviceInsertSerialOperationsParam,
 } from './get-device-insert-serial-operations.js';
 export {
-  getDeviceValueInsertSerialOperations,
+  getDeviceValueUpdateSerialOperations ,
   type GetDeviceValueUpdateSerialOperationsParam,
 } from './get-device-value-update-serial-operations.js';

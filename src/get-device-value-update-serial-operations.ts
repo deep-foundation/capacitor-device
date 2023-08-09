@@ -21,7 +21,7 @@ import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
   })
   ```
    */
- export async function getDeviceValueInsertSerialOperations(
+ export async function getDeviceValueUpdateSerialOperations(
    param: GetDeviceValueUpdateSerialOperationsParam
  ): Promise<Array<SerialOperation>> {
    const { deep, info } = param;
