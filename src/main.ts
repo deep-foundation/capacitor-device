@@ -3,29 +3,29 @@ export {
   Package as CapacitorDevicePackage,
   type PackageOptions,
   type PackageOptions as CapacitorDevicePackageConstructorParam,
-} from './package';
-export { getAllDeviceInfo } from './get-all-device-info';
-export { type DeviceInfo } from './device-info';
-export { Device, type DeviceParam } from './react-components/device';
+} from './package.js';
+export { getAllDeviceInfo } from './get-all-device-info.js';
+export { type DeviceInfo } from './device-info.js';
+export { Device, type DeviceParam } from './react-components/device.js';
 export {
   useDeviceInsertionIfDoesNotExistAndSavingData,
   type UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
   UseDeviceInsertionIfDoesNotExistAndSavingInfoResult,
-} from './react-components/use-device-insertion-if-does-not-exist-and-saving-data';
+} from './react-components/use-device-insertion-if-does-not-exist-and-saving-data.js';
 export {
   WithDeviceInsertionIfDoesNotExistAndSavingData,
   type WithDeviceInsertionIfDoesNotExistAndSavingDataParam,
-} from './react-components/with-device-insertion-if-does-not-exist-and-saving-data';
+} from './react-components/with-device-insertion-if-does-not-exist-and-saving-data.js';
 export {
   getDevice,
   type GetDeviceArg,
   type GetDevicecResult,
-} from './get-device';
+} from './get-device.js';
 export {
   getDeviceInsertSerialOperations,
   type GetDeviceInsertSerialOperationsParam,
-} from './get-device-insert-serial-operations';
+} from './get-device-insert-serial-operations.js';
 export {
   getDeviceValueInsertSerialOperations,
   type GetDeviceValueUpdateSerialOperationsParam,
-} from './get-device-value-update-serial-operations';
+} from './get-device-value-update-serial-operations.js';
