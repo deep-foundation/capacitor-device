@@ -1,8 +1,8 @@
 import {
   DeepClient,
   SerialOperation,
-} from '@deep-foundation/deeplinks/imports/client';
-import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
+} from '@deep-foundation/deeplinks/imports/client.js';
+import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/index.js';
 import { DeviceInfo } from './device-info';
 import { getAllDeviceInfo } from './get-all-device-info';
 import { Package } from './package';
