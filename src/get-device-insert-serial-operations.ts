@@ -126,11 +126,11 @@ export interface GetDeviceInsertSerialOperationsParam {
     /**
      * Reserved link id for the device
      */
-    deviceLinkId: number;
+    deviceLinkId?: number;
     /**
      * Reserved link id for the contain
      */
-    containLinkId: number;
+    containLinkId?: number;
   };
   /**
    * Link ids of types that will be used in the serial operations
