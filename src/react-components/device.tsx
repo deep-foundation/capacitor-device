@@ -37,5 +37,5 @@ export interface DeviceParam {
   /**
    * Props for the `Card` component
    */
-  cardProps: CardProps
+  cardProps?: CardProps
  }
