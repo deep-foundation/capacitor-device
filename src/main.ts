@@ -6,7 +6,7 @@ export {
 } from './package.js';
 export { getAllDeviceInfo } from './get-all-device-info.js';
 export { type DeviceInfo } from './device-info.js';
-export { Device, type DeviceParam } from './react-components/device.js';
+export { Device, Device as DeviceComponent, type DeviceParam, type DeviceParam as DeviceComponentParam } from './react-components/device.js';
 export {
   useDeviceInsertionIfDoesNotExistAndSavingData,
   type UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
