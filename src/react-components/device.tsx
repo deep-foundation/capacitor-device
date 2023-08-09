@@ -8,7 +8,7 @@ import { DeviceInfo } from "../device-info.js";
  */
 export function Device(param: DeviceParam) {
   const {device} = param;
-  return <Card>
+  return <Card {...param.cardProps}>
     <CardHeader>
       <Heading>
         {
