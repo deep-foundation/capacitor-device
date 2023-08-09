@@ -6,6 +6,7 @@ import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/in
 import { DeviceInfo } from './device-info.js';
 import { getAllDeviceInfo } from './get-all-device-info.js';
 import { Package } from './package.js';
+import debug from 'debug';
 
 /**
   * Gets serial operations to insert Device
@@ -23,15 +24,24 @@ import { Package } from './package.js';
 export async function getDeviceInsertSerialOperations(
   param: GetDeviceInsertSerialOperationsParam
 ): Promise<Array<SerialOperation>> {
+  const log = debug(getDeviceInsertSerialOperations.name);
+  log({ param });
   const {
     deep,
     info = await getAllDeviceInfo(),
     containValue,
     containerLinkId,
   } = param;
-  const $package = new Package({deep})
-  const { containLinkId, deviceLinkId } = await getReservedLinkIds();
-  const { containTypeLinkId, deviceTypeLinkId } = await getTypeLinkIds();
+  const _package = new Package({deep})
+  log({ info });
+  const reservedLinkIds = await getReservedLinkIds();
+  log({ reservedLinkIds });
+  const { containLinkId, deviceLinkId } = reservedLinkIds;
+  log({ containLinkId, deviceLinkId });
+  const typeLinkIds = await getTypeLinkIds();
+  log({ typeLinkIds });
+  const { containTypeLinkId, deviceTypeLinkId } = typeLinkIds;
+  log({ containTypeLinkId, deviceTypeLinkId });
   const serialOperations = [];
   const deviceInsertSerialOperation = createSerialOperation({
     type: 'insert',
@@ -41,6 +51,7 @@ export async function getDeviceInsertSerialOperations(
       type_id: deviceTypeLinkId,
     },
   });
+  log({ deviceInsertSerialOperation });
   serialOperations.push(deviceInsertSerialOperation);
   const valueOfDeviceInsertSerialOperation = createSerialOperation({
     type: 'insert',
@@ -50,6 +61,7 @@ export async function getDeviceInsertSerialOperations(
       value: info,
     },
   });
+  log({ valueOfDeviceInsertSerialOperation });
   serialOperations.push(valueOfDeviceInsertSerialOperation);
   if (containerLinkId !== null) {
     const containInsertSerialOperation = createSerialOperation({
@@ -61,6 +73,7 @@ export async function getDeviceInsertSerialOperations(
         to_id: deviceLinkId,
       },
     });
+    log({ containInsertSerialOperation });
     serialOperations.push(containInsertSerialOperation);
     const valueOfContainInsertSerialOperation = createSerialOperation({
       type: 'insert',
@@ -70,9 +83,11 @@ export async function getDeviceInsertSerialOperations(
         value: containValue,
       },
     });
+    log({ valueOfContainInsertSerialOperation });
     serialOperations.push(valueOfContainInsertSerialOperation);
   }
 
+  log({ serialOperations })
   return serialOperations;
 
   type GetReservedLinkIdsResult = Required<
@@ -112,7 +127,7 @@ export async function getDeviceInsertSerialOperations(
         (await deep.id('@deep-foundation/core', 'Contain')),
       deviceTypeLinkId:
         param.typeLinkIds?.deviceTypeLinkId ||
-        (await $package.Device.id()),
+        (await _package.Device.id()),
     };
     return result;
   }

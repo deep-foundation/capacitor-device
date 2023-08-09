@@ -7,6 +7,7 @@ import {
  import { getAllDeviceInfo } from './get-all-device-info.js';
 import { MutationInputValue } from '@deep-foundation/deeplinks/imports/client_types';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
+import debug from 'debug';
  
  /**
    * Gets serial operations to insert Device
@@ -24,19 +25,24 @@ import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
  export async function getDeviceValueUpdateSerialOperations(
    param: GetDeviceValueUpdateSerialOperationsParam
  ): Promise<Array<SerialOperation>> {
+  const log = debug(getDeviceValueUpdateSerialOperations.name)
+  log({param})
    const { deep, info } = param;
 
    const deviceLink = await getDeviceLink();
+   log({deviceLink})
  
    const value = await getValue({
      deviceLink,
      data: info,
    });
+    log({value})
  
    const serialOperations = await getSerialOperations({
      deviceLink,
      value,
    });
+    log({serialOperations})
 
    return serialOperations;
  
