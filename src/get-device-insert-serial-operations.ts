@@ -3,10 +3,10 @@ import {
   SerialOperation,
 } from '@deep-foundation/deeplinks/imports/client.js';
 import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/index.js';
+import { debug } from './debug.js';
 import { DeviceInfo } from './device-info.js';
 import { getAllDeviceInfo } from './get-all-device-info.js';
 import { Package } from './package.js';
-import debug from 'debug';
 
 /**
   * Gets serial operations to insert Device

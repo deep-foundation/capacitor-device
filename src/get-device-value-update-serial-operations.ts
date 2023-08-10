@@ -7,7 +7,7 @@ import {
  import { getAllDeviceInfo } from './get-all-device-info.js';
 import { MutationInputValue } from '@deep-foundation/deeplinks/imports/client_types';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
-import debug from 'debug';
+import { debug } from './debug.js';
  
  /**
    * Gets serial operations to insert Device
@@ -25,7 +25,7 @@ import debug from 'debug';
  export async function getDeviceValueUpdateSerialOperations(
    param: GetDeviceValueUpdateSerialOperationsParam
  ): Promise<Array<SerialOperation>> {
-  const log = debug(getDeviceValueUpdateSerialOperations.name)
+  const log = debug(`@deep-foundation/capacitor-device:${getDeviceValueUpdateSerialOperations.name}`)
   log({param})
    const { deep, info } = param;
 
