@@ -3,6 +3,7 @@ import {
   GetLanguageCodeResult,
   LanguageTag,
   DeviceInfo as DeviceGeneralInfo,
+  DeviceId,
 } from '@capacitor/device';
 
 /**
@@ -31,6 +32,7 @@ const deviceInfo: DeviceInfo = {
 ```
  */
 export type DeviceInfo = Partial<
+  DeviceId &
   DeviceGeneralInfo &
     BatteryInfo & { languageCode: GetLanguageCodeResult['value'] } & {
       languageTag: LanguageTag['value'];
