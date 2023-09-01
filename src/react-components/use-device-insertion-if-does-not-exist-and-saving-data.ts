@@ -10,7 +10,7 @@ import { WithDeviceSync } from './with-device-insertion-if-does-not-exist-and-sa
  * 
  * It is recommended to use {@link WithDeviceSync} instead of using this hook directly
  */
-export function useDeviceInsertionIfDoesNotExistAndSavingData(
+export function useDeviceSync(
   param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
 ): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
   const { deep, deviceLinkId, containerLinkId, insertDeviceCallback } = param;
@@ -38,7 +38,7 @@ export function useDeviceInsertionIfDoesNotExistAndSavingData(
 }
 
 /**
- * Describes the parameter object that should be passed to the {@link useDeviceInsertionIfDoesNotExistAndSavingData} hook.
+ * Describes the parameter object that should be passed to the {@link useDeviceSync} hook.
  */
 export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoParam {
   /**
@@ -62,7 +62,7 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoParam {
 }
 
 /**
- * Describes the return object of the {@link useDeviceInsertionIfDoesNotExistAndSavingData} hook.
+ * Describes the return object of the {@link useDeviceSync} hook.
  */
 export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
   /**

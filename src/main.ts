@@ -8,7 +8,7 @@ export { getAllDeviceInfo } from './get-all-device-info.js';
 export { type DeviceInfo } from './device-info.js';
 export { Device as DeviceComponent, type DeviceOptions as DeviceComponentOptions } from './react-components/device.js';
 export {
-  useDeviceInsertionIfDoesNotExistAndSavingData,
+  useDeviceSync,
   type UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
   UseDeviceInsertionIfDoesNotExistAndSavingInfoResult,
 } from './react-components/use-device-insertion-if-does-not-exist-and-saving-data.js';
