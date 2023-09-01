@@ -13,8 +13,8 @@ export {
   UseDeviceInsertionIfDoesNotExistAndSavingInfoResult,
 } from './react-components/use-device-insertion-if-does-not-exist-and-saving-data.js';
 export {
-  WithDeviceInsertionIfDoesNotExistAndSavingData,
-  type WithDeviceInsertionIfDoesNotExistAndSavingDataParam,
+  WithDeviceSync,
+  type WithDeviceSyncParam,
 } from './react-components/with-device-insertion-if-does-not-exist-and-saving-data.js';
 export {
   getDevice,

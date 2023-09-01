@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
-import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-insertion-if-does-not-exist-and-saving-data.js';
+import { WithDeviceSync } from './with-device-insertion-if-does-not-exist-and-saving-data.js';
 
 /**
  * A custom React Hook that checks if a device link exists in the Deep database, and if not, it inserts one. Also saves device information to deep on render.
@@ -8,7 +8,7 @@ import { WithDeviceInsertionIfDoesNotExistAndSavingData } from './with-device-in
  * @remarks
  * If the passed {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.deviceLinkId} is not undefined, the hook verifies its existence in Deep. If it does not exist, a new device link is inserted.
  * 
- * It is recommended to use {@link WithDeviceInsertionIfDoesNotExistAndSavingData} instead of using this hook directly
+ * It is recommended to use {@link WithDeviceSync} instead of using this hook directly
  */
 export function useDeviceInsertionIfDoesNotExistAndSavingData(
   param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
@@ -48,7 +48,7 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoParam {
   /**
    * A device link ID.
    * 
-   * This field is not of type undefined because you should not call this component until you get the device link ID which is known. For these reasons there is {@link WithDeviceInsertionIfDoesNotExistAndSavingData}
+   * This field is not of type undefined because you should not call this component until you get the device link ID which is known. For these reasons there is {@link WithDeviceSync}
    */
   deviceLinkId: number | null;
   /**

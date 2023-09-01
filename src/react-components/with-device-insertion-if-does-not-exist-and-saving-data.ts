@@ -8,10 +8,10 @@ import { UseDeviceInsertionIfDoesNotExistAndSavingInfoParam, useDeviceInsertionI
  * @remarks
  * This component utilizes the custom hook {@link useDeviceInsertionIfDoesNotExistAndSavingData} to manage the device link insertion operation and handles the rendering logic based on the loading and insertion state of Device link insertion.
  *
- * @returns A JSX.Element that is either the children of this component if Device link is available, or the result of {@link WithDeviceInsertionIfDoesNotExistAndSavingDataParam.renderIfLoading} if the insertion operation is loading, or the result of {@link WithDeviceInsertionIfDoesNotExistAndSavingDataParam.renderIfNotInserted} if the device link is not inserted.
+ * @returns A JSX.Element that is either the children of this component if Device link is available, or the result of {@link WithDeviceSyncParam.renderIfLoading} if the insertion operation is loading, or the result of {@link WithDeviceSyncParam.renderIfNotInserted} if the device link is not inserted.
  */
-export function WithDeviceInsertionIfDoesNotExistAndSavingData(
-  props: WithDeviceInsertionIfDoesNotExistAndSavingDataParam
+export function WithDeviceSync(
+  props: WithDeviceSyncParam
 ): JSX.Element {
   const {
     containerLinkId,
@@ -42,12 +42,12 @@ export function WithDeviceInsertionIfDoesNotExistAndSavingData(
 }
 
 /**
- * Describes the parameter object for the {@link WithDeviceInsertionIfDoesNotExistAndSavingData} higher-order component.
+ * Describes the parameter object for the {@link WithDeviceSync} higher-order component.
  *
  * @remarks
  * This interface extends from {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam}, and adds additional properties required for rendering.
  */
-export type WithDeviceInsertionIfDoesNotExistAndSavingDataParam =
+export type WithDeviceSyncParam =
   UseDeviceInsertionIfDoesNotExistAndSavingInfoParam & {
     /**
      * The ID of the container link in the Deep database.
