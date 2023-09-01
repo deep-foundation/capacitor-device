@@ -11,11 +11,11 @@ export {
   useDeviceSync,
   type UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
   UseDeviceInsertionIfDoesNotExistAndSavingInfoResult,
-} from './react-components/use-device-insertion-if-does-not-exist-and-saving-data.js';
+} from './react/hooks/use-device-sync.js';
 export {
   WithDeviceSync,
   type WithDeviceSyncParam,
-} from './react-components/with-device-insertion-if-does-not-exist-and-saving-data.js';
+} from './react/components/with-device-sync.js';
 export {
   getDevice,
   type GetDeviceArg,
