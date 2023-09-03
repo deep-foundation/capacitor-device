@@ -25,6 +25,6 @@ export {
   type MakeDeviceInsertOperationsOptions,
 } from './make-device-insert-operations.js';
 export {
-  makeDeviceValueUpdateSerialOperations,
+  makeDeviceValueUpdateOperations,
   MakeDeviceValueUpdateSerialOperationsOptions
 } from './make-device-value-update-operations.js';

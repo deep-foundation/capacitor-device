@@ -24,11 +24,11 @@ import { DeviceDecorator } from './create-device-decorator.js';
  })
  ```
   */
-export async function makeDeviceValueUpdateSerialOperations<TDeepClient extends DeepClientInstance>(
+export async function makeDeviceValueUpdateOperations<TDeepClient extends DeepClientInstance>(
   this: DeviceDecorator<TDeepClient>,
   options: MakeDeviceValueUpdateSerialOperationsOptions
 ): Promise<Array<SerialOperation>> {
- const log = debug(`@deep-foundation/capacitor-device:${makeDeviceValueUpdateSerialOperations.name}`)
+ const log = debug(`@deep-foundation/capacitor-device:${makeDeviceValueUpdateOperations.name}`)
  log({options})
   const { info = this.getAllDeviceInfo() } = options;
 

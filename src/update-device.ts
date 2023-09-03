@@ -3,7 +3,7 @@ import { DeviceDecorator } from "./create-device-decorator";
 import { MakeDeviceValueUpdateSerialOperationsOptions } from "./make-device-value-update-operations";
 
 export async function updateDevice<TDeepClient extends DeepClientInstance>(this: DeviceDecorator<TDeepClient>,options: UpdateDeviceOptions) {
-  const operations = await this.makeDeviceValueOperations(options)
+  const operations = await this.makeDeviceValueUpdateOperations(options)
   return await this.deep.serial({
     operations
   })
