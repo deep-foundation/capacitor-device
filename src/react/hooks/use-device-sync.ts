@@ -28,7 +28,9 @@ export function useDeviceSync<TDeepClient extends DeepClientInstance>(
 
       if (!initialDeviceLinkId || !deviceLink) {
         setIsLoading(true);
-        await 
+        await this.insertDevice({
+          containerLinkId,
+        })
         setIsLoading(false);
       }
     };
