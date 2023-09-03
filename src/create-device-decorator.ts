@@ -4,7 +4,7 @@ import debug from "debug";
 import { makeDeviceInsertOperations } from "./make-device-insert-operations";
 import { Package } from "./package";
 import { updateDevice } from "./update-device";
-import { WithDeviceSync, getAllDeviceInfo, getDevice, makeDeviceValueUpdateOperations, useDeviceSync } from "./main";
+import { WithDeviceSync, getAllDeviceInfo, getDevice, makeDeviceValueUpdateOperations as makeDeviceValueUpdateOperations, useDeviceSync } from "./main";
 
 export function createDeviceDecorator<TDeepClient extends DeepClientInstance>(deep: TDeepClient): DeviceDecorator<TDeepClient> {
   const log = debug(`@deep-foundation/capacitor-device:${createDeviceDecorator.name}`);
@@ -18,7 +18,7 @@ export function createDeviceDecorator<TDeepClient extends DeepClientInstance>(de
     getDevice: getDevice,
     insertDevice: insertDevice,
     makeDeviceInsertOperations: makeDeviceInsertOperations,
-    makeDeviceValueUpdateOperations: makeDeviceValueUpdateOperations,
+    makeDeviceValueOperations: makeDeviceValueUpdateOperations,
     updateDevice: updateDevice,
   } as DeviceDecorator<TDeepClient>, deep)
   log({decorator})
@@ -34,6 +34,6 @@ export type DeviceDecorator<TDeepClient extends DeepClientInstance = DeepClientI
   getDevice: typeof getDevice
   insertDevice: typeof insertDevice;
   makeDeviceInsertOperations: typeof makeDeviceInsertOperations
-  makeDeviceValueUpdateOperations: typeof makeDeviceValueUpdateOperations
+  makeDeviceValueOperations: typeof makeDeviceValueUpdateOperations
   updateDevice: typeof updateDevice;
 }
