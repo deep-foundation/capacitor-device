@@ -6,7 +6,6 @@ export {
 } from './package.js';
 export { getAllDeviceInfo } from './get-all-device-info.js';
 export { type DeviceInfo } from './device-info.js';
-export { Device as DeviceComponent, type DeviceOptions as DeviceComponentOptions } from './react-components/device.js';
 export {
   useDeviceSync,
   type UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
@@ -14,18 +13,18 @@ export {
 } from './react/hooks/use-device-sync.js';
 export {
   WithDeviceSync,
-  type WithDeviceSyncParam,
+  type WithDeviceSyncOptions,
 } from './react/components/with-device-sync.js';
 export {
   getDevice,
-  type GetDeviceArg,
+  type GetDeviceOptions,
   type GetDevicecResult,
 } from './get-device.js';
 export {
-  getDeviceInsertSerialOperations,
-  type GetDeviceInsertSerialOperationsParam,
-} from './get-device-insert-serial-operations.js';
+  makeDeviceInsertOperations,
+  type MakeDeviceInsertOperationsOptions,
+} from './make-device-insert-operations.js';
 export {
-  getDeviceValueUpdateSerialOperations ,
-  type GetDeviceValueUpdateSerialOperationsParam,
-} from './get-device-value-update-serial-operations.js';
+  makeDeviceValueUpdateSerialOperations,
+  MakeDeviceValueUpdateSerialOperationsOptions
+} from './make-device-value-update-operations.js';

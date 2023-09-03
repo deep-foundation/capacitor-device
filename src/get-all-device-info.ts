@@ -4,13 +4,14 @@ import { DeviceInfo } from './device-info.js';
 /**
  * Gets all information about the device. 
  *
+ * @remarks
+ * Battery information is not available on iOS or macOS
+ * This method does not get data from deep. It uses local device information
+ * 
  * @example
  * ```
  * const deviceInfo = await getAllDeviceInfo();
  * ```
- * 
- * @remarks
- * Battery information is not available on iOS or macOS
  */
 export async function getAllDeviceInfo(): Promise<DeviceInfo> {
   const deviceInfo = await Device.getInfo();

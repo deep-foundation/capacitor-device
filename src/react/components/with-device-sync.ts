@@ -1,6 +1,7 @@
-import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
+import { DeepClient, DeepClientInstance } from '@deep-foundation/deeplinks/imports/client.js';
 import { useState, useEffect } from 'react';
 import { UseDeviceInsertionIfDoesNotExistAndSavingInfoParam, useDeviceSync } from '../hooks/use-device-sync.js';
+import { DeviceDecorator } from '../../create-device-decorator.js';
 
 /**
  * A higher-order component that handles the logic of inserting a device link into Deep if it does not exist and saving device information.
@@ -8,33 +9,27 @@ import { UseDeviceInsertionIfDoesNotExistAndSavingInfoParam, useDeviceSync } fro
  * @remarks
  * This component utilizes the custom hook {@link useDeviceSync} to manage the device link insertion operation and handles the rendering logic based on the loading and insertion state of Device link insertion.
  *
- * @returns A JSX.Element that is either the children of this component if Device link is available, or the result of {@link WithDeviceSyncParam.renderIfLoading} if the insertion operation is loading, or the result of {@link WithDeviceSyncParam.renderIfNotInserted} if the device link is not inserted.
+ * @returns A JSX.Element that is either the children of this component if Device link is available, or the result of {@link WithDeviceSyncOptions.renderIfLoading} if the insertion operation is loading, or the result of {@link WithDeviceSyncOptions.renderIfNotInserted} if the device link is not inserted.
  */
-export function WithDeviceSync(
-  props: WithDeviceSyncParam
+export function WithDeviceSync<TDeepClient extends DeepClientInstance>(
+  this: DeviceDecorator<TDeepClient>,
+  options: WithDeviceSyncOptions
 ): JSX.Element {
   const {
     containerLinkId,
-    deep,
-    deviceLinkId,
+    initialDeviceLinkId,
     children,
     renderIfLoading,
     renderIfNotInserted,
-    insertDeviceCallback,
-  } = props;
+  } = options;
 
-  const { isLoading } = useDeviceSync({
-    deep,
-    containerLinkId,
-    deviceLinkId,
-    insertDeviceCallback,
-  });
+  const { isLoading } = this.useDeviceSync(options);
 
   if (isLoading) {
     return renderIfLoading();
   }
 
-  if (deviceLinkId) {
+  if (initialDeviceLinkId) {
     return children;
   } else {
     return renderIfNotInserted();
@@ -47,7 +42,7 @@ export function WithDeviceSync(
  * @remarks
  * This interface extends from {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam}, and adds additional properties required for rendering.
  */
-export type WithDeviceSyncParam =
+export type WithDeviceSyncOptions =
   UseDeviceInsertionIfDoesNotExistAndSavingInfoParam & {
     /**
      * The ID of the container link in the Deep database.

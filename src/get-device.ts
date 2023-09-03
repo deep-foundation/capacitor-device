@@ -1,14 +1,17 @@
 import { Device } from "@capacitor/device";
-import { DeepClient } from "@deep-foundation/deeplinks/imports/client.js";
+import { DeepClient, DeepClientInstance } from "@deep-foundation/deeplinks/imports/client.js";
 import { DeviceInfo } from './device-info.js';
+import { DeviceDecorator } from "./create-device-decorator.js";
 
-export interface GetDeviceArg {
-  deep: DeepClient, 
+export interface GetDeviceOptions {
   deviceLinkId: number
 }
 
-export async function getDevice(arg: GetDeviceArg): Promise<GetDevicecResult> {
-  const {deep, deviceLinkId} = arg;
+export async function getDevice<TDeepClient extends DeepClientInstance>(
+  this: DeviceDecorator<TDeepClient>,
+  options: GetDeviceOptions
+  ): Promise<GetDevicecResult> {
+  const {deviceLinkId} = options;
 //   const nameTypeLinkId = await deep.id(DEVICE_PACKAGE_NAME, "Name");
 //   const modelTypeLinkId = await deep.id(DEVICE_PACKAGE_NAME, "Model");
 
@@ -43,7 +46,7 @@ export async function getDevice(arg: GetDeviceArg): Promise<GetDevicecResult> {
 //     model
 //   }
 
-   const {data: [deviceLink]} = await deep.select(deviceLinkId)
+   const {data: [deviceLink]} = await this.select(deviceLinkId)
 
    if(!deviceLink) {
       throw new Error(`A link with id ##${deviceLinkId} is not found`)
