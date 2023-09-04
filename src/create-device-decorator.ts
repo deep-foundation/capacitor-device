@@ -1,10 +1,10 @@
 import { DeepClientInstance } from "@deep-foundation/deeplinks/imports/client";
 import { InsertDeviceOptions, insertDevice } from "./insert-device";
-import debug from "debug";
 import { makeDeviceInsertOperations } from "./make-device-insert-operations";
 import { Package } from "./package";
 import { updateDevice } from "./update-device";
 import { WithDeviceSync, getAllDeviceInfo, getDevice, makeDeviceValueUpdateOperations, useDeviceSync } from "./main";
+import { debug } from "./debug";
 
 export function createDeviceDecorator<TDeepClient extends DeepClientInstance>(deep: TDeepClient): DeviceDecorator<TDeepClient> {
   const log = debug(`@deep-foundation/capacitor-device:${createDeviceDecorator.name}`);
