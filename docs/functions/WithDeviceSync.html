@@ -17,7 +17,7 @@
 <h1>Function WithDeviceSync</h1></div>
 <section class="tsd-panel">
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="WithDeviceSync"><span class="tsd-kind-call-signature">With<wbr/>Device<wbr/>Sync</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">TDeepClient</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">this</span>, <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">JSX.Element</span><a href="#WithDeviceSync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" id="icon-anchor"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></g></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="WithDeviceSync"><span class="tsd-kind-call-signature">With<wbr/>Device<wbr/>Sync</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">TDeepClient</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">JSX.Element</span><a href="#WithDeviceSync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" id="icon-anchor"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></g></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A higher-order component that handles the logic of inserting a device link into Deep if it does not exist and saving device information.</p>
 </div>
@@ -25,21 +25,19 @@
 <h4>Type Parameters</h4>
 <ul class="tsd-type-parameter-list">
 <li>
-<h4><span class="tsd-kind-type-parameter">TDeepClient</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type ">DeepClientInstance</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type ">Link</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type tsd-kind-type-parameter">TDeepClient</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></section>
+<h4><span class="tsd-kind-type-parameter">TDeepClient</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type ">DeepClientInstance</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type ">Link</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type tsd-kind-type-parameter">TDeepClient</span><span class="tsd-signature-symbol">&gt;</span> = <span class="tsd-signature-type ">DeepClientInstance</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type ">Link</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></section>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><span class="tsd-kind-parameter">this</span>: <a href="../types/DeviceDecorator.html" class="tsd-signature-type tsd-kind-type-alias">DeviceDecorator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">TDeepClient</span><span class="tsd-signature-symbol">&gt;</span></h5></li>
-<li>
-<h5><span class="tsd-kind-parameter">options</span>: <a href="../types/WithDeviceSyncOptions.html" class="tsd-signature-type tsd-kind-type-alias">WithDeviceSyncOptions</a></h5></li></ul></div>
+<h5><span class="tsd-kind-parameter">options</span>: <a href="../types/WithDeviceSyncOptions.html" class="tsd-signature-type tsd-kind-type-alias">WithDeviceSyncOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">TDeepClient</span><span class="tsd-signature-symbol">&gt;</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">JSX.Element</span></h4><p>A JSX.Element that is either the children of this component if Device link is available, or the result of renderIfLoading if the insertion operation is loading, or the result of renderIfNotInserted if the device link is not inserted.</p>
 
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This component utilizes the custom hook <a href="useDeviceSync.html" class="tsd-kind-function">useDeviceSync</a> to manage the device link insertion operation and handles the rendering logic based on the loading and insertion state of Device link insertion.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/deep-foundation/capacitor-device/blob/ca7cd09/src/react/components/with-device-sync.ts#L14">src/react/components/with-device-sync.ts:14</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/deep-foundation/capacitor-device/blob/70dba43/src/react/components/with-device-sync.ts#L14">src/react/components/with-device-sync.ts:14</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
