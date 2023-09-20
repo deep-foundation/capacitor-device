@@ -35,7 +35,7 @@ export async function makeDeviceInsertOperations<TDeepClient extends DeepClientI
   } = options;
   log({ info });
   const {containValue} = options;
-  const reservedLinkIds = await this.deep.reserve(2);
+  const reservedLinkIds = await this.reserve(2);
   log({reservedLinkIds})
   const deviceLinkId = options.reservedLinkIds?.deviceLinkId ?? reservedLinkIds.pop()!;
   log({deviceLinkId})
