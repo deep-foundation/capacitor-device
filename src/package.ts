@@ -114,9 +114,9 @@ const webViewVersionValue = package["webViewVersionValue"].name;
 */
 export class Package extends BasePackage {
 
-  constructor(Options: PackageOptions) {
+  constructor(param: PackageOptions) {
     super({
-      ...Options,
+      ...param,
       name: '@deep-foundation/capacitor-device',
     });
   }
