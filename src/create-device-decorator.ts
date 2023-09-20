@@ -9,7 +9,8 @@ import { debug } from "./debug.js";
 export function createDeviceDecorator<TDeepClient extends DeepClientInstance>(deep: TDeepClient): DeviceDecorator<TDeepClient> {
   const log = debug(`@deep-foundation/capacitor-device:${createDeviceDecorator.name}`);
   const _package = new Package({deep})
-  const decorator: DeviceDecorator<TDeepClient> = Object.assign({
+  const decorator: DeviceDecorator<TDeepClient> = {
+    ...deep,
     capacitorDevicePackage: _package,
     "@deep-foundation/capacitor-device": _package,
     useDeviceSync: useDeviceSync,
@@ -20,7 +21,10 @@ export function createDeviceDecorator<TDeepClient extends DeepClientInstance>(de
     makeDeviceInsertOperations: makeDeviceInsertOperations,
     makeDeviceValueUpdateOperations: makeDeviceValueUpdateOperations,
     updateDevice: updateDevice,
-  } as DeviceDecorator<TDeepClient>, deep)
+  }
+
+  Object.setPrototypeOf(decorator, Object.getPrototypeOf(deep));
+
   log({decorator})
   return decorator;
 }
