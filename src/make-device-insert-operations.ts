@@ -65,6 +65,7 @@ export async function makeDeviceInsertOperations<TDeepClient extends DeepClientI
         id: containLinkId,
         type_id: this.idLocal("@deep-foundation/core", "Contain"),
         from_id: containerLinkId || this.linkId,
+        to_id: deviceLinkId,
         ...(containValue ? { value: containValue } : {})
       }
     })
