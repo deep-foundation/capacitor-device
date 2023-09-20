@@ -4,7 +4,7 @@ export {
 } from './react/components/with-device-sync.js';
 export {
   useDeviceSync,
-  type UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
+  type UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions,
   UseDeviceInsertionIfDoesNotExistAndSavingInfoResult,
 } from './react/hooks/use-device-sync.js';
 export {
@@ -35,8 +35,8 @@ export {
   Package as CapacitorDevicePackage,
   Package as DevicePackage,
   type PackageOptions,
-  type PackageOptions as CapacitorDevicePackageConstructorParam,
-  type PackageOptions as DevicePackageConstructorParam,
+  type PackageOptions as CapacitorDevicePackageConstructorOptions,
+  type PackageOptions as DevicePackageConstructorOptions,
 } from './package.js';
 export {
   updateDevice,

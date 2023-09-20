@@ -6,8 +6,8 @@ import {
 import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/index.js';
 import { DeviceInfo } from './device-info.js';
 import { getAllDeviceInfo } from './get-all-device-info.js';
-import { MutationInputValue } from '@deep-foundation/deeplinks/imports/client_types';
-import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
+import { MutationInputValue } from '@deep-foundation/deeplinks/imports/client_types.js';
+import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
 import { debug } from './debug.js';
 import { DeviceDecorator } from './create-device-decorator.js';
 

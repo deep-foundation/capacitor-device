@@ -1,6 +1,6 @@
-import { DeepClient, DeepClientInstance } from "@deep-foundation/deeplinks/imports/client"
-import { DeviceDecorator } from "./create-device-decorator";
-import { MakeDeviceValueUpdateSerialOperationsOptions } from "./make-device-value-update-operations";
+import { DeepClient, DeepClientInstance } from "@deep-foundation/deeplinks/imports/client.js"
+import { DeviceDecorator } from "./create-device-decorator.js";
+import { MakeDeviceValueUpdateSerialOperationsOptions } from "./make-device-value-update-operations.js";
 
 export async function updateDevice<TDeepClient extends DeepClientInstance>(this: DeviceDecorator<TDeepClient>,options: UpdateDeviceOptions) {
   const operations = await this.makeDeviceValueUpdateOperations(options)
