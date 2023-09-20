@@ -17,24 +17,24 @@ export function useDeviceSync<TDeepClient extends DeepClientInstance>(
   Options: UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions,
 ): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
   const { initialDeviceLinkId: initialDeviceLinkId, containerLinkId } = Options;
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [deviceLinkId, setDeviceLinkId] = useState<number | undefined>(initialDeviceLinkId);
 
   useEffect(() => {
     const fetchAndInsertDeviceLink = async () => {
+      setIsLoading(true);
       let deviceLink: Link<number>|undefined;
       if (initialDeviceLinkId) {
         deviceLink = await this.select(initialDeviceLinkId).then(result => result.data[0]);
       }
 
       if (!initialDeviceLinkId || !deviceLink) {
-        setIsLoading(true);
         const {deviceLinkId} = await this.insertDevice({
           containerLinkId,
         })
         setDeviceLinkId(deviceLinkId)
-        setIsLoading(false);
       }
+      setIsLoading(false);
     };
 
     fetchAndInsertDeviceLink();
