@@ -1,5 +1,5 @@
 import { DeepClientInstance } from "@deep-foundation/deeplinks/imports/client.js";
-import { InsertDeviceOptions, insertDevice } from "./insert-device";
+import { InsertDeviceOptions, insertDevice } from "./insert-device.js";
 import { makeDeviceInsertOperations } from "./make-device-insert-operations.js";
 import { Package } from "./package.js";
 import { updateDevice } from "./update-device.js";
