@@ -11,17 +11,17 @@ import { DeviceDecorator } from '../../create-device-decorator.js';
  *
  * @returns A JSX.Element that is either the children of this component if Device link is available, or the result of {@link WithDeviceSyncOptions.renderIfLoading} if the insertion operation is loading, or the result of {@link WithDeviceSyncOptions.renderIfNotInserted} if the device link is not inserted.
  */
-export function WithDeviceSync<TDeepClient extends DeepClientInstance>(
-  this: DeviceDecorator<TDeepClient>,
-  options: WithDeviceSyncOptions
+export function WithDeviceSync<TDeepClient extends DeepClientInstance = DeepClientInstance>(
+  options: WithDeviceSyncOptions<TDeepClient>
 ): JSX.Element {
   const {
     renderChildren: renderChildren,
     renderIfLoading,
     renderIfNotInserted,
+    deep
   } = options;
 
-  const { isLoading,deviceLinkId } = this.useDeviceSync(options);
+  const { isLoading,deviceLinkId } = deep.useDeviceSync(options);
 
   if (isLoading) {
     return renderIfLoading();
@@ -40,7 +40,7 @@ export function WithDeviceSync<TDeepClient extends DeepClientInstance>(
  * @remarks
  * This interface extends from {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions}, and adds additional properties required for rendering.
  */
-export type WithDeviceSyncOptions =
+export type WithDeviceSyncOptions<TDeepClient extends DeepClientInstance = DeepClientInstance> =
   UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions & {
     /**
      * The ID of the container link in the Deep database.
@@ -49,7 +49,7 @@ export type WithDeviceSyncOptions =
     /**
      * An instance of `DeepClient`.
      */
-    deep: DeepClient;
+    deep: DeviceDecorator<TDeepClient>;
     /**
      * The ID of the device link in the Deep database.
      */
