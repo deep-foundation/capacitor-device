@@ -26,7 +26,7 @@ import { DeviceDecorator } from './create-device-decorator.js';
 export async function makeDeviceInsertOperations<TDeepClient extends DeepClientInstance>(
   this: DeviceDecorator<TDeepClient>,
   options: MakeDeviceInsertOperationsOptions
-): Promise<Array<SerialOperation>> {
+){
   const log = debug(makeDeviceInsertOperations.name);
   log({ Options: options });
   const {
@@ -34,30 +34,48 @@ export async function makeDeviceInsertOperations<TDeepClient extends DeepClientI
     containerLinkId,
   } = options;
   log({ info });
-  const { deviceLinkId, containLinkId } = options.reservedLinkIds || {};
   const {containValue} = options;
-  const serialOperation = createSerialOperation({
-    type: 'insert',
-    table: 'links',
-    objects: {
-      ...(deviceLinkId ? { id: deviceLinkId } : {}),
-      type_id: this.capacitorDevicePackage.Device.idLocal(),
-      object: {
-        data: info
+  const reservedLinkIds = await this.deep.reserve(2);
+  log({reservedLinkIds})
+  const deviceLinkId = options.reservedLinkIds?.deviceLinkId ?? reservedLinkIds.pop()!;
+  log({deviceLinkId})
+  const containLinkId = options.reservedLinkIds?.containLinkId ?? reservedLinkIds.pop()!;
+  log({containLinkId})
+  const operations = [
+    createSerialOperation({
+      type: 'insert',
+      table: 'links',
+      objects: {
+        id: deviceLinkId,
+        type_id: this.capacitorDevicePackage.Device.idLocal(),
       },
-      in: {
-        data: {
-          ...(containLinkId ? { id: containLinkId } : {}),
-          type_id: this.idLocal("@deep-foundation/core", "Contain"),
-          from_id: containerLinkId || this.linkId,
-          ...(containValue ? { value: containValue } : {})
-        }
+    }),
+    createSerialOperation({
+      type: 'insert',
+      table: 'objects',
+      objects: {
+        link_id: deviceLinkId,
+        value: info,
       }
-    },
-  });
+    }),
+    createSerialOperation({
+      type: 'insert',
+      table: 'links',
+      objects: {
+        id: containLinkId,
+        type_id: this.idLocal("@deep-foundation/core", "Contain"),
+        from_id: containerLinkId || this.linkId,
+        ...(containValue ? { value: containValue } : {})
+      }
+    })
+  ]
+  log({operations})
 
-  log({ serialOperation })
-  return [serialOperation];
+  return {
+    operations,
+    deviceLinkId,
+    containLinkId,
+  };
 }
 
 export interface MakeDeviceInsertOperationsOptions {

@@ -16,21 +16,19 @@ export function WithDeviceSync<TDeepClient extends DeepClientInstance>(
   options: WithDeviceSyncOptions
 ): JSX.Element {
   const {
-    containerLinkId,
-    initialDeviceLinkId,
-    children,
+    renderChildren: renderChildren,
     renderIfLoading,
     renderIfNotInserted,
   } = options;
 
-  const { isLoading } = this.useDeviceSync(options);
+  const { isLoading,deviceLinkId } = this.useDeviceSync(options);
 
   if (isLoading) {
     return renderIfLoading();
   }
 
-  if (initialDeviceLinkId) {
-    return children;
+  if (deviceLinkId) {
+    return renderChildren({deviceLinkId});
   } else {
     return renderIfNotInserted();
   }
@@ -57,9 +55,9 @@ export type WithDeviceSyncOptions =
      */
     deviceLinkId: number | undefined | null;
     /**
-     * The child elements to render when the device link ID exists and the loading is finished.
+     * A function that returns a JSX.Element to render when the device link ID exists and the loading is finished.
      */
-    children: JSX.Element;
+    renderChildren: (options:{deviceLinkId:number}) => JSX.Element;
     /**
      * A function that returns a JSX.Element to render when the insertion operation is loading.
      */

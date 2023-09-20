@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { DeepClient, DeepClientInstance } from '@deep-foundation/deeplinks/imports/client.js';
 import { WithDeviceSync } from '../components/with-device-sync.js';
 import { DeviceDecorator } from '../../create-device-decorator.js';
+import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
 
 /**
  * A custom React Hook that checks if a device link exists in the Deep database, and if not, it inserts one. Also saves device information to deep on render.
@@ -17,20 +18,21 @@ export function useDeviceSync<TDeepClient extends DeepClientInstance>(
 ): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
   const { initialDeviceLinkId: initialDeviceLinkId, containerLinkId } = Options;
   const [isLoading, setIsLoading] = useState(false);
+  const [deviceLinkId, setDeviceLinkId] = useState<number | undefined>(initialDeviceLinkId);
 
   useEffect(() => {
     const fetchAndInsertDeviceLink = async () => {
-      let deviceLink;
+      let deviceLink: Link<number>|undefined;
       if (initialDeviceLinkId) {
-        const { data } = await this.select(initialDeviceLinkId);
-        deviceLink = data[0];
+        deviceLink = await this.select(initialDeviceLinkId).then(result => result.data[0]);
       }
 
       if (!initialDeviceLinkId || !deviceLink) {
         setIsLoading(true);
-        await this.insertDevice({
+        const {deviceLinkId} = await this.insertDevice({
           containerLinkId,
         })
+        setDeviceLinkId(deviceLinkId)
         setIsLoading(false);
       }
     };
@@ -38,7 +40,7 @@ export function useDeviceSync<TDeepClient extends DeepClientInstance>(
     fetchAndInsertDeviceLink();
   }, [initialDeviceLinkId]);
 
-  return { isLoading };
+  return { isLoading, deviceLinkId };
 }
 
 /**
@@ -50,7 +52,7 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions {
    * 
    * This field is not of type undefined because you should not call this component until you get the device link ID which is known. For these reasons there is {@link WithDeviceSync}
    */
-  initialDeviceLinkId: number | null;
+  initialDeviceLinkId?: number | undefined;
   /**
    * A container with ID of current space 
    */
@@ -65,4 +67,8 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
    * Indicates the loading state of the device link insertion operation.
    */
   isLoading: boolean;
+  /**
+   * Device link id
+   */
+  deviceLinkId: number | undefined;
 }
