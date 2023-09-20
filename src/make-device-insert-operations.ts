@@ -28,7 +28,7 @@ export async function makeDeviceInsertOperations<TDeepClient extends DeepClientI
   options: MakeDeviceInsertOperationsOptions
 ): Promise<Array<SerialOperation>> {
   const log = debug(makeDeviceInsertOperations.name);
-  log({ param: options });
+  log({ Options: options });
   const {
     info = await getAllDeviceInfo(),
     containerLinkId,

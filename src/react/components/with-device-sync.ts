@@ -1,6 +1,6 @@
 import { DeepClient, DeepClientInstance } from '@deep-foundation/deeplinks/imports/client.js';
 import { useState, useEffect } from 'react';
-import { UseDeviceInsertionIfDoesNotExistAndSavingInfoParam, useDeviceSync } from '../hooks/use-device-sync.js';
+import { UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions, useDeviceSync } from '../hooks/use-device-sync.js';
 import { DeviceDecorator } from '../../create-device-decorator.js';
 
 /**
@@ -37,13 +37,13 @@ export function WithDeviceSync<TDeepClient extends DeepClientInstance>(
 }
 
 /**
- * Describes the parameter object for the {@link WithDeviceSync} higher-order component.
+ * Describes the Optionseter object for the {@link WithDeviceSync} higher-order component.
  *
  * @remarks
- * This interface extends from {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam}, and adds additional properties required for rendering.
+ * This interface extends from {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions}, and adds additional properties required for rendering.
  */
 export type WithDeviceSyncOptions =
-  UseDeviceInsertionIfDoesNotExistAndSavingInfoParam & {
+  UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions & {
     /**
      * The ID of the container link in the Deep database.
      */

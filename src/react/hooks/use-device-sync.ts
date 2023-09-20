@@ -7,15 +7,15 @@ import { DeviceDecorator } from '../../create-device-decorator.js';
  * A custom React Hook that checks if a device link exists in the Deep database, and if not, it inserts one. Also saves device information to deep on render.
  * 
  * @remarks
- * If the passed {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoParam.initialDeviceLinkId} is not undefined, the hook verifies its existence in Deep. If it does not exist, a new device link is inserted.
+ * If the passed {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions.initialDeviceLinkId} is not undefined, the hook verifies its existence in Deep. If it does not exist, a new device link is inserted.
  * 
  * It is recommended to use {@link WithDeviceSync} instead of using this hook directly
  */
 export function useDeviceSync<TDeepClient extends DeepClientInstance>(
   this: DeviceDecorator<TDeepClient>,
-  param: UseDeviceInsertionIfDoesNotExistAndSavingInfoParam,
+  Options: UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions,
 ): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
-  const { initialDeviceLinkId: initialDeviceLinkId, containerLinkId } = param;
+  const { initialDeviceLinkId: initialDeviceLinkId, containerLinkId } = Options;
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -42,9 +42,9 @@ export function useDeviceSync<TDeepClient extends DeepClientInstance>(
 }
 
 /**
- * Describes the parameter object that should be passed to the {@link useDeviceSync} hook.
+ * Describes the Optionseter object that should be passed to the {@link useDeviceSync} hook.
  */
-export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoParam {
+export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions {
   /**
    * A device link ID.
    * 
