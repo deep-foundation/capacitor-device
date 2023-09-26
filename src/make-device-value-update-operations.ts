@@ -10,6 +10,7 @@ import { MutationInputValue } from '@deep-foundation/deeplinks/imports/client_ty
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
 import { debug } from './debug.js';
 import { DeviceDecorator } from './create-device-decorator.js';
+import deepEqual from 'deep-equal'
 
 /**
   * Gets serial operations to insert Device
@@ -34,6 +35,11 @@ export async function makeDeviceValueUpdateOperations<TDeepClient extends DeepCl
 
   const deviceLink = await getDeviceLink.call(this);
   log({deviceLink})
+
+  if(deepEqual(deviceLink.value?.value, info)) {
+    log(`The same value is already set, returning []`)
+    return []
+  }
 
   const serialOperations = await makeSerialOperations({
     deviceLink,

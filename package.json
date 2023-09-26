@@ -36,6 +36,7 @@
     "@freephoenix888/boolean": "~0.0.1",
     "@freephoenix888/object-to-links-async-converter": "~0.0.10",
     "debug": "^4.3.4",
+    "deep-equal": "^2.2.2",
     "delay": "^5.0.0",
     "lodash": "^4.17.21"
   },
@@ -50,6 +51,7 @@
     "@capacitor/cli": "^5.0.0",
     "@deep-foundation/npm-automation": "^18.1.10",
     "@types/debug": "^4.1.8",
+    "@types/deep-equal": "^1.0.2",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.2.4",
     "execa": "^7.1.1",
