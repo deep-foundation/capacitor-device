@@ -4,9 +4,13 @@ import { MakeDeviceValueUpdateSerialOperationsOptions } from "./make-device-valu
 
 export async function updateDevice<TDeepClient extends DeepClientInstance>(this: DeviceDecorator<TDeepClient>,options: UpdateDeviceOptions) {
   const operations = await this.makeDeviceValueUpdateOperations(options)
-  return await this.serial({
-    operations
-  })
+  if(operations.length > 0) {
+    return await this.serial({
+      operations
+    })
+  } else {
+    return undefined
+  }
 }
 
 export type UpdateDeviceOptions = MakeDeviceValueUpdateSerialOperationsOptions
