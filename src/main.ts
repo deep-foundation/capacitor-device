@@ -4,7 +4,7 @@ export {
 } from './react/components/with-device-sync.js';
 export {
   useDeviceSync,
-  type UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions,
+  type UseDeviceSyncOptions as UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions,
   UseDeviceInsertionIfDoesNotExistAndSavingInfoResult,
 } from './react/hooks/use-device-sync.js';
 export {
