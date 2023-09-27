@@ -1,6 +1,6 @@
 import { DeepClient, DeepClientInstance } from '@deep-foundation/deeplinks/imports/client.js';
 import { useState, useEffect } from 'react';
-import { UseDeviceSyncOptions, useDeviceSync } from '../hooks/use-device-sync.js';
+import { UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions, useDeviceSync } from '../hooks/use-device-sync.js';
 import { DeviceDecorator } from '../../create-device-decorator.js';
 
 /**
@@ -12,16 +12,16 @@ import { DeviceDecorator } from '../../create-device-decorator.js';
  * @returns A JSX.Element that is either the children of this component if Device link is available, or the result of {@link WithDeviceSyncOptions.renderIfLoading} if the insertion operation is loading, or the result of {@link WithDeviceSyncOptions.renderIfNotInserted} if the device link is not inserted.
  */
 export function WithDeviceSync<TDeepClient extends DeepClientInstance = DeepClientInstance>(
-  this: DeviceDecorator,
   options: WithDeviceSyncOptions<TDeepClient>
 ): JSX.Element {
   const {
     renderChildren: renderChildren,
     renderIfLoading,
     renderIfNotInserted,
+    deep
   } = options;
 
-  const { isLoading,deviceLinkId } = this.useDeviceSync(options);
+  const { isLoading,deviceLinkId } = deep.useDeviceSync(options);
 
   if (isLoading) {
     return renderIfLoading();
@@ -38,14 +38,18 @@ export function WithDeviceSync<TDeepClient extends DeepClientInstance = DeepClie
  * Describes the Optionseter object for the {@link WithDeviceSync} higher-order component.
  *
  * @remarks
- * This interface extends from {@link UseDeviceSyncOptions}, and adds additional properties required for rendering.
+ * This interface extends from {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions}, and adds additional properties required for rendering.
  */
 export type WithDeviceSyncOptions<TDeepClient extends DeepClientInstance = DeepClientInstance> =
-  UseDeviceSyncOptions & {
+  UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions & {
     /**
      * The ID of the container link in the Deep database.
      */
     containerLinkId: number;
+    /**
+     * An instance of `DeepClient`.
+     */
+    deep: DeviceDecorator<TDeepClient>;
     /**
      * The ID of the device link in the Deep database.
      */
