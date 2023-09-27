@@ -8,15 +8,14 @@ import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
  * A custom React Hook that checks if a device link exists in the Deep database, and if not, it inserts one. Also saves device information to deep on render.
  * 
  * @remarks
- * If the passed {@link UseDeviceSyncOptions.initialDeviceLinkId} is not undefined, the hook verifies its existence in Deep. If it does not exist, a new device link is inserted.
+ * If the passed {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions.initialDeviceLinkId} is not undefined, the hook verifies its existence in Deep. If it does not exist, a new device link is inserted.
  * 
  * It is recommended to use {@link WithDeviceSync} instead of using this hook directly
  */
-export function useDeviceSync(
-  this: DeviceDecorator,
-  options: UseDeviceSyncOptions,
+export function useDeviceSync<TDeepClient extends DeepClientInstance>(
+  options: UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions<TDeepClient>,
 ): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
-  const { initialDeviceLinkId: initialDeviceLinkId, containerLinkId} = options;
+  const { initialDeviceLinkId: initialDeviceLinkId, containerLinkId , deep} = options;
   const [isLoading, setIsLoading] = useState(true);
   const [deviceLinkId, setDeviceLinkId] = useState<number | undefined>(initialDeviceLinkId);
 
@@ -25,11 +24,11 @@ export function useDeviceSync(
       setIsLoading(true);
       let deviceLink: Link<number>|undefined;
       if (initialDeviceLinkId) {
-        deviceLink = await this.select(initialDeviceLinkId).then(result => result.data[0]);
+        deviceLink = await deep.select(initialDeviceLinkId).then(result => result.data[0]);
       }
 
       if (!initialDeviceLinkId || !deviceLink) {
-        const {deviceLinkId} = await this.insertDevice({
+        const {deviceLinkId} = await deep.insertDevice({
           containerLinkId,
         })
         setDeviceLinkId(deviceLinkId)
@@ -46,13 +45,14 @@ export function useDeviceSync(
 /**
  * Describes the Optionseter object that should be passed to the {@link useDeviceSync} hook.
  */
-export interface UseDeviceSyncOptions {
+export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions<TDeepClient extends DeepClientInstance = DeepClientInstance> {
   /**
    * A device link ID.
    * 
    * This field is not of type undefined because you should not call this component until you get the device link ID which is known. For these reasons there is {@link WithDeviceSync}
    */
   initialDeviceLinkId?: number | undefined;
+  deep: DeviceDecorator<TDeepClient>;
   /**
    * A container with ID of current space 
    */
