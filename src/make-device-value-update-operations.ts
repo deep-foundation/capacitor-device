@@ -58,7 +58,7 @@ export async function makeDeviceValueUpdateOperations<TDeepClient extends DeepCl
       if (!options.deviceLinkId) {
         throw new Error(`deviceLinkId is undefined`);
       }
-      // 'this' implicitly has type 'any' because it does not have a type annotation.ts(2683)
+
       const { data } = await this.select({
         id: options.deviceLinkId,
       });
