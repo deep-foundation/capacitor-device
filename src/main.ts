@@ -1,12 +1,21 @@
+// ./react/components/
 export {
   WithDeviceSync,
   type WithDeviceSyncOptions,
 } from './react/components/with-device-sync.js';
+
+// ./react/hooks/
 export {
   useDeviceSync,
   type UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions,
   UseDeviceInsertionIfDoesNotExistAndSavingInfoResult,
 } from './react/hooks/use-device-sync.js';
+export {
+  UseDeviceLinkReturn,
+  useDeviceLink,
+  UseDeviceLinkOptions
+} from './react/hooks/use-device-link.js'
+
 export {
   createDeviceDecorator,
   DeviceDecorator
