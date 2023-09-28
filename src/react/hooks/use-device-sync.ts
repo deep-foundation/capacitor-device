@@ -3,6 +3,8 @@ import { DeepClient, DeepClientInstance } from '@deep-foundation/deeplinks/impor
 import { WithDeviceSync } from '../components/with-device-sync.js';
 import { DeviceDecorator } from '../../create-device-decorator.js';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
+import { packageLog } from '../../package-log.js';
+const moduleLog = packageLog.extend('react/hooks/use-device-sync.ts');
 
 /**
  * A custom React Hook that checks if a device link exists in the Deep database, and if not, it inserts one. Also saves device information to deep on render.
@@ -15,24 +17,32 @@ import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
 export function useDeviceSync<TDeepClient extends DeepClientInstance>(
   options: UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions<TDeepClient>,
 ): UseDeviceInsertionIfDoesNotExistAndSavingInfoResult {
+  const log = moduleLog.extend(useDeviceSync.name);
+  log({options})
   const { initialDeviceLinkId: initialDeviceLinkId, containerLinkId , deep} = options;
   const [isLoading, setIsLoading] = useState(true);
+  log({isLoading, setIsLoading})
   const [deviceLinkId, setDeviceLinkId] = useState<number | undefined>(initialDeviceLinkId);
+  log({deviceLinkId, setDeviceLinkId})
 
   useEffect(() => {
     const fetchAndInsertDeviceLink = async () => {
       setIsLoading(true);
+      log("setIsLoading(true)")
       let deviceLink: Link<number>|undefined;
       if (initialDeviceLinkId) {
         deviceLink = await deep.select(initialDeviceLinkId).then(result => result.data[0]);
       }
+      log({deviceLink})
 
       if (!initialDeviceLinkId || !deviceLink) {
-        const {deviceLinkId} = await deep.insertDevice({
+        const {deviceLinkId: newDeviceLinkId} = await deep.insertDevice({
           containerLinkId,
         })
-        setDeviceLinkId(deviceLinkId)
+        log({newDeviceLinkId})
+        setDeviceLinkId(newDeviceLinkId)
       }
+      log("setIsLoading(false)")
       setIsLoading(false);
     };
 
