@@ -18,12 +18,16 @@ export interface UseDeviceLinkOptions {
 
 export function useDeviceLink(options: UseDeviceLinkOptions): UseDeviceLinkReturn {
   const log = packageLog.extend(useDeviceLink.name);
+  log({options})
   const { initialDeviceLinkId, deep, containerLinkId = deep.linkId! } = options;
   const [deviceLinkId, setDeviceLinkId] = useState<number | undefined>(
     initialDeviceLinkId
   );
+  log({ deviceLinkId });
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  log({ isLoading, setIsLoading });
   const [error, setError] = useState<unknown>(null);
+  log({ error, setError });
 
   useEffect(() => {
     const checkAndInsertDeviceLink = async () => {
@@ -46,8 +50,9 @@ export function useDeviceLink(options: UseDeviceLinkOptions): UseDeviceLinkRetur
           log({ newDeviceLinkId });
           setDeviceLinkId(newDeviceLinkId);
         }
-      } catch (err) {
-        setError(err);
+      } catch (error) {
+        log({error})
+        setError(error);
       } finally {
         setIsLoading(false);
       }

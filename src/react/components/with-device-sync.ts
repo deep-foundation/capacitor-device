@@ -1,5 +1,3 @@
-import { DeepClient, DeepClientInstance } from '@deep-foundation/deeplinks/imports/client.js';
-import { useState, useEffect } from 'react';
 import { UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions, useDeviceSync } from '../hooks/use-device-sync.js';
 import { DeviceDecorator } from '../../create-device-decorator.js';
 
@@ -7,40 +5,30 @@ import { DeviceDecorator } from '../../create-device-decorator.js';
  * A higher-order component that handles the logic of inserting a device link into Deep if it does not exist and saving device information.
  *
  * @remarks
- * This component utilizes the custom hook {@link useDeviceSync} to manage the device link insertion operation and handles the rendering logic based on the loading and insertion state of Device link insertion.
+ * This component uses the custom hook {@link useDeviceSync} 
  *
- * @returns A JSX.Element that is either the children of this component if Device link is available, or the result of {@link WithDeviceSyncOptions.renderIfLoading} if the insertion operation is loading, or the result of {@link WithDeviceSyncOptions.renderIfNotInserted} if the device link is not inserted.
+ * @returns The result of {@link WithDeviceSyncOptions.renderIfLoading} if the synchronization is in the process, or the result of {@link WithDeviceSyncOptions.renderChildren} if synchronization is done.
  */
-export function WithDeviceSync<TDeepClient extends DeepClientInstance = DeepClientInstance>(
-  options: WithDeviceSyncOptions<TDeepClient>
+export function WithDeviceSync(
+  options: WithDeviceSyncOptions
 ): JSX.Element {
   const {
-    renderChildren: renderChildren,
+    children,
     renderIfLoading,
-    renderIfNotInserted,
     deep
   } = options;
 
-  const { isLoading,deviceLinkId } = deep.useDeviceSync(options);
+  const { isLoading } = deep.useDeviceSync(options);
 
   if (isLoading) {
     return renderIfLoading();
   }
 
-  if (deviceLinkId) {
-    return renderChildren({deviceLinkId});
-  } else {
-    return renderIfNotInserted();
-  }
+  return children;
+
 }
 
-/**
- * Describes the Optionseter object for the {@link WithDeviceSync} higher-order component.
- *
- * @remarks
- * This interface extends from {@link UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions}, and adds additional properties required for rendering.
- */
-export type WithDeviceSyncOptions<TDeepClient extends DeepClientInstance = DeepClientInstance> =
+export type WithDeviceSyncOptions =
   UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions & {
     /**
      * The ID of the container link in the Deep database.
@@ -49,21 +37,17 @@ export type WithDeviceSyncOptions<TDeepClient extends DeepClientInstance = DeepC
     /**
      * An instance of `DeepClient`.
      */
-    deep: DeviceDecorator<TDeepClient>;
+    deep: DeviceDecorator;
     /**
      * The ID of the device link in the Deep database.
      */
     deviceLinkId: number | undefined | null;
     /**
-     * A function that returns a JSX.Element to render when the device link ID exists and the loading is finished.
+     * A JSX.Element to render when the synchronization is finished.
      */
-    renderChildren: (options:{deviceLinkId:number}) => JSX.Element;
+    children: JSX.Element;
     /**
-     * A function that returns a JSX.Element to render when the insertion operation is loading.
+     * A function that returns a JSX.Element to render when synchronization is in the process.
      */
     renderIfLoading: () => JSX.Element;
-    /**
-     * A function that returns a JSX.Element to render when the device link ID doesn't exist.
-     */
-    renderIfNotInserted: () => JSX.Element;
   };

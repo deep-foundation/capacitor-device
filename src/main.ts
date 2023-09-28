@@ -8,7 +8,7 @@ export {
 export {
   useDeviceSync,
   type UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions,
-  UseDeviceInsertionIfDoesNotExistAndSavingInfoResult,
+  UseDeviceSyncResult,
 } from './react/hooks/use-device-sync.js';
 export {
   UseDeviceLinkReturn,
