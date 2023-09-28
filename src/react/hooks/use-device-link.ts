@@ -10,11 +10,13 @@ export interface UseDeviceLinkReturn {
   error: unknown;
 }
 
-export function useDeviceLink(options: {
+export interface UseDeviceLinkOptions {
   initialDeviceLinkId?: number;
   deep: DeviceDecorator;
   containerLinkId?: number;
-}): UseDeviceLinkReturn {
+}
+
+export function useDeviceLink(options: UseDeviceLinkOptions): UseDeviceLinkReturn {
   const log = packageLog.extend(useDeviceLink.name);
   const { initialDeviceLinkId, deep, containerLinkId = deep.linkId! } = options;
   const [deviceLinkId, setDeviceLinkId] = useState<number | undefined>(
