@@ -31,7 +31,7 @@ export async function makeDeviceValueUpdateOperations<TDeepClient extends DeepCl
 ): Promise<Array<SerialOperation>> {
  const log = debug(`@deep-foundation/capacitor-device:${makeDeviceValueUpdateOperations.name}`)
  log({options})
-  const { info = this.getAllDeviceInfo() } = options;
+  const { info = await this.getAllDeviceInfo() } = options;
 
   const deviceLink = await getDeviceLink.call(this);
   log({deviceLink})
