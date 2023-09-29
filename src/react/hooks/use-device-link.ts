@@ -16,9 +16,11 @@ export interface UseDeviceLinkOptions {
   containerLinkId?: number;
 }
 
-export function useDeviceLink(options: UseDeviceLinkOptions): UseDeviceLinkReturn {
+export function useDeviceLink(
+  options: UseDeviceLinkOptions
+): UseDeviceLinkReturn {
   const log = packageLog.extend(useDeviceLink.name);
-  log({options})
+  log({ options });
   const { initialDeviceLinkId, deep, containerLinkId = deep.linkId! } = options;
   const [deviceLinkId, setDeviceLinkId] = useState<number | undefined>(
     initialDeviceLinkId
@@ -30,20 +32,19 @@ export function useDeviceLink(options: UseDeviceLinkOptions): UseDeviceLinkRetur
   log({ error, setError });
 
   useEffect(() => {
-    const checkAndInsertDeviceLink = async () => {
+    new Promise(async () => {
       setIsLoading(true);
       setError(null);
 
       try {
         let deviceLink: Link<number> | undefined;
-        if (initialDeviceLinkId) {
+        if (deviceLinkId) {
           deviceLink = await deep
-            .select(initialDeviceLinkId)
+            .select(deviceLinkId)
             .then((result) => result.data[0]);
+          log({ deviceLink });
         }
-        log({ deviceLink });
-
-        if (!initialDeviceLinkId || !deviceLink) {
+        if (!deviceLink) {
           const { deviceLinkId: newDeviceLinkId } = await deep.insertDevice({
             containerLinkId,
           });
@@ -51,16 +52,12 @@ export function useDeviceLink(options: UseDeviceLinkOptions): UseDeviceLinkRetur
           setDeviceLinkId(newDeviceLinkId);
         }
       } catch (error) {
-        log({error})
+        log({ error });
         setError(error);
       } finally {
         setIsLoading(false);
       }
-    };
-
-    if (deviceLinkId !== undefined) {
-      checkAndInsertDeviceLink();
-    }
+    });
   }, [deviceLinkId]);
 
   return {
@@ -68,4 +65,4 @@ export function useDeviceLink(options: UseDeviceLinkOptions): UseDeviceLinkRetur
     isLoading,
     error,
   };
-};
+}
