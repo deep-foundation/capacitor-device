@@ -6,7 +6,7 @@ import { packageLog } from "../../package-log.js";
 
 export interface UseDeviceLinkReturn {
   deviceLinkId: number | undefined;
-  isLoading: boolean;
+  isLoading: boolean|undefined;
   error: unknown;
 }
 
@@ -26,9 +26,9 @@ export function useDeviceLink(
     initialDeviceLinkId
   );
   log({ deviceLinkId });
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean|undefined>(undefined);
   log({ isLoading, setIsLoading });
-  const [error, setError] = useState<unknown>(null);
+  const [error, setError] = useState<unknown|undefined>(undefined);
   log({ error, setError });
 
   useEffect(() => {
