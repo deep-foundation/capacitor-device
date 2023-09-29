@@ -42,8 +42,8 @@ export function useDeviceLink(
           deviceLink = await deep
             .select(deviceLinkId)
             .then((result) => result.data[0]);
-          log({ deviceLink });
         }
+        log({ deviceLink });
         if (!deviceLink) {
           const { deviceLinkId: newDeviceLinkId } = await deep.insertDevice({
             containerLinkId,
