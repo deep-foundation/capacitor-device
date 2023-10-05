@@ -17,13 +17,16 @@ export function useDeviceSync<TDeepClient extends DeepClientInstance>(
 ): UseDeviceSyncResult {
   const log = moduleLog.extend(useDeviceSync.name);
   log({ options });
-  const { deviceLinkId: deviceLinkId, deep } = options;
+  const { deviceLinkId: deviceLinkId, deep, shouldAct = true } = options;
   const [isLoading, setIsLoading] = useState<boolean | undefined>(undefined);
   log({ isLoading, setIsLoading });
   const [error, setError] = useState<unknown | undefined>(undefined);
   log({error, setError})
 
   useEffect(() => {
+    if(!shouldAct) {
+      return;
+    }
     setIsLoading(true);
     deep
       .updateDevice({
@@ -46,6 +49,7 @@ export interface UseDeviceInsertionIfDoesNotExistAndSavingInfoOptions<
    */
   deviceLinkId: number;
   deep: DeviceDecorator<TDeepClient>;
+  shouldAct?: boolean;
 }
 
 export interface UseDeviceSyncResult {
