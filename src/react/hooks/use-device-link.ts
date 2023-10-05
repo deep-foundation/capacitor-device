@@ -67,7 +67,7 @@ export function useDeviceLink(
         setIsLoading(false);
       }
     });
-  }, [initialDeviceLinkId]);
+  }, [initialDeviceLinkId, shouldAct]);
 
   return {
     deviceLinkId,
