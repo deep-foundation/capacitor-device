@@ -6,7 +6,7 @@ import { packageLog } from "../../package-log.js";
 
 export interface UseDeviceLinkReturn {
   deviceLinkId: number | undefined;
-  isLoading: boolean|undefined;
+  isLoading: boolean | undefined;
   error: unknown;
 }
 
@@ -22,21 +22,28 @@ export function useDeviceLink(
 ): UseDeviceLinkReturn {
   const log = packageLog.extend(useDeviceLink.name);
   log({ options });
-  const { initialDeviceLinkId, deep, containerLinkId = deep.linkId!, shouldAct = true } = options;
+  const {
+    initialDeviceLinkId,
+    deep,
+    containerLinkId = deep.linkId!,
+    shouldAct = true,
+  } = options;
   const [deviceLinkId, setDeviceLinkId] = useState<number | undefined>(
     initialDeviceLinkId
   );
   log({ deviceLinkId });
-  const [isLoading, setIsLoading] = useState<boolean|undefined>(undefined);
+  const [isLoading, setIsLoading] = useState<boolean | undefined>(undefined);
   log({ isLoading, setIsLoading });
-  const [error, setError] = useState<unknown|undefined>(undefined);
+  const [error, setError] = useState<unknown | undefined>(undefined);
   log({ error, setError });
 
   useEffect(() => {
-    if(!shouldAct) return;
+    if (!shouldAct) return;
     new Promise(async () => {
       setIsLoading(true);
+      log(`setIsLoading(true)`);
       setError(null);
+      log(`setError(null)`);
 
       try {
         let deviceLink: Link<number> | undefined;
@@ -60,7 +67,7 @@ export function useDeviceLink(
         setIsLoading(false);
       }
     });
-  }, [initialDeviceLinkId]);
+  }, [initialDeviceLinkId, shouldAct]);
 
   return {
     deviceLinkId,
