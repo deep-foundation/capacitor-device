@@ -14,6 +14,7 @@ export interface UseDeviceLinkOptions {
   initialDeviceLinkId?: number;
   deep: DeviceDecorator;
   containerLinkId?: number;
+  shouldAct?: boolean;
 }
 
 export function useDeviceLink(
@@ -21,7 +22,7 @@ export function useDeviceLink(
 ): UseDeviceLinkReturn {
   const log = packageLog.extend(useDeviceLink.name);
   log({ options });
-  const { initialDeviceLinkId, deep, containerLinkId = deep.linkId! } = options;
+  const { initialDeviceLinkId, deep, containerLinkId = deep.linkId!, shouldAct = true } = options;
   const [deviceLinkId, setDeviceLinkId] = useState<number | undefined>(
     initialDeviceLinkId
   );
@@ -32,6 +33,7 @@ export function useDeviceLink(
   log({ error, setError });
 
   useEffect(() => {
+    if(!shouldAct) return;
     new Promise(async () => {
       setIsLoading(true);
       setError(null);
