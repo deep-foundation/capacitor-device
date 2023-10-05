@@ -41,7 +41,9 @@ export function useDeviceLink(
     if (!shouldAct) return;
     new Promise(async () => {
       setIsLoading(true);
+      log(`setIsLoading(true)`);
       setError(null);
+      log(`setError(null)`);
 
       try {
         let deviceLink: Link<number> | undefined;
