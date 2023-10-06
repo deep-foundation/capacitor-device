@@ -1,224 +1,59 @@
 {
   "package": {
     "name": "@deep-foundation/capacitor-device",
-    "version": "18.0.0-dev.23"
+    "version": "20.0.0"
   },
   "data": [
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Value"
+        "containValue": "Type"
       },
       "id": 1
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Number"
+        "containValue": "Value"
       },
       "id": 2
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Type"
+        "containValue": "Object"
       },
       "id": 3
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "String"
+        "containValue": "HandleUpdate"
       },
       "id": 4
     },
     {
       "package": {
         "dependencyId": 1,
-        "containValue": "Boolean"
+        "containValue": "updateHandler"
       },
       "id": 5
     },
     {
-      "package": {
-        "dependencyId": 0,
-        "containValue": "HandleUpdate"
-      },
-      "id": 6
-    },
-    {
-      "package": {
-        "dependencyId": 2,
-        "containValue": "UpdateHandler"
-      },
-      "id": 7
-    },
-    {
-      "package": {
-        "dependencyId": 0,
-        "containValue": "Object"
-      },
-      "id": 8
-    },
-    {
-      "id": "batteryLevelValue",
-      "type": 1,
-      "from": "BatteryLevel",
-      "to": 2
-    },
-    {
-      "id": "BatteryLevel",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "languageTagValue",
-      "type": 1,
-      "from": "LanguageTag",
-      "to": 4
-    },
-    {
-      "id": "LanguageTag",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "IsCharging",
-      "type": 3,
-      "from": "Device",
-      "to": 5
-    },
-    {
-      "id": "manufacturerValue",
-      "type": 1,
-      "from": "Manufacturer",
-      "to": 4
-    },
-    {
-      "id": "Manufacturer",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "languageCodeValue",
-      "type": 1,
-      "from": "LanguageCode",
-      "to": 4
-    },
-    {
-      "id": "LanguageCode",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
       "id": "Device",
-      "type": 3
+      "type": 1
     },
     {
-      "id": "handleUpdate",
-      "type": 6,
+      "id": "TypeOfValueOfDevice",
+      "type": 2,
       "from": "Device",
-      "to": 7
+      "to": 3
     },
     {
-      "id": "Identifier",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "identifierValue",
-      "type": 1,
-      "from": "Identifier",
-      "to": 4
-    },
-    {
-      "id": "deviceValue",
-      "type": 1,
-      "from": "Device",
-      "to": 8
-    },
-    {
-      "id": "Name",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "nameValue",
-      "type": 1,
-      "from": "Name",
-      "to": 4
-    },
-    {
-      "id": "OperatingSystem",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "operatingSystemValue",
-      "type": 1,
-      "from": "OperatingSystem",
-      "to": 4
-    },
-    {
-      "id": "OsVersion",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "osVersionValue",
-      "type": 1,
-      "from": "OsVersion",
-      "to": 4
-    },
-    {
-      "id": "IsVirtual",
-      "type": 3,
+      "id": "HandleUpdate",
+      "type": 4,
       "from": "Device",
       "to": 5
-    },
-    {
-      "id": "Platform",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "platformValue",
-      "type": 1,
-      "from": "Platform",
-      "to": 4
-    },
-    {
-      "id": "Model",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "modelValue",
-      "type": 1,
-      "from": "Model",
-      "to": 4
-    },
-    {
-      "id": "WebViewVersion",
-      "type": 3,
-      "from": "Device",
-      "to": "Device"
-    },
-    {
-      "id": "webViewVersionValue",
-      "type": 1,
-      "from": "WebViewVersion",
-      "to": 4
     }
   ],
   "errors": [],
@@ -228,12 +63,8 @@
       "version": "0.0.2"
     },
     {
-      "name": "@freephoenix888/boolean",
-      "version": "0.0.1"
-    },
-    {
-      "name": "@freephoenix888/object-to-links-async-converter",
-      "version": "0.0.10"
+      "name": "@deep-foundation/object-to-links-async-converter",
+      "version": "0.0.1-dev.4"
     }
   ]
 }
