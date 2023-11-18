@@ -59,6 +59,8 @@ export function useDeviceLink(
           });
           log({ newDeviceLinkId });
           setDeviceLinkId(newDeviceLinkId);
+        } else {
+          setDeviceLinkId(deviceLink.id);
         }
       } catch (error) {
         log({ error });
