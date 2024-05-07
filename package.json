@@ -9,7 +9,7 @@
     "deep",
     "deep-foundation"
   ],
-  "version": "20.0.3-dev.2",
+  "version": "20.0.3-dev.3",
   "description": "A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device)",
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
   "dependencies": {
     "@deep-foundation/core": "~0.0.2",
     "@deep-foundation/object-to-links-async-converter": "~0.0.1-dev.4",
+    "@deep-foundation/tsx": "^0.0.5",
     "@freephoenix888/boolean": "^0.0.1",
     "debug": "^4.3.4",
     "deep-equal": "^2.2.2",
