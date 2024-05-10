@@ -9,7 +9,7 @@
     "deep",
     "deep-foundation"
   ],
-  "version": "20.0.3-dev.3",
+  "version": "20.0.3-dev.4",
   "description": "A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device)",
   "repository": {
     "type": "git",
@@ -34,32 +34,32 @@
   "dependencies": {
     "@deep-foundation/core": "~0.0.2",
     "@deep-foundation/object-to-links-async-converter": "~0.0.1-dev.4",
-    "@deep-foundation/tsx": "^0.0.5",
-    "@freephoenix888/boolean": "^0.0.1",
-    "debug": "^4.3.4",
-    "deep-equal": "^2.2.2",
-    "delay": "^5.0.0",
-    "lodash": "^4.17.21"
+    "@deep-foundation/tsx": "~0.0.5",
+    "@freephoenix888/boolean": "~0.0.1",
+    "debug": "~4.3.4",
+    "deep-equal": "~2.2.2",
+    "delay": "~5.0.0",
+    "lodash": "~4.17.21"
   },
   "peerDependencies": {
-    "@capacitor/device": "^5.0.4",
-    "@chakra-ui/react": "^2.5.5",
+    "@capacitor/device": "~5.0.4",
+    "@chakra-ui/react": "~2.5.5",
     "@deep-foundation/deeplinks": "~0.0.294",
-    "react": "^18.2.0"
+    "react": "~18.2.0"
   },
   "devDependencies": {
-    "@atao60/fse-cli": "^0.1.7",
-    "@capacitor/cli": "^5.0.0",
-    "@deep-foundation/npm-automation": "^18.1.11",
-    "@types/debug": "^4.1.8",
-    "@types/deep-equal": "^1.0.2",
-    "@types/fs-extra": "^11.0.1",
-    "@types/node": "^20.2.4",
-    "execa": "^7.1.1",
-    "fs-extra": "^11.1.1",
-    "markdown-toc": "^1.2.0",
-    "replace-in-file": "^7.0.1",
-    "typedoc": "^0.25.1",
-    "typescript": "^5.2.2"
+    "@atao60/fse-cli": "~0.1.7",
+    "@capacitor/cli": "~5.0.0",
+    "@deep-foundation/npm-automation": "~18.1.11",
+    "@types/debug": "~4.1.8",
+    "@types/deep-equal": "~1.0.2",
+    "@types/fs-extra": "~11.0.1",
+    "@types/node": "~20.2.4",
+    "execa": "~7.1.1",
+    "fs-extra": "~11.1.1",
+    "markdown-toc": "~1.2.0",
+    "replace-in-file": "~7.0.1",
+    "typedoc": "~0.25.1",
+    "typescript": "~5.2.2"
   }
 }
