@@ -9,7 +9,7 @@
     "deep",
     "deep-foundation"
   ],
-  "version": "20.0.3-dev.4",
+  "version": "20.0.3-dev.5",
   "description": "A deep package based on [`@capacitor/device`](https://www.npmjs.com/package/@capacitor/device)",
   "repository": {
     "type": "git",
@@ -43,9 +43,9 @@
   },
   "peerDependencies": {
     "@capacitor/device": "~5.0.4",
-    "@chakra-ui/react": "~2.5.5",
-    "@deep-foundation/deeplinks": "~0.0.294",
-    "react": "~18.2.0"
+    "@chakra-ui/react": "*",
+    "@deep-foundation/deeplinks": "*",
+    "react": "*"
   },
   "devDependencies": {
     "@atao60/fse-cli": "~0.1.7",
